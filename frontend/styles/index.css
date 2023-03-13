@@ -1,0 +1,103 @@
+@font-face {
+    font-family: 'Libre-Bodoni';
+    src: url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.otf'),
+        url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.svg') format('svg'),
+        url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.ttf') format('truetype'),
+        url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.woff') format('woff'),
+        url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+    cursor: pointer;
+}
+
+[type=button], [type=reset], [type=submit], button {
+    -webkit-appearance: button;
+}
+
+
+.signUp-logIn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(248,249,250);
+    height: 100vh;
+    margin: 0;
+}
+
+.signUp-logIn-container-form {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+}
+
+.signUp-logIn-container-form-h2 {
+    font-family: 'Libre-Bodoni';
+    text-align: center;
+}
+
+.signUp-logIn-container-form-div-div {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.signUp-logIn-container-form-div-div-input {
+    margin: 0;
+    display: block;
+    padding: .375rem .75rem;
+    width: calc(100% - 1.75rem);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dee2e6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.signUp-logIn-container-form-div-div-input:focus {
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+    border-color: #86b7fe;
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+}
+
+.signUp-logIn-container-form-span {
+    display: block;
+    text-align: end;
+    width: 100%;
+    font-size: .75rem;
+    margin: 1rem 0;
+}
+
+.signUp-logIn-container-form-button {
+    margin: .25rem .125rem;
+    text-transform: none;
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    background-color: transparent;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

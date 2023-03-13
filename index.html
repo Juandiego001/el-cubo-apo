@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- 
+        Esta hoja de estilos se utiliza para normalizar
+        algunos elementos que vienen preconfigurados.
+        Es como para que quede más personalizable los
+        elementos HTML y eliminar esos estilos predefinidos.
+    -->
+    <link rel="stylesheet" href="./frontend/styles/normalize.css" />
+
+    <link rel="stylesheet" href="./frontend/styles/index.css" />
+
+
+    <title>EL CUBO APO</title>
+</head>
+<body>
+    <!-- 
+        Contenedor inicial que presentará las opciones
+        para iniciar sesión o registrarse.
+    -->
+    <div class="signUp-logIn-container">
+        <form class="signUp-logIn-container-form">
+            <h2 class="signUp-logIn-container-form-h2   ">
+                EL CUBO APO
+            </h2>
+            <div>
+                <div class="signUp-logIn-container-form-div-div">
+                    <input class="signUp-logIn-container-form-div-div-input" id="email" name="email" type="email" placeholder="Ingresa tu correo" />
+                </div>
+                <div class="signUp-logIn-container-form-div-div">
+                    <input class="signUp-logIn-container-form-div-div-input" id="password" name="password" type="password" placeholder="Ingresa tu contraseña" />
+                </div>
+            </div>
+
+            <span class="signUp-logIn-container-form-span">¿No te has registrado?</span>
+
+            <button class="signUp-logIn-container-form-button">Iniciar sesión</button>
+            <button class="signUp-logIn-container-form-button">Registrarse</button>
+        </form>
+    </div>
+</body>
+</html>
