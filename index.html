@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,35 +14,75 @@
     -->
     <link rel="stylesheet" href="./frontend/styles/normalize.css" />
 
+    <!-- 
+        Hoja de estilos principal.
+     -->
     <link rel="stylesheet" href="./frontend/styles/index.css" />
 
 
     <title>EL CUBO APO</title>
 </head>
+
 <body>
+    <!-- 
+        Contenedor que sirve como telón 
+        para alternar entre el formulario 
+        de inicio de sesión o registrarse
+        y la interfaz del juego.
+    -->
+    <div class="container-curtain"></div>
+
     <!-- 
         Contenedor inicial que presentará las opciones
         para iniciar sesión o registrarse.
     -->
-    <div class="signUp-logIn-container">
+    <div id="signUp-logIn-container" class="signUp-logIn-container-show 
+        signUp-logIn-container-front-curtain
+        signUp-logIn-container">
         <form class="signUp-logIn-container-form">
-            <h2 class="signUp-logIn-container-form-h2   ">
+            <h2 class="signUp-logIn-container-form-h2">
                 EL CUBO APO
             </h2>
             <div>
                 <div class="signUp-logIn-container-form-div-div">
-                    <input class="signUp-logIn-container-form-div-div-input" id="email" name="email" type="email" placeholder="Ingresa tu correo" />
+                    <input class="signUp-logIn-container-form-div-div-input" id="email" name="email" type="email"
+                        placeholder="Ingresa tu correo" />
                 </div>
                 <div class="signUp-logIn-container-form-div-div">
-                    <input class="signUp-logIn-container-form-div-div-input" id="password" name="password" type="password" placeholder="Ingresa tu contraseña" />
+                    <input class="signUp-logIn-container-form-div-div-input" id="password" name="password"
+                        type="password" placeholder="Ingresa tu contraseña" />
                 </div>
             </div>
 
             <span class="signUp-logIn-container-form-span">¿No te has registrado?</span>
 
-            <button class="signUp-logIn-container-form-button">Iniciar sesión</button>
-            <button class="signUp-logIn-container-form-button">Registrarse</button>
+            <button class="signUp-logIn-container-form-button" type="submit" onclick="logIn(event)">Iniciar
+                sesión</button>
+            <button class="signUp-logIn-container-form-button" type="button" onclick="singUp()">Registrarse</button>
         </form>
     </div>
+
+    <!-- 
+        Contenedor para mostrar
+        las opciones del juego
+     -->
+    <div id="game-options-container" class="game-options-container-hide 
+            game-options-container-behind-curtain 
+            game-options-container">
+        <h2 class="game-options-container-h2">
+            EL CUBO APO
+        </h2>
+
+        <button class="game-options-container-button">Historia</button>
+        <button class="game-options-container-button">Multijugador</button>
+        <button class="game-options-container-button">Instrucciones</button>
+        <button class="game-options-container-button">Documentación</button>
+        <button class="game-options-container-button">Configuración</button>
+        <button class="game-options-container-button" onclick="logOut()">Salir</button>
+    </div>
+
+    <!-- Javascript principal de la página idnex -->
+    <script src="frontend/js/index.js"></script>
 </body>
+
 </html>

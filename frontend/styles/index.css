@@ -1,3 +1,6 @@
+/* 
+    Importación de fuentes de texto.
+*/
 @font-face {
     font-family: 'Libre-Bodoni';
     src: url('../fonts/Libre-Bodoni/LibreBodoni-VariableFont/LibreBodoni-VariableFont.eot?#iefix') format('embedded-opentype'),
@@ -11,6 +14,23 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'M-Plus';
+    src: url('../fonts/M-Plus/MPlus-VariableFont/MPlus-VariableFont.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/M-Plus/MPlus-VariableFont/MPlus-VariableFont.otf'),
+        url('../fonts/M-Plus/MPlus-VariableFont/MPlus-VariableFont.svg') format('svg'),
+        url('../fonts/M-Plus/MPlus-VariableFont/MPlus-VariableFont.ttf') format('truetype'),
+        url('../fonts/M-Plus/MPlus-VariableFont/MPlus-VariableFont.woff') format('woff'),
+        url('../fonts/M-Plus/MPlus-VariableFont/MPlus-VariableFont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 
+    Configuración general de botones.
+    (Traidos de bootstrap) 
+*/
 [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
     cursor: pointer;
 }
@@ -19,19 +39,38 @@
     -webkit-appearance: button;
 }
 
+/*
+    Configuración del contenedor telón
+*/
+.container-curtain {
+    position: absolute;
+    z-index: 1;
+    background-color: #86b7fe;
+    width: 100%;
+    height: 100vh;
+}
 
+/* 
+    Configuración de estilos
+    para el formulario de inicio de sesión
+    y registrarse.
+*/
 .signUp-logIn-container {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(248,249,250);
-    height: 100vh;
     margin: 0;
+    transition: opacity .75s linear;
 }
 
 .signUp-logIn-container-form {
     padding: 1rem;
     border-radius: 0.375rem;
+    background-color: rgb(248,249,250);
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
 }
 
@@ -63,6 +102,7 @@
     appearance: none;
     border-radius: .375rem;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-family: 'system-ui';
 }
 
 .signUp-logIn-container-form-div-div-input:focus {
@@ -79,10 +119,12 @@
     width: 100%;
     font-size: .75rem;
     margin: 1rem 0;
+    font-family: 'system-ui';
 }
 
 .signUp-logIn-container-form-button {
     margin: .25rem .125rem;
+    font-family: 'system-ui';
     text-transform: none;
     display: inline-block;
     padding: 0.375rem 0.75rem;
@@ -100,4 +142,91 @@
     border: none;
     background-color: transparent;
     transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* 
+    Estilos para generar una animación al mostrar u ocultar el contenedor del formulario 
+    para iniciar sesión o para registrarse.
+*/
+.signUp-logIn-container-show {
+    opacity: 1;
+}
+
+.signUp-logIn-container-hide {
+    opacity: 0;
+}
+
+.signUp-logIn-container-behind-curtain {
+    z-index: -1;
+}
+
+.signUp-logIn-container-front-curtain {
+    z-index: 2;
+}
+
+/* 
+    Configuración del contenedor donde se mostrarán
+    las opciones del juego.
+*/
+.game-options-container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    background-color: rgb(248,249,250);
+    padding: 3rem 5rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+    text-align: center;
+    transition: opacity .75s linear;
+}
+
+.game-options-container-h2 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Libre-Bodoni';
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.game-options-container-button {
+    font-family: 'M-Plus';
+    font-weight: 400;
+    margin: .25rem 0;
+    text-transform: none;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    background-color: transparent;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+/* 
+    Estilos para generar una animación al mostrar u ocultar el contenedor de opciones.
+*/
+.game-options-container-show {
+    opacity: 1;
+}
+
+.game-options-container-hide {
+    opacity: 0;
+}
+
+.game-options-container-behind-curtain {
+    z-index: -1;
+}
+
+.game-options-container-front-curtain {
+    z-index: 2;
 }
