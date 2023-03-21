@@ -10,6 +10,9 @@ let signUpLogInContainer = document.getElementById("signUp-logIn-container");
 // las opciones del juego
 let gameOptionsContainer = document.getElementById("game-options-container");
 
+// Contenedor de los módulos de historia
+let gameHistory = document.getElementById("game-history");
+
 function singUp() {
     alert("Has presionado el botón para el singUp");
 }
@@ -32,12 +35,10 @@ async function logIn(event) {
         // Se espera a que se oculte el contenedor y luego se ubica detrás del telón.
         // Con esto, esperamos 750 milisegundos, y después ubicamos el contenedor detrás del telón.
         await new Promise((resolve, reject) => setTimeout(resolve, 1000));
-        signUpLogInContainer.classList.remove("signUp-logIn-container-front-curtain");
         signUpLogInContainer.classList.add("signUp-logIn-container-behind-curtain");
 
         // Se muestra el contenedor que almacena las opciones.
-        gameOptionsContainer.classList.remove("game-options-container-behind-curtain");
-        gameOptionsContainer.classList.add("game-options-container-front-curtain");
+        gameOptionsContainer.classList.remove("game-options-container-behind-curtain");        
         gameOptionsContainer.classList.remove("game-options-container-hide");
 
     } else {
@@ -56,6 +57,28 @@ async function logOut() {
 
     // Se muestra el contenedor general que almacena el formulario de inicio.
     signUpLogInContainer.classList.remove("signUp-logIn-container-behind-curtain");
-    signUpLogInContainer.classList.add("signUp-logIn-container-front-curtain");
     signUpLogInContainer.classList.remove("signUp-logIn-container-hide");
+}
+
+async function showHistory() {
+    // Ocultamos el menú del juego
+    gameOptionsContainer.classList.add("game-options-container-hide");
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    gameOptionsContainer.classList.add("game-options-container-behind-curtain");
+
+    // Mostramos el menú de historia
+    gameHistory.classList.remove("game-history-behind-curtain");
+    gameHistory.classList.remove("game-history-hide");
+}
+
+async function goBackMenu() {
+    // Ocultar el menú de historia
+    gameHistory.classList.add("game-history-hide");
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    gameHistory.classList.add("game-history-behind-curtain");
+
+
+    // Mostrar el menú del juego
+    gameOptionsContainer.classList.remove("game-options-container-behind-curtain");
+    gameOptionsContainer.classList.remove("game-options-container-hide");
 }
