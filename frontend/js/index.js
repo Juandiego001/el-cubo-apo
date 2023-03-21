@@ -13,6 +13,22 @@ let gameOptionsContainer = document.getElementById("game-options-container");
 // Contenedor de los módulos de historia
 let gameHistory = document.getElementById("game-history");
 
+// Contenedor para la opción de multijugador
+let gameMultiplayer = document.getElementById("game-multiplayer");
+
+// Contenedor de instrucciones
+let gameInstructions = document.getElementById("game-instructions");
+
+// Contenedor para la opción de documentación
+let gameDocumentation = document.getElementById("game-documentation");
+
+// Contenedor de configuración
+let gameConfig = document.getElementById("game-config");
+
+
+// Variable que contendrá todas las opciones 
+let optionsGame = [gameHistory, gameMultiplayer, gameInstructions, gameDocumentation, gameConfig];
+
 function singUp() {
     alert("Has presionado el botón para el singUp");
 }
@@ -60,22 +76,27 @@ async function logOut() {
     signUpLogInContainer.classList.remove("signUp-logIn-container-hide");
 }
 
-async function showHistory() {
+async function showOption(index) {
     // Ocultamos el menú del juego
+    let theOption = optionsGame[index];
+    let idOption = theOption.id;
     gameOptionsContainer.classList.add("game-options-container-hide");
     await new Promise(resolve => setTimeout(resolve, 1000));
     gameOptionsContainer.classList.add("game-options-container-behind-curtain");
 
-    // Mostramos el menú de historia
-    gameHistory.classList.remove("game-history-behind-curtain");
-    gameHistory.classList.remove("game-history-hide");
+    // Mostramos la opción que deseamos observar
+    theOption.classList.remove(`${idOption}-behind-curtain`);
+    theOption.classList.remove(`${idOption}-hide`);
 }
 
-async function goBackMenu() {
+async function goBackMenu(index) {
+    let theOption = optionsGame[index];
+    let idOption = theOption.id;
+
     // Ocultar el menú de historia
-    gameHistory.classList.add("game-history-hide");
+    theOption.classList.add(`${idOption}-hide`);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    gameHistory.classList.add("game-history-behind-curtain");
+    theOption.classList.add(`${idOption}-behind-curtain`);
 
 
     // Mostrar el menú del juego

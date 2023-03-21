@@ -71,11 +71,11 @@
             EL CUBO APO
         </h2>
 
-        <button class="game-options-container-button" onclick="showHistory()">Historia</button>
-        <button class="game-options-container-button">Multijugador</button>
-        <button class="game-options-container-button">Instrucciones</button>
-        <button class="game-options-container-button">Documentación</button>
-        <button class="game-options-container-button">Configuración</button>
+        <button class="game-options-container-button" onclick="showOption(0)">Historia</button>
+        <button class="game-options-container-button" onclick="showOption(1)">Multijugador</button>
+        <button class="game-options-container-button" onclick="showOption(2)">Instrucciones</button>
+        <button class="game-options-container-button" onclick="showOption(3)">Documentación</button>
+        <button class="game-options-container-button" onclick="showOption(4)">Configuración</button>
         <button class="game-options-container-button" onclick="logOut()">Salir</button>
     </div>
 
@@ -91,7 +91,7 @@
                 Historia
             </h2>
 
-            <h6 onclick="goBackMenu()">
+            <h6 onclick="goBackMenu(0)">
                 Regresar
             </h6>
         </div>
@@ -120,6 +120,74 @@
             <button>
                 6
             </button>
+        </div>
+    </div>
+
+    <!-- 
+        Contenedor para la opción de multijugador.
+    -->
+    <div id="game-multiplayer" class="game-multiplayer
+    game-multiplayer-hide
+    game-multiplayer-behind-curtain">
+        <div>
+            <h2>
+                Multijugador
+            </h2>
+
+            <h6 onclick="goBackMenu(1)">
+                Regresar
+            </h6>
+        </div>
+    </div>
+
+    <!--
+        Contenedor para las instrucciones del juego.
+    -->
+    <div id="game-instructions" class="game-instructions
+    game-instructions-hide
+    game-instructions-behind-curtain">
+        <div>
+            <h2>
+                Instrucciones
+            </h2>
+
+            <h6 onclick="goBackMenu(2)">
+                Regresar
+            </h6>
+        </div>
+    </div>
+
+    <!-- 
+        Contenedor para la opción de documentación. 
+    -->
+    <div id="game-documentation" class="game-documentation
+    game-documentation-hide
+    game-documentation-behind-curtain">
+        <div>
+            <h2>
+                Documentación
+            </h2>
+
+            <h6 onclick="goBackMenu(3)">
+                Regresar
+            </h6>
+        </div>
+    </div>
+
+    <!-- 
+        Contenedor para la configuración del juego.
+    -->
+    <div id="game-config" class="game-config
+    game-config-hide
+    game-config-behind-curtain">
+        <div>
+            <h2>
+                Configuración
+            </h2>
+
+            <h6 onclick="goBackMenu(4)">
+                Regresar
+            </h6>
         </div>
     </div>
 
