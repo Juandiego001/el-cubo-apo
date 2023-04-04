@@ -158,22 +158,27 @@ async function logOut() {
     signUpInContainer.classList.remove("signUpIn-container-hide");
 }
 
-async function showHistory() {
+async function showOption(index) {
     // Ocultamos el menú del juego
+    let theOption = optionsGame[index];
+    let idOption = theOption.id;
     gameOptionsContainer.classList.add("game-options-container-hide");
     await new Promise(resolve => setTimeout(resolve, 1000));
     gameOptionsContainer.classList.add("game-options-container-behind-curtain");
 
-    // Mostramos el menú de historia
-    gameHistory.classList.remove("game-history-behind-curtain");
-    gameHistory.classList.remove("game-history-hide");
+    // Mostramos la opción que deseamos observar
+    theOption.classList.remove(`${idOption}-behind-curtain`);
+    theOption.classList.remove(`${idOption}-hide`);
 }
 
-async function goBackMenu() {
+async function goBackMenu(index) {
+    let theOption = optionsGame[index];
+    let idOption = theOption.id;
+
     // Ocultar el menú de historia
-    gameHistory.classList.add("game-history-hide");
+    theOption.classList.add(`${idOption}-hide`);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    gameHistory.classList.add("game-history-behind-curtain");
+    theOption.classList.add(`${idOption}-behind-curtain`);
 
 
     // Mostrar el menú del juego
