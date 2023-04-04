@@ -55,7 +55,7 @@
     para el formulario de inicio de sesión
     y registrarse.
 */
-.signUp-logIn-container {
+.signUpIn-container {
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
@@ -68,25 +68,21 @@
     transition: opacity .75s linear;
 }
 
-.signUp-logIn-container-form {
+.signUpIn-container form {
+    min-width: 20rem;
+    min-height: 20rem;
     padding: 1rem;
     border-radius: 0.375rem;
     background-color: rgb(248,249,250);
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
 }
 
-.signUp-logIn-container-form-h2 {
+h2 {
     font-family: 'Libre-Bodoni';
     text-align: center;
 }
 
-.signUp-logIn-container-form-div-div {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.signUp-logIn-container-form-div-div-input {
+input {
     margin: 0;
     display: block;
     padding: .375rem .75rem;
@@ -106,7 +102,7 @@
     font-family: 'system-ui';
 }
 
-.signUp-logIn-container-form-div-div-input:focus {
+input:focus {
     color: var(--bs-body-color);
     background-color: var(--bs-form-control-bg);
     border-color: #86b7fe;
@@ -114,16 +110,25 @@
     box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
 }
 
-.signUp-logIn-container-form-span {
+.signUpIn-container span {
     display: block;
     text-align: end;
     width: 100%;
     font-size: .75rem;
-    margin: 1rem 0;
     font-family: 'system-ui';
 }
 
-.signUp-logIn-container-form-button {
+/* Para la parte final en los botones */
+.signUpIn-container form div {
+    margin-top: 1.25rem;
+    text-align: center;
+}
+
+.signUpIn-container form div button:last-child {
+    text-decoration: underline;
+}
+
+button {
     margin: .25rem .125rem;
     font-family: 'system-ui';
     text-transform: none;
@@ -149,13 +154,114 @@
     Estilos para generar una animación al mostrar u ocultar el contenedor del formulario 
     para iniciar sesión o para registrarse.
 */
-.signUp-logIn-container-hide {
+.signUpIn-container-hide {
     opacity: 0;
 }
 
-.signUp-logIn-container-behind-curtain {
+.signUpIn-container-behind-curtain {
     z-index: 1;
 }
+
+/* 
+    Estilos del contenedor para registrarse.
+*/
+
+.register-container {
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    transition: opacity .75s linear;
+}
+
+.register-container form {
+    padding: 1rem;
+    border-radius: 0.375rem;
+    background-color: rgb(248,249,250);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+}
+
+.register-container form div {
+    margin-bottom: 1rem;
+}
+
+.register-container label {
+    font-family: 'system-ui';
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+    display: inline-block;
+    cursor: default;
+}
+
+.register-container input {
+    margin: 0;
+    display: block;
+    padding: .375rem .75rem;
+    width: calc(100% - 1.75rem);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #dee2e6;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    font-family: 'system-ui';
+}
+
+/* Para el último input del checkbox */
+#termsR {
+    width: auto;
+    height: auto;
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: .25em;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    border: 1px solid #afc6c9;
+    border-radius: 0.25em;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-print-color-adjust: exact;
+    color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+#termsR:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Para el último div que contiene los botones para regresar o registrarse */
+.register-container form div:last-child {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+/* Para oculter el register-container */
+.register-container-hide {
+    opacity: 0;
+}
+
+.register-container-behind-curtain {
+    z-index: 1;
+}
+
 
 /* 
     Configuración del contenedor donde se mostrarán

@@ -36,27 +36,56 @@
         Contenedor inicial que presentará las opciones
         para iniciar sesión o registrarse.
     -->
-    <div id="signUp-logIn-container" class="signUp-logIn-container">
-        <form class="signUp-logIn-container-form">
-            <h2 class="signUp-logIn-container-form-h2">
-                EL CUBO APO
-            </h2>
+    <div id="signUpIn-container" class="signUpIn-container">
+        <form>
+            <h2>EL CUBO APO</h2>
+            <input id="email" name="email" type="email" placeholder="Ingresa tu correo" /><br />
+            <input id="password" name="password" type="password" placeholder="Ingresa tu contraseña" />
+            
             <div>
-                <div class="signUp-logIn-container-form-div-div">
-                    <input class="signUp-logIn-container-form-div-div-input" id="email" name="email" type="email"
-                        placeholder="Ingresa tu correo" />
-                </div>
-                <div class="signUp-logIn-container-form-div-div">
-                    <input class="signUp-logIn-container-form-div-div-input" id="password" name="password"
-                        type="password" placeholder="Ingresa tu contraseña" />
-                </div>
+                <button type="submit" onclick="logIn(event)">Iniciar sesión</button>
+                <button type="button" onclick="goSignUp()">Registrarse</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 
+        Contenedor para registrarse.
+    -->
+    <div id="register-container" class="register-container register-container-hide
+        register-container-behind-curtain">
+        <form>
+            <h2>Registrarse</h2>
+
+            <div>
+                <label>Ingresa tu nombre</label>
+                <input id="nameR" name="nameR" value="" type="text" placeholder="Ingresa tu nombre" />
             </div>
 
-            <span class="signUp-logIn-container-form-span">¿No te has registrado?</span>
+            <div>
+                <label>Ingresa tu correo</label>
+                <input id="emailR" name="emailR" value="" type="email" placeholder="Ingresa tu correo"/>
+            </div>            
 
-            <button class="signUp-logIn-container-form-button" type="submit" onclick="logIn(event)">Iniciar
-                sesión</button>
-            <button class="signUp-logIn-container-form-button" type="button" onclick="singUp()">Registrarse</button>
+            <div>
+                <label>Ingresa tu contraseña</label>
+                <input id="passwordR" name="passwordR" value="" type="password" placeholder="&bullet;&bullet;&bullet;&bullet;" />
+            </div>
+
+            <div>
+                <label>Confirma tu contraseña</label>
+                <input id="confirmPasswordR" name="confirmPasswordR" value="" type="password" placeholder="&bullet;&bullet;&bullet;&bullet;"/>
+            </div>
+
+            <div>
+                <input id="termsR" name="termsR" type="checkbox" />
+                <label>Aceptar los términos y condiciones</label>
+            </div>
+
+            <div>
+                <button type="button" onclick="goBackLogIn()">Regresar</button>
+                <button type="submit" onclick="signUp(event)">Registrarse</button>
+            </div>
         </form>
     </div>
 
