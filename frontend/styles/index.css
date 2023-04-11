@@ -69,6 +69,8 @@
 }
 
 .signUpIn-container form {
+    display: grid;
+    grid-template-rows: 75% 25%;
     min-width: 20rem;
     min-height: 20rem;
     padding: 1rem;
@@ -119,8 +121,10 @@ input:focus {
 }
 
 /* Para la parte final en los botones */
-.signUpIn-container form div {
-    margin-top: 1.25rem;
+.signUpIn-container form div:last-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 

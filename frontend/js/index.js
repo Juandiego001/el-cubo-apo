@@ -26,6 +26,21 @@ let gameOptionsContainer = document.getElementById("game-options-container");
 // Contenedor de los módulos de historia
 let gameHistory = document.getElementById("game-history");
 
+// Contenedor para la opción de multijugador
+let gameMultiplayer = document.getElementById("game-multiplayer");
+
+// Contenedor de instrucciones
+let gameInstructions = document.getElementById("game-instructions");
+
+// Contenedor para la opción de documentación
+let gameDocumentation = document.getElementById("game-documentation");
+
+// Contenedor de configuración
+let gameConfig = document.getElementById("game-config");
+
+// Variable que contendrá todas las opciones 
+let optionsGame = [gameHistory, gameMultiplayer, gameInstructions, gameDocumentation, gameConfig];
+
 async function signUp(event) {
     event.preventDefault();
 
@@ -34,12 +49,6 @@ async function signUp(event) {
     let thePassword = inputPasswordR.value;
     let theConfirmPassword = inputConfirmPasswordR.value;
     let theTerms = inputTermsR.checked;
-
-    // console.log({theName});
-    // console.log({theEmail});
-    // console.log({thePassword});
-    // console.log({theConfirmPassword});
-    // console.log({theTerms});
 
     if (!theName) {
         alert("Por favor digita tu nombre.");
