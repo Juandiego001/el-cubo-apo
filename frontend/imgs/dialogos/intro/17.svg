@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="66.145844mm"
+   height="39.698311mm"
+   viewBox="0 0 66.145844 39.698311"
+   version="1.1"
+   id="svg9786"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   sodipodi:docname="dialogos.svg"
+   inkscape:export-filename="3.svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview9788"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.0066639"
+     inkscape:cx="97.351264"
+     inkscape:cy="167.88126"
+     inkscape:window-width="1304"
+     inkscape:window-height="745"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs9783" />
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(766.88534,-82.831708)">
+    <g
+       id="g6499">
+      <path
+         id="rect9758-3-0-3-5-3-3"
+         style="fill:#ffffff;stroke:#000000;stroke-width:0.196232"
+         d="m -761.77629,82.929825 c -2.77602,0 -5.01092,2.451123 -5.01092,5.495726 v 21.273569 c 0,3.0446 2.2349,5.49572 5.01092,5.49572 h 47.66507 l 3.42435,7.1091 3.42482,-7.1091 h 1.41397 c 2.77602,0 5.01047,-2.45112 5.01047,-5.49572 V 88.425551 c 0,-3.044603 -2.23445,-5.495726 -5.01047,-5.495726 z" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.52778px;font-family:'PT Serif';-inkscape-font-specification:'PT Serif';fill:#000000;stroke-width:0.522999"
+         x="-732.60217"
+         y="97.73362"
+         id="text11054-4-9-0-6-7-7"><tspan
+           sodipodi:role="line"
+           style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.52778px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light Italic';text-align:center;text-anchor:middle;stroke-width:0.523"
+           x="-732.60217"
+           y="97.73362"
+           id="tspan1172-1">Recuerda: el conocimiento</tspan><tspan
+           sodipodi:role="line"
+           style="font-style:italic;font-variant:normal;font-weight:300;font-stretch:normal;font-size:3.52778px;font-family:'Segoe UI';-inkscape-font-specification:'Segoe UI Light Italic';text-align:center;text-anchor:middle;stroke-width:0.523"
+           x="-732.60217"
+           y="102.17297"
+           id="tspan1544">es lo más importante...</tspan></text>
+    </g>
+  </g>
+</svg>

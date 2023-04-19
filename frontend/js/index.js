@@ -1,46 +1,3 @@
-// Inputs para iniciar sesión
-let inputEmail = document.getElementById("email");
-let inputPassword = document.getElementById("password");
-
-// Contenedor general que almacena
-// el formulario inicial.
-let signUpInContainer = document.getElementById("signUpIn-container");
-
-// Contenedor del formulario de registrarse.
-let registerContainer = document.getElementById("register-container");
-
-// Inputs para poder obtener los valores y realizar el registro.
-// La R al final es para referirse a registro.
-let inputNameR = document.getElementById("nameR");
-let inputEmailR = document.getElementById("emailR");
-let inputPasswordR = document.getElementById("passwordR");
-let inputConfirmPasswordR = document.getElementById("confirmPasswordR");
-
-// Input de los términos y condiciones
-let inputTermsR = document.getElementById("termsR");
-
-// Contener que almacena
-// las opciones del juego
-let gameOptionsContainer = document.getElementById("game-options-container");
-
-// Contenedor de los módulos de historia
-let gameHistory = document.getElementById("game-history");
-
-// Contenedor para la opción de multijugador
-let gameMultiplayer = document.getElementById("game-multiplayer");
-
-// Contenedor de instrucciones
-let gameInstructions = document.getElementById("game-instructions");
-
-// Contenedor para la opción de documentación
-let gameDocumentation = document.getElementById("game-documentation");
-
-// Contenedor de configuración
-let gameConfig = document.getElementById("game-config");
-
-// Variable que contendrá todas las opciones 
-let optionsGame = [gameHistory, gameMultiplayer, gameInstructions, gameDocumentation, gameConfig];
-
 async function signUp(event) {
     event.preventDefault();
 
@@ -195,6 +152,30 @@ async function goBackMenu(index) {
     gameOptionsContainer.classList.remove("game-options-container-hide");
 }
 
+// Función para volver al menú principal desde la historia
+async function goBackMenuFromHistory() {
+    // Se oculta el contenedor de pausa
+    gameStop.classList.add("game-stop-hide");
+
+    // Se oculta el canvas del juego
+    canvas.classList.add(`the-history-hide`);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    canvas.classList.add(`the-history-behind-curtain`);
+
+    // Se establece que el jugador ha dejado de jugar algún nivel
+    mVC = -1;
+
+    // Mostrar el menú del juego
+    gameOptionsContainer.classList.remove("game-options-container-behind-curtain");
+    gameOptionsContainer.classList.remove("game-options-container-hide");
+}
+
+// Función para cerrar el menú de pausa del juego
+async function hideStopMenu(){
+    // Se oculta el contenedor de pausa
+    gameStop.classList.add("game-stop-hide");
+}
+
 // Devolverse al formulario de inicio de sesión.
 async function goBackLogIn() {
     registerContainer.classList.add("register-container-hide");
@@ -214,3 +195,53 @@ async function goSignUp() {
     registerContainer.classList.remove("register-container-behind-curtain");
     registerContainer.classList.remove("register-container-hide");
 }
+
+// Dirigirse a algún nivel.
+async function goLevel(theLevel) {
+    // Se oculta el menú de historia
+    gameHistory.classList.add(`game-history-hide`);
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    gameHistory.classList.add(`game-history-behind-curtain`);
+
+    // Se muestra el canvas del juego
+    canvas.classList.remove(`the-history-behind-curtain`);
+    canvas.classList.remove(`the-history-hide`);
+
+    mVC = Number(theLevel) - 1;
+    
+    // Se carga el nivel 1.
+    if (mVC == 0) loadLevel1Variables();
+}
+
+// Registro de teclas
+function teclado(e) {
+    let tecla = e.key;
+    let gameStopContainerVisible = !gameStop.classList.contains("game-stop-hide");
+
+    // Si el jugador no está jugando un nivel, no se leen las pulsaciones de teclado.
+    if (mVC == -1) return;    
+    
+    // Si el contenedor de pausa del juego está visible, no se debe permitir mover el personaje.
+    if (gameStopContainerVisible && tecla != "Escape") return;
+
+    // Se togglea el contenedor del menú de escape al presionar dos veces Escape.
+    if (tecla == "Escape") gameStop.classList.toggle("game-stop-hide");
+    else {
+        let funcsLevel = arrayMVC[mVC][0];
+        funcsLevel(tecla);
+    }
+}
+
+// Función que sirve para registrar las teclas que se han dejado de pulsar.
+function teclado2(e) {
+    let tecla = e.key;
+    let gameStopContainerVisible = !gameStop.classList.contains("game-stop-hide");
+
+    // Si el jugador no está jugando un nivel, no se leen las pulsaciones de teclado.
+    if (mVC == -1) return;
+    if (gameStopContainerVisible) return;
+
+    let funcsLevel = arrayMVC[mVC][1];
+    funcsLevel(tecla);
+}
+

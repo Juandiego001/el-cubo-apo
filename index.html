@@ -23,7 +23,7 @@
     <title>EL CUBO APO</title>
 </head>
 
-<body>
+<body onkeydown="teclado(event)" onkeyup="teclado2(event)">
     <!-- 
         Contenedor que sirve como telón 
         para alternar entre el formulario 
@@ -36,7 +36,7 @@
         Contenedor inicial que presentará las opciones
         para iniciar sesión o registrarse.
     -->
-    <div id="signUpIn-container" class="signUpIn-container">
+    <div id="signUpIn-container" class="signUpIn-container signUpIn-container-hide">
         <form>
             <div>
                 <h2>EL CUBO APO</h2>
@@ -129,26 +129,26 @@
 
         <!-- Para los primeros tres módulos -->
         <div>
-            <button>
+            <button onclick="goLevel(1)">
                 1
             </button>
-            <button>
+            <button onclick="goLevel(2)">
                 2
             </button>
-            <button>
+            <button onclick="goLevel(3)">
                 3
             </button>
         </div>
 
         <!-- Para los siguientes tres módulos -->
         <div>
-            <button>
+            <button onclick="goLevel(4)">
                 4
             </button>
-            <button>
+            <button onclick="goLevel(5)">
                 5
             </button>
-            <button>
+            <button onclick="goLevel(6)">
                 6
             </button>
         </div>
@@ -222,7 +222,33 @@
         </div>
     </div>
 
-    <!-- Javascript principal de la página idnex -->
+    <!-- 
+        Contenedor para hacer una pausa en el juego y salir al menú principal
+     -->
+     <div id="game-stop" class="game-stop game-stop-hide">
+         <button onclick="hideStopMenu()">Volver al juego</button>
+        <button>Libro</button>
+        <button>Configuración</button>
+        <button onclick="goBackMenuFromHistory(5)">Salir al menú principal</button>
+     </div>
+
+    <!-- Canvas para jugar los módulos de historia. -->
+    <!-- 
+        the-history-hide
+        the-history-behind-curtain
+     -->
+    <canvas id="the-history" class="the-history 
+    "></canvas>
+
+    <!-- Variables globales para utilizar en el resto de aplicación. -->
+    <script src="frontend/js/global.variables.js"></script>
+     <!-- Javascript de la cinemática intro. -->
+     <script src="frontend/js/cinematicas/intro.js"></script>
+     <!-- Javascript del nivel 1. -->
+     <script src="frontend/js/niveles/1.js"></script>
+     <!-- Funciones globales para utilizar en el resto de aplicación. -->
+     <script src="frontend/js/global.funcs.js"></script>
+    <!-- Javascript principal de la página index. -->
     <script src="frontend/js/index.js"></script>
 </body>
 

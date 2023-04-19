@@ -1,4 +1,12 @@
 /* 
+    Declaración de variables
+*/
+
+:root {
+    --fondo-blanco: rgb(248, 249, 250);
+}
+
+/*
     Importación de fuentes de texto.
 */
 @font-face {
@@ -31,11 +39,17 @@
     Configuración general de botones.
     (Traidos de bootstrap) 
 */
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type=button]:not(:disabled),
+[type=reset]:not(:disabled),
+[type=submit]:not(:disabled),
+button:not(:disabled) {
     cursor: pointer;
 }
 
-[type=button], [type=reset], [type=submit], button {
+[type=button],
+[type=reset],
+[type=submit],
+button {
     -webkit-appearance: button;
 }
 
@@ -57,7 +71,7 @@
 */
 .signUpIn-container {
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     z-index: 2;
@@ -75,7 +89,7 @@
     min-height: 20rem;
     padding: 1rem;
     border-radius: 0.375rem;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
 }
 
@@ -93,14 +107,15 @@ input {
     font-weight: 400;
     line-height: 1.5;
     color: #212529;
-    background-color: #fff;
+    background-color: #fff !important;
+    /* Estilos traidos de bootstrap */
     background-clip: padding-box;
     border: 1px solid #dee2e6;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border-radius: .375rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     font-family: 'system-ui';
 }
 
@@ -109,7 +124,7 @@ input:focus {
     background-color: var(--bs-form-control-bg);
     border-color: #86b7fe;
     outline: 0;
-    box-shadow: 0 0 0 .25rem rgba(13,110,253,.25);
+    box-shadow: 0 0 0 .25rem rgba(13, 110, 253, .25);
 }
 
 .signUpIn-container span {
@@ -151,7 +166,7 @@ button {
     user-select: none;
     border: none;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* 
@@ -172,7 +187,7 @@ button {
 
 .register-container {
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     z-index: 2;
@@ -186,7 +201,7 @@ button {
 .register-container form {
     padding: 1rem;
     border-radius: 0.375rem;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
 }
 
@@ -212,13 +227,14 @@ button {
     line-height: 1.5;
     color: #212529;
     background-color: #fff;
+    /* Estilos traidos de bootstrap */
     background-clip: padding-box;
     border: 1px solid #dee2e6;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border-radius: .375rem;
-    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
     font-family: 'system-ui';
 }
 
@@ -277,7 +293,7 @@ button {
     top: 50%;
     left: 50%;
     z-index: 2;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
@@ -312,7 +328,7 @@ button {
     user-select: none;
     border: none;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* 
@@ -339,7 +355,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
@@ -410,7 +426,7 @@ button {
     user-select: none;
     border: 1px solid black;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* Estilos para el contendor de multijugador del juego */
@@ -420,7 +436,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
@@ -491,7 +507,7 @@ button {
     user-select: none;
     border: 1px solid black;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* Estilos para el contenedor de instrucciones*/
@@ -501,7 +517,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
@@ -572,7 +588,7 @@ button {
     user-select: none;
     border: 1px solid black;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* Estilos para el contendor de documentación del juego */
@@ -582,7 +598,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
@@ -653,7 +669,7 @@ button {
     user-select: none;
     border: 1px solid black;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 /* Estilos para el contendor de configuración del juego */
@@ -663,7 +679,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgb(248,249,250);
+    background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
@@ -734,5 +750,75 @@ button {
     user-select: none;
     border: 1px solid black;
     background-color: transparent;
-    transition: color .15s ease-in-out, background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+/* Contenedor en donde se jugarán los niveles */
+.the-history {
+    height: 525px;
+    width: 650px;
+    opacity: 1;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    background-color: rgba(248, 249, 250);
+    z-index: 2;
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+    transition: opacity 1s linear, background-color 1s linear, box-shadow 1s linear;
+}
+
+.the-history-hide {
+    opacity: 0;
+}
+
+.the-history-behind-curtain {
+    z-index: 1;
+}
+
+/* Para hacer transiciones en el canvas */
+.the-history-fadeInOut {
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+}
+
+/* Contenedor para las pausas del juego */
+.game-stop {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    margin: 0;
+    background-color: var(--fondo-blanco);
+    padding: 3rem 5rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+    text-align: center;
+}
+
+.game-stop button {
+    font-family: 'system-ui';
+    font-weight: 400;
+    margin: .25rem 0;
+    text-transform: none;
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0;
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: none;
+    background-color: transparent;
+}
+
+.game-stop-hide {
+    display: none;
 }
