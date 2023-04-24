@@ -158,9 +158,9 @@ async function goBackMenuFromHistory() {
     gameStop.classList.add("game-stop-hide");
 
     // Se oculta el canvas del juego
-    canvas.classList.add(`the-history-hide`);
+    levels.classList.add(`levels-hide`);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    canvas.classList.add(`the-history-behind-curtain`);
+    levels.classList.add(`levels-behind-curtain`);
 
     // Se establece que el jugador ha dejado de jugar algún nivel
     mVC = -1;
@@ -199,13 +199,13 @@ async function goSignUp() {
 // Dirigirse a algún nivel.
 async function goLevel(theLevel) {
     // Se oculta el menú de historia
-    gameHistory.classList.add(`game-history-hide`);
+    gameHistory.classList.add(`game-levels-hide`);
     await new Promise(resolve => setTimeout(resolve, 1000));
-    gameHistory.classList.add(`game-history-behind-curtain`);
+    gameHistory.classList.add(`game-levels-behind-curtain`);
 
     // Se muestra el canvas del juego
-    canvas.classList.remove(`the-history-behind-curtain`);
-    canvas.classList.remove(`the-history-hide`);
+    levels.classList.remove(`levels-behind-curtain`);
+    levels.classList.remove(`levels-hide`);
 
     mVC = Number(theLevel) - 1;
     
@@ -245,3 +245,8 @@ function teclado2(e) {
     funcsLevel(tecla);
 }
 
+async function sleep(miliseconds) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => resolve(), miliseconds);
+    });
+}

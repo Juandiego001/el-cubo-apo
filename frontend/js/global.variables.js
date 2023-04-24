@@ -1,12 +1,11 @@
 /*
-    VARIABLES GLOBALES PARA TODOS LOS DEMÁS.
+    Variables globales para todos los demás archivos de JavaScript.
 */
-// Inputs para iniciar sesión
+// Inputs para iniciar sesión.
 let inputEmail = document.getElementById("email");
 let inputPassword = document.getElementById("password");
 
-// Contenedor general que almacena
-// el formulario inicial.
+// Contenedor general que almacena el formulario inicial.
 let signUpInContainer = document.getElementById("signUpIn-container");
 
 // Contenedor del formulario de registrarse.
@@ -19,41 +18,70 @@ let inputEmailR = document.getElementById("emailR");
 let inputPasswordR = document.getElementById("passwordR");
 let inputConfirmPasswordR = document.getElementById("confirmPasswordR");
 
-// Input de los términos y condiciones
+// Input de los términos y condiciones.
 let inputTermsR = document.getElementById("termsR");
 
-// Contener que almacena
-// las opciones del juego
+// Contener que almacena las opciones del juego.
 let gameOptionsContainer = document.getElementById("game-options-container");
 
-// Contenedor de los módulos de historia
+// Contenedor de los módulos de historia.
 let gameHistory = document.getElementById("game-history");
 
-// Contenedor para la opción de multijugador
+// Contenedor para la opción de multijugador.
 let gameMultiplayer = document.getElementById("game-multiplayer");
 
-// Contenedor de instrucciones
+// Contenedor de instrucciones.
 let gameInstructions = document.getElementById("game-instructions");
 
-// Contenedor para la opción de documentación
+// Contenedor para la opción de documentación.
 let gameDocumentation = document.getElementById("game-documentation");
 
-// Contenedor de configuración
+// Contenedor de configuración.
 let gameConfig = document.getElementById("game-config");
 
-// Variables del canvas
-const canvas = document.getElementById("the-history");
-const ctx = canvas.getContext('2d');
-const CANVAS_WIDTH = canvas.width = 650;
-const CANVAS_HEIGHT = canvas.height = 525;
-
-// Contenedor de pausa
+// Contenedor de pausa.
 let gameStop = document.getElementById("game-stop");
 
-// Variable que contendrá todas las opciones 
+// Variable que contendrá todas las opciones.
 let optionsGame = [gameHistory, gameMultiplayer, gameInstructions, gameDocumentation, gameConfig];
 
-// mVC: Control de movimiento (movement controll)
+// Contenedor de diálogos.
+let dialog = document.getElementById("dialog");
+
+// Contenedor general de Pablo
+let pablo = document.getElementById("pablo");
+
+// Contenedor de pablo pequeño
+let pabloSmall = document.getElementById("pablo-small");
+
+// Contenedor del personaje del jugador
+let character = document.getElementById("character");
+
+// Contenedor del piso del juego
+let floor = document.getElementById("floor");
+
+// Contenedor general para mostrar cada uno de los niveles de historia.
+let levels = document.getElementById("levels");
+
+// Contenedor de escuela
+let school = document.getElementById("school");
+
+// Contenedor de personaje secundario
+let teacher = document.getElementById("teacher");
+
+// Alerta para indicarle al jugador qué hacer
+let alertAction = document.getElementById("alert-action");
+
+// Contenedor de respuestas para que el usuario digite sus respuestas
+let answers = document.getElementById("answers");
+
+// Cada botón de respuestas
+let answer1 = document.getElementById("answer1");
+let answer2 = document.getElementById("answer2");
+let answer3 = document.getElementById("answer3");
+let answer4 = document.getElementById("answer4");
+
+// mVC: Control de movimiento (movement control)
 // Sirve también de referencia para determinar el nivel que está jugando el jugador.
 // mVC = -1: No se puede mover el personaje
 // mVC = 0: Se pasa el control de movimiento al nivel 1.

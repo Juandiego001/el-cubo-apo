@@ -19,6 +19,10 @@
      -->
     <link rel="stylesheet" href="./frontend/styles/index.css" />
 
+    <!-- 
+        Hoja de estilos para todos los niveles.
+     -->
+    <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/1.css">
 
     <title>EL CUBO APO</title>
 </head>
@@ -43,7 +47,7 @@
                 <input id="email" name="email" type="email" placeholder="Ingresa tu correo" /><br />
                 <input id="password" name="password" type="password" placeholder="Ingresa tu contraseña" />
             </div>
-            
+
             <div>
                 <button type="submit" onclick="logIn(event)">Iniciar sesión</button>
                 <button type="button" onclick="goSignUp()">Registrarse</button>
@@ -66,17 +70,19 @@
 
             <div>
                 <label>Ingresa tu correo</label>
-                <input id="emailR" name="emailR" value="" type="email" placeholder="Ingresa tu correo"/>
-            </div>            
+                <input id="emailR" name="emailR" value="" type="email" placeholder="Ingresa tu correo" />
+            </div>
 
             <div>
                 <label>Ingresa tu contraseña</label>
-                <input id="passwordR" name="passwordR" value="" type="password" placeholder="&bullet;&bullet;&bullet;&bullet;" />
+                <input id="passwordR" name="passwordR" value="" type="password"
+                    placeholder="&bullet;&bullet;&bullet;&bullet;" />
             </div>
 
             <div>
                 <label>Confirma tu contraseña</label>
-                <input id="confirmPasswordR" name="confirmPasswordR" value="" type="password" placeholder="&bullet;&bullet;&bullet;&bullet;"/>
+                <input id="confirmPasswordR" name="confirmPasswordR" value="" type="password"
+                    placeholder="&bullet;&bullet;&bullet;&bullet;" />
             </div>
 
             <div>
@@ -224,30 +230,136 @@
 
     <!-- 
         Contenedor para hacer una pausa en el juego y salir al menú principal
-     -->
-     <div id="game-stop" class="game-stop game-stop-hide">
-         <button onclick="hideStopMenu()">Volver al juego</button>
+    -->
+    <div id="game-stop" class="game-stop game-stop-hide">
+        <button onclick="hideStopMenu()">Volver al juego</button>
         <button>Libro</button>
         <button>Configuración</button>
         <button onclick="goBackMenuFromHistory(5)">Salir al menú principal</button>
-     </div>
+    </div>
 
-    <!-- Canvas para jugar los módulos de historia. -->
+
     <!-- 
-        the-history-hide
-        the-history-behind-curtain
-     -->
-    <canvas id="the-history" class="the-history 
-    "></canvas>
+        Contenedor general que contendrá todo el juego o cada nivel que se vaya jugando.
+    -->
+    <div id="levels" class="levels">
+        <!-- 
+            Contenedor de diálogos para ir mostrando cada diálogo.
+            dialog-hide dialog-behind-curtain
+        -->
+        <div id="dialog" class="dialog">
+        </div>
+
+        <!--
+            Contenedor del personaje guía (Pablo).
+            pablo-hide pablo-behind-curtain
+        -->
+        <div id="pablo" class="pablo">
+            <div class="hat"></div>
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+            <div class="beard"></div>
+        </div>
+
+        <!--
+            Contenedor del personaje guía (Pablo), pero en un tamaño más pequeño.
+        -->
+        <div id="pablo-small" class="pablo-small pablo-small-hide pablo-small-behind-curtain">
+            <div class="hat"></div>
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+            <div class="beard"></div>
+        </div>
+
+        <!--
+            Contenedor del personaje del jugador.
+        -->
+        <div id="character" class="character character-hide character-behind-curtain">
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+        </div>
+
+        <!--
+            Contenedor del piso de cada nivel.
+        -->
+        <div id="floor" class="floor floor-hide floor-behind-curtain">
+        </div>
+
+        <!--
+            Prueba para agregar un personaje secundario.
+            Este personaje será una mujer que le contará mejor la historia,
+            le brindará más contexto al personaje, le hablará acerca de POO
+            y le enseñará y pondrá a prueba al jugador acerca de las clases.
+        -->
+        <div id="teacher" class="teacher teacher-hide teacher-behind-curtain">
+            <div class="hair">
+            </div>
+
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+
+            <div class="t-shirt">
+            </div>
+        </div>
+
+        <!--
+            Prueba para crear una edificación como una escuela
+        -->
+        <div id="school" class="school school-hide school-behind-curtain">
+            <div class="building1">
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+
+            <div class="building0">
+                <div class="door"></div>
+            </div>
+
+            <div class="building2">
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+
+            <div class="school-flag">
+                <div class="flag"></div>
+                <div class="stick"></div>
+            </div>
+        </div>
+
+        <!--
+            Alerta para informarle al jugador que debe presionar E para hablar con un personaje
+            o hacer alguna acción.
+        -->
+        <div id="alert-action" class="alert-action alert-action-hide alert-action-behind-curtain">
+        </div>
+
+        <!--
+            Contenedor de todas las respuestas.
+        -->
+        <div id="answers" class="answers answers-hide answers-behind-curtain">
+            <button id="answer1" class="answer">a. Respuesta</button>
+            <button id="answer2" class="answer">a. Respuesta</button>
+            <button id="answer3" class="answer">a. Respuesta</button>
+            <button id="answer4" class="answer">a. Respuesta</button>
+        </div>
+    </div>
 
     <!-- Variables globales para utilizar en el resto de aplicación. -->
     <script src="frontend/js/global.variables.js"></script>
-     <!-- Javascript de la cinemática intro. -->
-     <script src="frontend/js/cinematicas/intro.js"></script>
-     <!-- Javascript del nivel 1. -->
-     <script src="frontend/js/niveles/1.js"></script>
-     <!-- Funciones globales para utilizar en el resto de aplicación. -->
-     <script src="frontend/js/global.funcs.js"></script>
+    <!-- Javascript de la cinemática intro. -->
+    <script src="frontend/js/cinematicas/intro.js"></script>
+    <!-- Javascript del nivel 1. -->
+    <script src="frontend/js/niveles/1.js"></script>
+    <!-- Funciones globales para utilizar en el resto de aplicación. -->
+    <script src="frontend/js/global.funcs.js"></script>
     <!-- Javascript principal de la página index. -->
     <script src="frontend/js/index.js"></script>
 </body>

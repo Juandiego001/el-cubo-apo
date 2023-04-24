@@ -178,7 +178,7 @@ button {
 }
 
 .signUpIn-container-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 /* 
@@ -279,7 +279,7 @@ button {
 }
 
 .register-container-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 
@@ -343,7 +343,7 @@ button {
 }
 
 .game-options-container-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 /*
@@ -367,7 +367,7 @@ button {
 }
 
 .game-history-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 .game-history div {
@@ -448,7 +448,7 @@ button {
 }
 
 .game-multiplayer-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 .game-multiplayer div {
@@ -529,7 +529,7 @@ button {
 }
 
 .game-instructions-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 .game-instructions div {
@@ -610,7 +610,7 @@ button {
 }
 
 .game-documentation-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 .game-documentation div {
@@ -691,7 +691,7 @@ button {
 }
 
 .game-config-behind-curtain {
-    z-index: 1;
+    z-index: -1;
 }
 
 .game-config div {
@@ -754,33 +754,27 @@ button {
 }
 
 /* Contenedor en donde se jugarán los niveles */
-.the-history {
-    height: 525px;
-    width: 650px;
+.levels {
+    height: 100%;
+    width: 100%;
     opacity: 1;
     position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    background-color: rgba(248, 249, 250);
+    background-color: var(--fondo-blanco);
     z-index: 2;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
     transition: opacity 1s linear, background-color 1s linear, box-shadow 1s linear;
+    overflow: hidden;
 }
 
-.the-history-hide {
+.levels-hide {
     opacity: 0;
 }
 
-.the-history-behind-curtain {
-    z-index: 1;
-}
-
-/* Para hacer transiciones en el canvas */
-.the-history-fadeInOut {
-    opacity: 0;
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: none;
+.levels-behind-curtain {
+    z-index: -1;
 }
 
 /* Contenedor para las pausas del juego */
@@ -789,7 +783,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    z-index: 3;
+    z-index: 99 !important;
     margin: 0;
     background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
@@ -820,5 +814,526 @@ button {
 }
 
 .game-stop-hide {
+    display: none;
+}
+
+/* Contenedor para los diálogos */
+.dialog {
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Posicionamiento inicial para el primer nivel */
+    top: 80vh;
+    left: 50%;
+    transform: translateY(-15vh) translateX(-50%);
+    /* --------------------------------------------- */
+    position: absolute;
+    padding: 1rem 2rem;
+    z-index: 3;
+    min-height: 10vh;
+    max-width: 70%;
+    color: rgba(33, 37, 41, .80);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    text-align: center;
+    transition: opacity 1s linear;
+}
+
+/* Para mostrar los diálogos en la parte superior de la pantalla */
+.dialog-top {
+    top: calc(7.25rem - 10vh);
+    left: 12.5rem;
+    transform: none;
+}
+
+.dialog-hide {
+    opacity: 0;
+}
+
+.dialog-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor del personaje de pablo */
+.pablo {
+    height: 20rem;
+    width: 20rem;
+    position: absolute;
+    z-index: 3;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    opacity: 1;
+    transition: opacity 1s linear;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border-radius: 3rem;
+}
+
+.pablo-hide {
+    opacity: 0;
+}
+
+.pablo-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor de sombrero */
+.pablo .hat {
+    background-color: darkgray;
+    width: 100%;
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+    border-radius: 3rem 3rem 0 0;
+}
+
+/* Contenedor para organizar ambos ojos de pablo */
+.pablo .eyes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+}
+
+/* Contendor de un ojo de pablo */
+.pablo .eye {
+    background-color: #212529;
+    width: 2.5rem;
+    height: 5rem;
+    margin-top: 5rem;
+}
+
+/* Contenedor de barba para el personaje de pablo */
+.pablo .beard {
+    background-color: gray;
+    width: 80%;
+    height: 1.5rem;
+    margin-top: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: 3rem;
+    z-index: 4;
+}
+
+/* Before y after utilizados para las puntas de la bárba */
+.pablo .beard::before {
+    content: "";
+    display: block;
+    background-color: gray;
+    width: 1.5rem;
+    height: 4rem;
+    display: block;
+    position: absolute;
+    left: -5%;
+    z-index: -1;
+    border-radius: 1rem;
+}
+
+.pablo .beard::after {
+    content: "";
+    display: block;
+    background-color: gray;
+    width: 1.5rem;
+    height: 4rem;
+    position: absolute;
+    right: -5%;
+    border-radius: 1rem;
+}
+
+/* Contenedor para pablo pequeño */
+.pablo-small {
+    height: 10rem;
+    width: 10rem;
+    position: absolute;
+    z-index: 4;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    opacity: 1;
+    transition: opacity 1s linear;
+    border-radius: 2rem;
+}
+
+.pablo-small-hide {
+    opacity: 0;
+}
+
+.pablo-small-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor de sombrero para pablo pequeño*/
+.pablo-small .hat {
+    background-color: darkgray;
+    width: 100%;
+    height: 1rem;
+    position: absolute;
+    top: 0rem;
+    border-radius: 1rem 1rem 0 0;
+}
+
+/* Contenedor para organizar ambos ojos de pablo pequeño */
+.pablo-small .eyes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+}
+
+/* Contendor de un ojo de pablo pequeño */
+.pablo-small .eye {
+    background-color: #212529;
+    width: 1rem;
+    height: 2rem;
+    margin-top: 3rem;
+}
+
+/* Contenedor de barba para el personaje de pablo pequeño */
+.pablo-small .beard {
+    background-color: gray;
+    width: 80%;
+    height: 1rem;
+    position: absolute;
+    top: 75%;
+    bottom: 3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+}
+
+/* Before y after utilizados para las puntas de la bárba */
+.pablo-small .beard::before {
+    content: "";
+    display: block;
+    background-color: gray;
+    width: 1rem;
+    height: 2rem;
+    display: block;
+    position: absolute;
+    left: -5%;
+    z-index: -1;
+    border-radius: 1rem;
+}
+
+.pablo-small .beard::after {
+    content: "";
+    display: block;
+    background-color: gray;
+    width: 1rem;
+    height: 2rem;
+    position: absolute;
+    right: -5%;
+    border-radius: 1rem;
+}
+
+/* Contenedor para el personaje del jugador */
+.character {
+    position: absolute;
+    z-index: 98;
+    border-radius: 1rem;
+    width: 6rem;
+    height: 6rem;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .25);
+    transition: opacity 1s linear, bottom 0.5s ease-in, left 0.01s ease-in;
+}
+
+.character-hide {
+    opacity: 0;
+}
+
+.character-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor para organizar ambos ojos del jugador */
+.character .eyes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+/* Contendor de un ojo del jugador */
+.character .eye {
+    background-color: #212529;
+    width: 0.5rem;
+    height: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* Contenedor para el piso del juego */
+.floor {
+    width: 100%;
+    height: 1rem;
+    background-color: rgb(204,204,204);
+    position: absolute;
+    z-index: 3;
+    bottom: 2rem;
+    opacity: 1;
+    transition: opacity 1s linear;
+}
+
+/* El fondo del piso que es más oscuro */
+.floor::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background-color: rgb(153,153,153);
+    position: absolute;
+    bottom: -2rem;
+    z-index: 3;
+}
+
+.floor-hide {
+    opacity: 0;
+}
+
+.floor-behind-curtain {
+    z-index: -1;
+}
+
+/* Personaje de profesora */
+.teacher {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .8);
+    position: absolute;
+    z-index: 4;
+    border-radius: 1rem;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.teacher .hair {
+    width: 100%;
+    height: 1rem;
+    background-color: gray;
+    border-radius: 1rem 1rem 0 0;
+    position: absolute;
+}
+
+.teacher .hair::after{
+    content: "";
+    position: absolute;
+    top: -1rem;
+    left: -.25rem;
+    background-color: gray;
+    display: block;
+    width: 1rem;
+    height: 7rem;
+    border-radius: 2rem;
+}
+
+.teacher .hair::before{
+    content: "";
+    position: absolute;
+    top: -1rem;
+    right: -.25rem;
+    background-color: gray;
+    display: block;
+    width: 1rem;
+    height: 7rem;
+    border-radius: 2rem;
+}
+
+.teacher .eyes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);   
+}
+
+.teacher .eye {
+    background-color: #212529;
+    width: 0.5rem;
+    height: 1rem;
+    margin-top: 0.5rem;
+}
+
+.teacher .t-shirt{
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 1rem 1rem;
+    width: 100%;
+    height: 3rem;
+    background-color: lightgray;
+}
+
+.teacher .t-shirt::after {
+    content: "";
+    width: 1rem;
+    height: 1rem;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.teacher-hide {
+    opacity: 0;
+}
+
+.teacher-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor de escuela */
+.school {
+    width: 40rem;
+    height: 20rem;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+}
+
+.school .building1 {
+    width: 30%;
+    height: 70%;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.school .building1 .window {
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(33, 37, 41, .5);
+    margin: auto;
+}
+
+.school .building0 {
+    width: 40%;
+    height: 100%;
+    z-index: 4;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.school .building0 .door {
+    height: 6rem;
+    width: 4rem;
+    box-shadow: 0 0 1rem rgba(33, 37, 41, .5);
+}
+
+.school .building2 {
+    width: 30%;
+    height: 70%;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.school .building2 .window {
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(33, 37, 41, .5);
+    margin: auto;
+}
+
+.school .school-flag {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    top: -5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center
+}
+
+.school .school-flag .stick {
+    position: absolute;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 0 1rem rgba(33, 37, 41, .5);
+    width: 1rem;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.school .school-flag .flag {
+    position: absolute;
+    z-index: 4;
+    background-color: gray;
+    box-shadow: 0 0 1rem rgba(33, 37, 41, .5);
+    width: 2rem;
+    height: 2rem;
+    right: 0;
+}
+
+.school-hide {
+    opacity: 0;
+}
+
+.school-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor para mostrar la opción de hablar con algún personaje */
+.alert-action {
+    width: 20rem;
+    height: auto;
+    display: block;
+    font-family: 'M-Plus';
+    position: absolute;
+    z-index: 4;
+    transition: opacity 0.25s ease;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.alert-action-hide {
+    display: none;
+}
+
+.answers {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 50%;
+    margin: 1rem auto;
+    top: 9rem;
+    left: 12.5rem;
+    transition: opacity 1s ease;
+}
+
+/* Para cada botón de answer */
+.answer {
+    outline: none;
+    border: 0;
+    background-color: var(--fondo-blanco);
+    padding: 1rem 3rem;
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+}
+
+.answer-hide {
+    display: none;
+}
+
+.answer:hover {
+    cursor: pointer;
+}
+
+/* Para todo el contenedor que contiene las 4 answers */
+.answers-hide {
+    opacity: 0;
+}
+
+.answers-behind-curtain {
     display: none;
 }
