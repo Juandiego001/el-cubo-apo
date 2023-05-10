@@ -2,9 +2,14 @@
 // Ancho: 1304 aprox -> 1300, el 50% -> 650px
 // Altura: 697 aprox -> 700, el 75% -> 525px
 
-// Controlador de funciones o movimientos del nivel 1.
+// Controlador de funciones o movimientos del nivel 1 (Controlador de teclas/W-A-S-D).
 // mVC1 = 0: solo se pueden mover los diálogos del nivel 1 en la parte introductoria.
 // mVC1 = 1: se puede mover el personaje.
+// --------------- PODRIA SER PARA REFACTORIZAR --------------
+// mvC1 = 2: mover los diálogos de la profesora.
+// mvC1 = 3: mover las preguntas de la profesora.
+// mvC1 = 4: mover los diálogos de pablo.
+// --------------- PODRIA SER PARA REFACTORIZAR --------------
 let mVC1 = 0;
 let arrayMVC1 = [
     [prevDialog, nextDialog],
@@ -31,6 +36,7 @@ let teacher21 = teacher.cloneNode(true);
 let pabloSmall21 = pabloSmall.cloneNode(true);
 
 // Para mostrar los diálogos en la parte superior de la pantalla para cada personaje.
+// El 2 indica que es una copia del diálogo original.
 let dialog21 = dialog.cloneNode(true);
 
 // Diálogos para cada personaje.
@@ -60,6 +66,9 @@ let dialogsTeacher1 = [
     "<span>¿Estás listo para responder algunas preguntas de Clases en la POO?</span>"
 ];
 
+// Variable similar a dialogs21 para ir mostrando las preguntas.
+let questions1 = -1;
+
 // Preguntas que hará la profesora.
 // El 1 indica el nivel 1.
 let questionsTeacher1 = [
@@ -71,6 +80,7 @@ let questionsTeacher1 = [
     "6. Un Jet es un objeto de la clase...",
     "7. Elefantes y delfines hacen parte respectivamente de las clases..."
 ];
+
 
 // Respuestas para la profesora.
 // El 1 indica el nivel 1.
@@ -147,6 +157,14 @@ let answersTeacher1 = [
     }
 ];
 
+// Variable para permitir mostrar las preguntas de la profesora
+// TQ: Teacher Questions.
+// -1 -> No se permite mostrar las preguntas
+// 0 -> Se permite mostrar las preguntas
+// 1 -> Hubo un error en las respuestas
+// 2 -> Ha terminado de responder todo correctamente.
+let allowTQ = -1;
+
 // Diálogos de pablo.
 let dialogsPablo1 = [
     "¿Y qué tal? ¿Cómo ha ido todo?",
@@ -155,7 +173,7 @@ let dialogsPablo1 = [
     "¿Estás listo para el siguiente nivel?"
 ];
 
-// 
+// Arreglo que contiene todos los diálogos de ambos personajes
 let allDialogs = [
     dialogsTeacher1,
     dialogsPablo1
@@ -173,7 +191,7 @@ let teacherX1 = 100;
 let schoolX1 = 120;
 let pabloSmallX1 = 240;
 
-// Alertas para hablar con los personajes.
+// Alertas que indican con la proximidad del jugador que es posible hablar con los personajes.
 // El 1, indica el nivel 1.
 let alertTeacher1 = alertAction.cloneNode(true);
 let alertPablo1 = alertAction.cloneNode(true);
@@ -183,6 +201,8 @@ let alertTeacherX1 = 95;
 let alertPabloX1 = 235;
 
 // Variable que controla el desplegar el diálogo de algún personaje.
+// Esta variable se actualiza cuando el jugador está cerca de algún personaje
+// con el que pueda interactuar y se muestra el mensaje de "Presiona E para hablar con..."
 // -1 -> No se puede hablar con nadie.
 // 0 -> Se puede hablar con la profesora.
 // 1 -> Se puede hablar con Pablo.
@@ -191,54 +211,113 @@ let talkTo = -1;
 // Variable para verificar que ya habló con un personaje.
 // -1 -> No ha hablado con nadie.
 // 0 -> Ya habló con la profesora.
+// 1 -> Ya habló con pablo.
 let alreadyTalkTo = -1;
 
-// Variable para mostrar las respuestas.
-// Se copia el contenedor de cada botón y una referencia para cada botón.
-// El 1 indica el nivel en el que se encuentra.
-// let answers1 = answers.cloneNode(false);
-// let answer11 = answer1.cloneNode(true);
-// let answer21 = answer2.cloneNode(true);
-// let answer31 = answer3.cloneNode(true);
-// let answer41 = answer4.cloneNode(true);
+// Función para ocultar las respuestas.
+function hideAnswers1() {
+    answer1.classList.add("answer-hide");
+    answer2.classList.add("answer-hide");
+    answer3.classList.add("answer-hide");
+    answer4.classList.add("answer-hide");
+}
 
-// Función para mostrar en la parte superior de la pantalla los personajes y sus diálogos.
-async function toggleCharacterDialogs(){
-    if (talkTo == 0) {
-        // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
-        teacher21.style.left = "0.5rem";
-        teacher21.style.top = "0.75rem";
-        teacher21.classList.toggle("teacher-hide");
-        teacher21.classList.toggle("teacher-behind-curtain");
-    } else {
-        // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
-        pabloSmall21.style.left = "0.5rem";
-        pabloSmall21.style.top = "0.75rem";
-        pabloSmall21.classList.toggle("pablo-small-hide");
-        pabloSmall21.classList.toggle("pablo-small-behind-curtain");
-    }
+// Función para ocultar los diálogos.
+async function hideDialogs1() {
+    dialog21.classList.add("dialog-hide");
+    dialog21.classList.add("dialog-behind-curtain");
+    dialogs1 = -1;
+    hideAnswers1();
+}
 
+// Para mostrar los diálogos (se empieza mostrando el primero).
+async function showDialogs1() {
     // Se resetean algunos atributos del contenedor de diálogos.
     dialog21.style.top = "";
     dialog21.style.left = "";
     dialog21.style.transform = "";
 
-    // Se muestra/esconde el primer diálogo de la profesora.
-    let lastDialog = dialogs1;
-    dialogs1 = dialogs1 > -1 ? -1 : 0;
-    dialog21.classList.toggle("dialog-hide");
-    dialog21.classList.toggle("dialog-behind-curtain");
-    dialog21.innerHTML = allDialogs[talkTo][dialogs1 == -1 ? lastDialog : dialogs1];
+    // Se muestra el diálogo.
+    dialog21.classList.remove("dialog-hide");
+    dialog21.classList.remove("dialog-behind-curtain");
+
+    // Se coloca el diálogo en cuestión.
+    dialogs1 = 0;
+    dialog21.innerHTML = allDialogs[talkTo][0];
+}
+
+// Función para mostrar los diálogos de la profesora.
+async function showTeacherDialogs1() {
+    teacher21.style.left = "0.5rem";
+    teacher21.style.top = "0.75rem";
+    teacher21.classList.remove("teacher-hide");
+    teacher21.classList.remove("teacher-behind-curtain");
+    alreadyTalkTo = 0;
+    showDialogs1();
+}
+
+// Función para ocultar los diálogos de la profesora.
+async function hideTeacherDialogs1() {
+    teacher21.classList.add("teacher-hide");
+    teacher21.classList.add("teacher-behind-curtain");
+    alreadyTalkTo = -1;
+    hideDialogs1();
+}
+
+// Función para mostrar los diálogos de pablo small.
+async function showPabloSmallDialogs1() {
+    pabloSmall21.style.left = "0.5rem";
+    pabloSmall21.style.top = "0.75rem";
+    pabloSmall21.classList.remove("pablo-small-hide");
+    pabloSmall21.classList.remove("pablo-small-behind-curtain");
+    alreadyTalkTo = 1;
+    showDialogs1();
+}
+
+// Función para ocultar los diálogos de pablo small.
+async function hidePabloSmallDialogs1() {
+    pabloSmall21.classList.add("pablo-small-hide");
+    pabloSmall21.classList.add("pablo-small-behind-curtain");
+    alreadyTalkTo = -1;
+    hideDialogs1();
+}
+
+// Función para mostrar en la parte superior de la pantalla los personajes y sus diálogos.
+// Esta función se activa al presionar la tecla E.
+async function toggleCharacterDialogs(){
+    // Se ocultan los diálogos de la profesora.
+    if (alreadyTalkTo == 0) { hideTeacherDialogs1(); return; }
+
+    // Se ocultan los diálogos de pablo pequeño.
+    if (alreadyTalkTo == 1) { hidePabloSmallDialogs1(); return; }
+
+    // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
+    // Tener en cuenta que si ya ha logrado responder todas las preguntas de la profesorá,
+    // no podrá volver a hablar con ella.
+    if (talkTo == 0 && allowTQ != 2) { showTeacherDialogs1(); return; }
+
+    // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
+    if (talkTo == 1) { showPabloSmallDialogs1(); return; }
 };
 
 async function updateDialog() {
+    // Sí ya se admitió responder las preguntas, entonces
+    // se debe esperar a que se respondan las preguntas.
+    if (allowTQ == 0) return;
+
+    // Si se ha equivado en la respuesta se ocultan los diálogos de la profesora y el personaje de la profesora.
+    if (allowTQ == 1) {  hideTeacherDialogs1(); allowTQ = -1; return; }
+    if (allowTQ == 2) {  hideTeacherDialogs1(); return; }
+
     let theDialogs = allDialogs[talkTo];
     dialog21.innerHTML = theDialogs[dialogs1];
     if (dialogs1 == (theDialogs.length - 1)) {
         // Se debe permitir al jugador si decide continuar con las preguntas de la profesora o no.
         // Se modifican los textos de las respuestas 1 y 2.
         answer1.innerHTML = "Sí.";
-        answer2.innerHTML = "No.";        
+        answer2.innerHTML = "No.";
+        answer1.classList.remove("answer-hide");
+        answer2.classList.remove("answer-hide");
 
         answer1.onclick = () => showTeacherQuestions1(true);
         answer2.onclick = () => showTeacherQuestions1(false);
@@ -250,12 +329,97 @@ async function updateDialog() {
         // Se muestra todo el contenedor de respuestas.
         answers.classList.remove("answers-hide");
         answers.classList.remove("answers-behind-curtain");
+
+        // En caso de que el usuario se encuentre en un diálogo
+        // diferente al último, se deben ocultar las respuestas.
+    } else hideAnswers1();
+}
+
+async function verifyAnswer1(theQuestion, theAnswer, theAnswerElement) {
+    // Se toma la pregunta y se verifica que la respuesta correcta
+    // de la pregunta, efectivamente corresponde con la respuesta otorgada.
+    // En caso tal de que la respuesta otorgada no corresponda con la respuesta
+    // correcta, se debe indicar al usuario que se ha equivocado y que debe revisar
+    // el libro e intentar nuevamente
+    if (answersTeacher1[theQuestion]["c"] == theAnswer) {
+        // Se hace una animación indicando que la respuesta fue correcta
+        theAnswerElement.classList.add("right-answer");
+        await sleep(750);
+        theAnswerElement.classList.remove("right-answer");
+        await sleep(750);
+        
+        // Se muestra la siguiente pregunta.
+        questions1++;
+
+        // Se valida que al intentar mostrar la siguiente pregunta sea la última pregunta.
+        // Si ha sido la última pregunta, debe mostrar un mensaje exitoso y actualizar 
+        // una variable para que ya pueda continuar hacia el siguiente nivel.
+        if (questions1 == questionsTeacher1.length) {
+            // Se coloca el mensaje final indicando que ya puede pasar de nivel.
+            dialog21.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
+            // Se asigna el valor correspondiente a la variable.
+            allowTQ = 2;
+            // Se ocultan las respuestas.
+            hideAnswers1();
+            return;
+        }
+
+        dialog21.innerHTML = `<span>${questionsTeacher1[questions1]}</span>`;
+
+        // Se actualizan las respuestas.
+        answer1.innerHTML = answersTeacher1[questions1]["r"][0];
+        answer2.innerHTML = answersTeacher1[questions1]["r"][1];
+        answer3.innerHTML = answersTeacher1[questions1]["r"][2];
+        answer4.innerHTML = answersTeacher1[questions1]["r"][3];
+
+        // Se actualizan los eventos onclick de las respuestas.
+        answer1.onclick = () => verifyAnswer1(questions1, 0, answer1);
+        answer2.onclick = () => verifyAnswer1(questions1, 1, answer2);
+        answer3.onclick = () => verifyAnswer1(questions1, 2, answer3);
+        answer4.onclick = () => verifyAnswer1(questions1, 3, answer4);
+
+    // Se ha equivocado en la respuesta.
+    } else {
+        theAnswerElement.classList.add("incorrect-answer");
+        await sleep(1500);
+        theAnswerElement.classList.remove("incorrect-answer");
+
+        // Se ocultan las respuestas
+        answer1.classList.add("answer-hide");
+        answer2.classList.add("answer-hide");
+        answer3.classList.add("answer-hide");
+        answer4.classList.add("answer-hide");
+
+        dialog21.innerHTML = "Lo siento, creo que te has equivocado...";
+
+        allowTQ = 1;
     }
 }
 
 async function showTeacherQuestions1(showThem) {
     if (showThem) {
-        
+        // Se actualiza la variable.
+        questions1 = 0;
+
+        // Se debe ocultar el diálogo previo a las preguntas de si se está listo para contestar las preguntas.
+        allowTQ = 0;
+        dialog21.innerHTML = `<span>${questionsTeacher1[0]}</span>`;
+
+        // Se debe mostrar la primera pregunta junto con sus respuestas
+        answer1.innerHTML = answersTeacher1[0]["r"][0];
+        answer2.innerHTML = answersTeacher1[0]["r"][1];
+
+        // Se muestran las respuestas 3 y 4
+        answer3.classList.remove("answer-hide");
+        answer4.classList.remove("answer-hide");
+        answer3.innerHTML = answersTeacher1[0]["r"][2];
+        answer4.innerHTML = answersTeacher1[0]["r"][3];
+
+        // Se asigna el método click para cada una de las variables
+        answer1.onclick = () => verifyAnswer1(0, 0, answer1);
+        answer2.onclick = () => verifyAnswer1(0, 1, answer2);
+        answer3.onclick = () => verifyAnswer1(0, 2, answer3);
+        answer4.onclick = () => verifyAnswer1(0, 3, answer4);
     } else {
 
     }
@@ -451,7 +615,10 @@ async function movePlayerRight() {
 function verifyDialog() {
     // Se verifica para la teacher.
     let distanceTeacher = teacherX1 - xPlayer1;
-    if (distanceTeacher > -16 && distanceTeacher < 13) {
+
+    // Hay que tener en cuenta que si ya ha pasado el nivel, no se mostrará nuevamente el mensaje
+    // para hablar con la profesora.
+    if (distanceTeacher > -16 && distanceTeacher < 13 && allowTQ != 2) {
         alertTeacher1.classList.remove("alert-action-hide");
         alertTeacher1.classList.remove("alert-action-behind-curtain");
         talkTo = 0;

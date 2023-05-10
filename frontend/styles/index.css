@@ -1319,6 +1319,8 @@ button {
     background-color: var(--fondo-blanco);
     padding: 1rem 3rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    z-index: 4;
+    transition: background-color 0.75s ease;
 }
 
 .answer-hide {
@@ -1336,4 +1338,14 @@ button {
 
 .answers-behind-curtain {
     display: none;
+}
+
+.right-answer {
+    background-color: #32CD32;
+    color: var(--fondo-blanco);
+}
+
+.incorrect-answer {
+    background-color: red;
+    color: var(--fondo-blanco);
 }

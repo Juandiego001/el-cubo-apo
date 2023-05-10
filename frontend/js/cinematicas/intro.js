@@ -1,10 +1,6 @@
 // Opacidad para los efectos de transición
 let opa = 0;
 
-// Personaje de pablo
-const imgPablo = new Image();
-imgPablo.src = "./frontend/imgs/personajes/pablo/1.svg";
-
 let introDialogs = [
     "¡Bienvenida joven alma a nuestro mundo!",
     "Mi nombre es <b>Pablo</b> y pertenezco a los ancianos de este pueblo que ves a tu alrededor...",
