@@ -54,13 +54,13 @@ let questions2 = -1;
 // Preguntas que hará el biólogo.
 // El 2 indica el nivel 2.
 let questionsBiologist2 = [
-    "1. ¿Qué es un objeto?",
-    "2. ¿Cómo se puede categorizar un objeto?",
-    "3. ¿Qué son los mensajes entre objetos?",
-    "4. ¿Qué son las clases?",
-    "5. Un Ferrari es un objeto de la clase...",
-    "6. Un Jet es un objeto de la clase...",
-    "7. Elefantes y delfines hacen parte respectivamente de las clases..."
+    "1. ¿Cuál de las siguientes afirmaciones es verdadera acerca de los atributos de una clase?",
+    "2. ¿Qué es un atributo?",
+    "3. ¿Qué es un objeto?",
+    "4. ¿Cuáles son los tipos de atributos en POO?",
+    "5. ¿Qué atributos puede tener un elefante?",
+    "6. ¿Qué son las clases?",
+    "7. ¿Qué atributos puede tener una casa?"
 ];
 
 
@@ -70,6 +70,26 @@ let answersBiologist2 = [
     // Respuestas de la pregunta 1.
     {
         r: [
+            "Los atributos son funciones que pertenecen a una clase.",
+            "Los atributos definen el comportamiento de una clase.",
+            "Los atributos son variables que almacenan datos relacionados con una clase.",
+            "Los atributos son utilizados para realizar operaciones en una clase."
+        ],
+        c: 2
+    },
+    // Respuestas de la pregunta 2.
+    {
+        r: [
+            "Propiedad o característica que se puede asignar a un objeto (elemento).",
+            "Son aquellos que permiten definir nuevas clases a partir de unas ya existentes.",
+            "El proceso de crear una nueva instancia de una clase.",
+            "La relación entre las instancias de una clase."
+        ],
+        c: 0
+    },
+    // Respuestas de la pregunta 3.
+    {
+        r: [
             "Definen estados o cualidades.",
             "Son las característiaca de un algo.",
             "Son aquellos encargados de representar cosas.",
@@ -77,27 +97,27 @@ let answersBiologist2 = [
         ],
         c: 2
     },
-    // Respuestas de la pregunta 2.
+    // Respuestas de la pregunta 4.
     {
         r: [
-            "Simples y complejos.",
-            "Reales o imaginarios.",
-            "Nignua de las anteriores.",
+            "Públicos.",
+            "Privados.",
+            "Protegidos.",
             "Todas las anteriores."
         ],
         c: 3
     },
-    // Respuestas de la pregunta 3.
+    // Respuestas de la pregunta 5.
     {
         r: [
-            "Son representaciones de cosas.",
-            "Son comunicaciones e interacciones entre objetos.",
-            "Son acciones que puede ejecutar un objeto.",
-            "Son características de un objeto."
+            "Motor y puertas.",
+            "Puertas y ventanas.",
+            "Trompa y orejas.",
+            "Alas y pico."
         ],
-        c: 1
+        c: 2
     },
-    // Respuestas de la pregunta 4.
+    // Respuestas de la pregunta 6.
     {
         r: [
             "Son representaciones de un tipo particular de objeto.",
@@ -107,35 +127,15 @@ let answersBiologist2 = [
         ],
         c: 0
     },
-    // Respuestas de la pregunta 5.
-    {
-        r: [
-            "De coches.",
-            "De aviones.",
-            "De animales.",
-            "De plantas."
-        ],
-        c: 0
-    },
-    // Respuestas de la pregunta 6.
-    {
-        r: [
-            "De coches.",
-            "De animales.",
-            "De aviones.",
-            "De plantas."
-        ],
-        c: 2
-    },
     // Respuestas de la pregunta 7.
     {
         r: [
-            "Marsupiales y mamíferos.",
-            "Acuáticos y terrestres.",
-            "Ambos son mamíferos.",
-            "Carnívoros y Omnívoros."
+            "Motor y puertas.",
+            "Puertas y ventanas.",
+            "Trompa y orejas.",
+            "Alas y pico."
         ],
-        c: 2
+        c: 1
     }
 ];
 

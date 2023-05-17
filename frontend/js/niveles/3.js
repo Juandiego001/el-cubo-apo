@@ -54,10 +54,10 @@ let questions3 = -1;
 // Preguntas que hará el doctor.
 // El 3 indica el nivel 3.
 let questionsDoctor3 = [
-    "1. ¿Qué es un objeto?",
-    "2. ¿Cómo se puede categorizar un objeto?",
-    "3. ¿Qué son los mensajes entre objetos?",
-    "4. ¿Qué son las clases?",
+    "1. ¿Qué es la herencia?",
+    "2. ¿Cuáles son los tipos de herencia?",
+    "3. ¿Qué es la subclase en herencias?",
+    "4. ¿Cuál podría ser la relación de herencias entre Avión-Jet?",
     "5. Un Ferrari es un objeto de la clase...",
     "6. Un Jet es un objeto de la clase...",
     "7. Elefantes y delfines hacen parte respectivamente de las clases..."
@@ -72,7 +72,7 @@ let answersDoctor3 = [
         r: [
             "Definen estados o cualidades.",
             "Son las característiaca de un algo.",
-            "Son aquellos encargados de representar cosas.",
+            "Mecanismo por el cual una clase permite heredar las características.",
             "Ninguna de las anteriores."
         ],
         c: 2
@@ -80,30 +80,30 @@ let answersDoctor3 = [
     // Respuestas de la pregunta 2.
     {
         r: [
-            "Simples y complejos.",
-            "Reales o imaginarios.",
-            "Nignua de las anteriores.",
-            "Todas las anteriores."
+            "Todas las anteriores.",
+            "Superclase.",
+            "Subclase.",
+            "Reutilización."
         ],
-        c: 3
+        c: 0
     },
     // Respuestas de la pregunta 3.
     {
         r: [
-            "Son representaciones de cosas.",
-            "Son comunicaciones e interacciones entre objetos.",
-            "Son acciones que puede ejecutar un objeto.",
-            "Son características de un objeto."
+            "Ninguna de las anteriores.",
+            "Es la clase padre de la que se puede heredar.",
+            "Es la clase que hereda de una clase padre.",
+            "Todas las anteriores."
         ],
-        c: 1
+        c: 2
     },
     // Respuestas de la pregunta 4.
     {
         r: [
-            "Son representaciones de un tipo particular de objeto.",
-            "Son acciones que pueden retornan o no un valor como resultado.",
-            "Todas las anteriores.",
-            "Son las características de un objeto."
+            "Avión es la subclase.",
+            "Avión es la superclase.",
+            "Jet es la subclase.",
+            "Jet es la superclase."
         ],
         c: 0
     },
