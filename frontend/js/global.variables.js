@@ -66,6 +66,18 @@ let levels = document.getElementById("levels");
 // Contenedor de escuela
 let school = document.getElementById("school");
 
+// Contenedor de biólogo
+let biologist = document.getElementById("biologist");
+
+// Contenedor de árbol grande
+let bigTree = document.getElementById("big-tree");
+
+// Contenedor de árbol mediano
+let midTree = document.getElementById("mid-tree");
+
+// Contenedor de árbol pequeño
+let smallTree = document.getElementById("small-tree");
+
 // Contenedor de personaje secundario
 let teacher = document.getElementById("teacher");
 
@@ -93,4 +105,9 @@ let answer4 = document.getElementById("answer4");
 
 let mVC = 0;
 
+// Contenedor para las animaciones entre niveles
+let between = document.getElementById("between");
+
+// Contenedor para mostrar el nivel al que se accede
+let showLevel = document.getElementById("show-level");
 

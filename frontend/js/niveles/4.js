@@ -309,7 +309,7 @@ async function toggleCharacterDialogs(){
     if (talkTo == 1 && allowTQ != 3) { showPabloSmallDialogs1(); return; }
 };
 
-async function finishLevel1(goNextLevel) {
+function finishLevel1(goNextLevel) {
     if (!goNextLevel) {
         dialog21.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
         hideAnswers1();
@@ -326,23 +326,7 @@ async function finishLevel1(goNextLevel) {
         return;
     }
 
-    if (goNextLevel && allowTQ == 2) {
-        // Se ocultan todos los recursos del nivel 1.
-        hideFirstLevel();
-
-        between.classList.remove('between-behind-curtain');
-        between.classList.remove('between-hide');
-        await sleep(5000);
-        between.classList.add('between-hide');
-        await sleep(1000);
-        between.classList.add('between-behind-curtain');
-
-        // Se le pasa el control del movimiento al nivel 2.
-        mVC = 1;
-
-        // Se ejecuta el proceso para mostrar el nivel 2.
-        addSecondLevel();
-    }
+    if (goNextLevel && allowTQ == 2) alert("Está intentando ir al siguiente nivel");
 }
 
 async function updateDialog() {
@@ -578,15 +562,10 @@ function controlPressedKeys(keyUp) {
 }
 
 // Función para agregar los primeros objetos y cuestiones del primer nivel.
-async function addFirstLevel() {
-    // Se muestra el letrero que indica el primer nivel
-    showLevel.innerHTML = 'NIVEL 1';
-    showLevel.classList.remove('show-level-behind-curtain');
-    showLevel.classList.remove('show-level-hide');
-
+function addFirstLevel() {
     // Se muestra el jugador
     character.classList.remove("character-behind-curtain");
-    await sleep(1000);
+    sleep(1000);
     character.classList.remove("character-hide");
 
     // Se ubica el jugador en la parte inferior del mapa
@@ -595,6 +574,7 @@ async function addFirstLevel() {
 
     // Se muestra el piso del juego
     floor.classList.remove("floor-behind-curtain");
+    sleep(1000);
     floor.classList.remove("floor-hide");
 
     // Se agrega el personaje de la profesora
@@ -633,47 +613,6 @@ async function addFirstLevel() {
     // Se agregan los diálogos al nivel
     levels.appendChild(alertTeacher1);
     levels.appendChild(alertPablo1);
-
-    // Se oculta el letrero después de haber mostrado todos los recursos del nivel.
-    showLevel.classList.add('show-level-hide');
-    await sleep(1000);
-    showLevel.classList.add('show-level-behind-curtain');
-}
-
-async function hideFirstLevel() {
-    // Se oculta el personaje principal
-    character.classList.add("character-behind-curtain");
-    character.classList.add("character-hide");
-
-    // Se oculta el personaje de la profesora
-    teacher.classList.add("teacher-behind-curtain");
-    teacher.classList.add("teacher-hide");
-
-    // Se oculta la construcción de la escuela
-    school.classList.add("school-behind-curtain");
-    school.classList.add("school-hide");
-
-    // Se oculta al pablo pequeño de los diálogos
-    pabloSmall21.classList.add("pablo-small-hide");
-    pabloSmall21.classList.add("pablo-small-behind-curtain");
-
-    // Se oculta al pablo que se encuentra en el nivel
-    pabloSmall.classList.add("pablo-small-hide");
-    pabloSmall.classList.add("pablo-small-behind-curtain");
-
-    // Se ocultan los diálogos
-    dialog21.classList.add("dialog-hide");
-    dialog21.classList.add("dialog-behind-curtain");
-
-    // Se ocultan las respuestas
-    answer1.classList.add("answer-hide");
-    answer2.classList.add("answer-hide");
-    answer3.classList.add("answer-hide");
-    answer4.classList.add("answer-hide");
-
-    // Se remueven los diálogos del nivel
-    levels.removeChild(alertTeacher1);
-    levels.removeChild(alertPablo1);
 }
 
 let alreadyGoUp = false;

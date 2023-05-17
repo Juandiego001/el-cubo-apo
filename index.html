@@ -23,6 +23,7 @@
         Hoja de estilos para todos los niveles.
      -->
     <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/1.css">
+    <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/2.css">
 
     <title>EL CUBO APO</title>
 </head>
@@ -292,7 +293,7 @@
         </div>
 
         <!--
-            Prueba para agregar un personaje secundario.
+            Personaje profesora.
             Este personaje será una mujer que le contará mejor la historia,
             le brindará más contexto al personaje, le hablará acerca de POO
             y le enseñará y pondrá a prueba al jugador acerca de las clases.
@@ -311,7 +312,7 @@
         </div>
 
         <!--
-            Prueba para crear una edificación como una escuela
+            Escuela
         -->
         <div id="school" class="school school-hide school-behind-curtain">
             <div class="building1">
@@ -334,6 +335,38 @@
             </div>
         </div>
 
+        <!-- Personaje biólogo -->
+        <div id="biologist" class="biologist biologist-hide biologist-behind-curtain">
+            <div class="hat">
+            </div>
+
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+
+            <div class="t-shirt">
+            </div>
+        </div>
+
+        <!-- Árbol grande para el biólogo -->
+        <div id="big-tree" class="big-tree big-tree-hide big-tree-behind-curtain">
+            <div class="sheet"></div>
+            <div class="branch"></div>
+        </div>
+
+        <!-- Árbol pequeño para el biólogo -->
+        <div id="small-tree" class="small-tree small-tree-hide small-tree-behind-curtain">
+            <div class="sheet"></div>
+            <div class="branch"></div>
+        </div>
+
+        <!-- Árbol mediano para el biólogo -->
+        <div id="mid-tree" class="mid-tree mid-tree-hide mid-tree-behind-curtain">
+            <div class="sheet"></div>
+            <div class="branch"></div>
+        </div>
+
         <!--
             Alerta para informarle al jugador que debe presionar E para hablar con un personaje
             o hacer alguna acción.
@@ -352,10 +385,19 @@
         </div>
     </div>
 
+    <!-- Contenedor para las animaciones de paso entre niveles -->
+    <div id="between" class="between between-hide between-behind-curtain">
+    </div>
+
+    <!-- Contenedor para mostrar el nivel al que se accede -->
+    <div id="show-level" class="show-level show-level-hide show-level-behind-curtain"></div>
+
     <!-- Variables globales para utilizar en el resto de aplicación. -->
     <script src="frontend/js/global.variables.js"></script>
     <!-- Javascript de la cinemática intro. -->
     <script src="frontend/js/cinematicas/intro.js"></script>
+    <!-- Javascript del nivel 2. -->
+    <script src="frontend/js/niveles/2.js"></script>
     <!-- Javascript del nivel 1. -->
     <script src="frontend/js/niveles/1.js"></script>
     <!-- Funciones globales para utilizar en el resto de aplicación. -->
