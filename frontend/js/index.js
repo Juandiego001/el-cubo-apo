@@ -212,9 +212,9 @@ async function goLevel(theLevel) {
     if (mVC == 0) loadLevel1Variables();
     if (mVC == 1) loadLevel2Variables();
     if (mVC == 2) loadLevel3Variables();
-    // if (mVC == 3) loadLevel4Variables();
-    // if (mVC == 4) loadLevel5Variables();
-    // if (mVC == 5) loadLevel6Variables();
+    if (mVC == 3) loadLevel4Variables();
+    if (mVC == 4) loadLevel5Variables();
+    if (mVC == 5) loadLevel6Variables();
 }
 
 // Registro de teclas

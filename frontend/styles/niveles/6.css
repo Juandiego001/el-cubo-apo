@@ -1,0 +1,126 @@
+.apo {
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  z-index: 4;
+  transition: opacity 1s ease;
+  perspective: 600px;
+}
+
+.apo-hide {
+  opacity: 0;
+}
+
+.apo-behind-curtain {
+  z-index: -1;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+  transform-style: preserve-3d;
+  animation: rotarcubo 5s ease 0s infinite alternate;
+}
+
+@keyframes rotarcubo {
+  from {
+    transform: translateZ(-100px) rotateY(0deg) rotateX(0deg);
+  }
+ 
+  to {
+    transform: translateZ(-100px) rotateY(360deg) rotateX(360deg);
+  }
+ }
+
+.cube__face {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-color: var(--fondo-blanco);
+  box-shadow: 0 1rem 3rem rgba(33, 37, 41, .8);
+  opacity: 0.5;
+}
+
+.cube__face--front  {
+  transform: rotateY(  0deg) translateZ(100px); 
+}
+
+.cube__face--right  {
+  transform: rotateY( 90deg) translateZ(100px); 
+}
+
+.cube__face--back { 
+  transform: rotateY(180deg) translateZ(100px); 
+}
+
+.cube__face--left   { 
+  transform: rotateY(-90deg) translateZ(100px); 
+}
+
+.cube__face--top {
+  transform: rotateX( 90deg) translateZ(100px); 
+}
+
+.cube__face--bottom {
+  transform: rotateX(-90deg) translateZ(100px);
+}
+
+/* APO2 */
+.apo2 {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  z-index: 4;
+  transition: opacity 1s ease;
+  perspective: 15rem;
+}
+
+.apo2-hide {
+  opacity: 0;
+}
+
+.apo2-behind-curtain {
+  z-index: -1;
+}
+
+.cube2 {
+  width: 5rem;
+  height: 5rem;
+  position: relative; 
+  transform-style: preserve-3d;
+}
+
+.cube__face2 {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--fondo-blanco);
+  box-shadow: 0 0 1rem 3rem rgba(33, 37, 41, .8);
+  opacity: 0.25;
+}
+
+.cube__face--front2  {
+  transform: rotateY(  0deg) translateZ(2.5rem); 
+}
+
+.cube__face--right2  {
+  transform: rotateY( 90deg) translateZ(2.5rem); 
+}
+
+.cube__face--back2 { 
+  transform: rotateY(180deg) translateZ(2.5rem); 
+}
+
+.cube__face--left2   { 
+  transform: rotateY(-90deg) translateZ(2.5rem); 
+}
+
+.cube__face--top2 {
+  transform: rotateX( 90deg) translateZ(2.5rem); 
+}
+
+.cube__face--bottom2 {
+  transform: rotateX(-90deg) translateZ(2.5rem);
+}
+

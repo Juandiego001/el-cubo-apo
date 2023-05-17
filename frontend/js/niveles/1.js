@@ -303,7 +303,7 @@ async function toggleCharacterDialogs(){
     // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
     // Tener en cuenta que si ya ha logrado responder todas las preguntas de la profesorá,
     // no podrá volver a hablar con ella.
-    if (talkTo == 0 && allowTQ != 2) { showTeacherDialogs1(); return; }
+    if (talkTo == 0 && allowTQ != 2) { console.log("TAMBIEN LLEGA AQUI"); showTeacherDialogs1(); return; }
 
     // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
     if (talkTo == 1 && allowTQ != 3) { showPabloSmallDialogs1(); return; }
@@ -341,7 +341,7 @@ async function finishLevel1(goNextLevel) {
         between.classList.add('between-behind-curtain');
 
         // Se ejecuta el proceso para mostrar el nivel 2.
-        addSecondLevel();
+        loadLevel2Variables();
     }
 }
 

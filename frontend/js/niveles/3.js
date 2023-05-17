@@ -323,7 +323,7 @@ async function finishLevel3(goNextLevel) {
         between.classList.add('between-behind-curtain');
 
         // Se ejecuta el proceso para mostrar el nivel 4.
-        addFourthLevel();
+        loadLevel4Variables();
     }
 }
 
@@ -610,25 +610,25 @@ async function hideThirdLevel() {
     character.classList.add("character-behind-curtain");
     character.classList.add("character-hide");
 
-    // Se oculta el personaje de la profesora
-    teacher.classList.add("teacher-behind-curtain");
-    teacher.classList.add("teacher-hide");
+    // Se oculta el personaje de la doctor
+    doctor.classList.add("doctor-behind-curtain");
+    doctor.classList.add("doctor-hide");
 
     // Se oculta la construcción de la escuela
-    school.classList.add("school-behind-curtain");
-    school.classList.add("school-hide");
+    hospital.classList.add("hospital-behind-curtain");
+    hospital.classList.add("hospital-hide");
 
     // Se oculta al pablo pequeño de los diálogos
-    pabloSmall21.classList.add("pablo-small-hide");
-    pabloSmall21.classList.add("pablo-small-behind-curtain");
+    pabloSmall32.classList.add("pablo-small-hide");
+    pabloSmall32.classList.add("pablo-small-behind-curtain");
 
     // Se oculta al pablo que se encuentra en el nivel
     pabloSmall.classList.add("pablo-small-hide");
     pabloSmall.classList.add("pablo-small-behind-curtain");
 
     // Se ocultan los diálogos
-    dialog21.classList.add("dialog-hide");
-    dialog21.classList.add("dialog-behind-curtain");
+    dialog32.classList.add("dialog-hide");
+    dialog32.classList.add("dialog-behind-curtain");
 
     // Se ocultan las respuestas
     answer1.classList.add("answer-hide");
@@ -637,8 +637,8 @@ async function hideThirdLevel() {
     answer4.classList.add("answer-hide");
 
     // Se remueven los diálogos del nivel
-    levels.removeChild(alertTeacher1);
-    levels.removeChild(alertPablo1);
+    levels.removeChild(alertDoctor3);
+    levels.removeChild(alertPablo3);
 }
 
 let alreadyGoUp3 = false;

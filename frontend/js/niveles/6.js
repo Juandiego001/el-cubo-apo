@@ -1,30 +1,30 @@
 // Coordenadas del jugador para el nivel 3
-let xPlayer4 = 1;
-let yPlayer4 = 3;
+let xPlayer6 = 1;
+let yPlayer6 = 3;
 
 // Coordenadas para mover el escenario
-let xBackground4 = 1;
+let xBackground6 = 1;
 
 // Teclas presionadas
-let keyToUpPressed4 = false;
-let keyToDownPressed4 = false;
-let keyToLeftPressed4 = false;
-let keyToRightPressed4 = false;
+let keyToUpPressed6 = false;
+let keyToDownPressed6 = false;
+let keyToLeftPressed6 = false;
+let keyToRightPressed6 = false;
 
 // Para mostrar al personaje en la parte superior de la pantalla y mostrar sus diálogos.
 // El primer 3 inidica que es del nivel 3.
 // El segundo 2 inidica que es una copia del personaje original.
-let engineer42 = engineer.cloneNode(true);
-let pabloSmall42 = pabloSmall.cloneNode(true);
+let apo62 = apo2.cloneNode(true);
+let pabloSmall62 = pabloSmall.cloneNode(true);
 
 // Para mostrar los diálogos en la parte superior de la pantalla para cada personaje.
 // El 2 indica que es una copia del diálogo original.
-let dialog42 = dialog.cloneNode(true);
+let dialog62 = dialog.cloneNode(true);
 
 // Diálogos para cada personaje.
 // El 3 al final indica el nivel 3.
 // Diálogos del doctor.
-let dialogsEngineer4 = [
+let dialogsApo6 = [
     "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
     "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
     "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
@@ -49,11 +49,11 @@ let dialogsEngineer4 = [
 ];
 
 // Variable similar a dialogs43 para ir mostrando las preguntas.
-let questions4 = -1;
+let questions6 = -1;
 
 // Preguntas que hará el doctor.
 // El 3 indica el nivel 3.
-let questionsEngineer4 = [
+let questionsApo6 = [
     "1. ¿Qué es un objeto?",
     "2. ¿Cómo se puede categorizar un objeto?",
     "3. ¿Qué son los mensajes entre objetos?",
@@ -66,7 +66,7 @@ let questionsEngineer4 = [
 
 // Respuestas para el doctor.
 // El 3 indica el nivel 3.
-let answersEngineer4 = [
+let answersApo6 = [
     // Respuestas de la pregunta 1.
     {
         r: [
@@ -145,16 +145,16 @@ let answersEngineer4 = [
 // 0 -> Se permite mostrar las preguntas
 // 1 -> Hubo un error en las respuestas
 // 2 -> Ha terminado de responder todo correctamente.
-let allowQ4 = -1;
+let allowQ6 = -1;
 
 // Variable que permite pasar o no de nivel.
 // -1 -> No se ha determinado.
 // 0 -> Cuando ha contestado correctamente las preguntas y ha dado click en Sí.
 // 1 -> Cuando no ha contestado correctamente las preguntas o ha dado click en No.
-let allowPassLevel4 = -1;
+let allowPassLevel6 = -1;
 
 // Diálogos de pablo.
-let dialogsPablo4 = [
+let dialogsPablo6 = [
     "¿Y qué tal? ¿Cómo ha ido todo?",
     "La profesora me comentó que has estado contestado adecuadamente...",
     "Es hora de seguir aprendiendo...",
@@ -162,31 +162,30 @@ let dialogsPablo4 = [
 ];
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
-let allDialogs4 = [
-    dialogsEngineer4,
-    dialogsPablo4
+let allDialogs6 = [
+    dialogsApo6,
+    dialogsPablo6
 ];
 
 // El 3 al final indica el nivel 3.
 // Variable para mover los diálogos.
 // Si esta variable toma un valor mayor a -1, no se le debe permitir al jugador moverse,
 // sino mover los diálogos.
-let dialogs4 = -1;
+let dialogs6 = -1;
 
 // Para ir moviendo los objetos/personajes/construcciones del escenario.
 // El 3, indica el nivel 3.
-let engineerX4 = 100;
-let schoolX4 = 120;
-let pabloSmallX4 = 240;
+let apoX6 = 100;
+let pabloSmallX6 = 240;
 
 // Alertas que indican con la proximidad del jugador que es posible hablar con los personajes.
 // El 3, indica el nivel 3.
-let alertEngineer4 = alertAction.cloneNode(true);
-let alertPablo4 = alertAction.cloneNode(true);
+let alertApo6 = alertAction.cloneNode(true);
+let alertPablo6 = alertAction.cloneNode(true);
 
 // Coordenadas de las alertas (se deben mover con los personajes).
-let alertEngineerX4 = 95;
-let alertPabloX4 = 235;
+let alertApoX6 = 95;
+let alertPabloX6 = 235;
 
 // Variable que controla el desplegar el diálogo de algún personaje.
 // Esta variable se actualiza cuando el jugador está cerca de algún personaje
@@ -194,16 +193,16 @@ let alertPabloX4 = 235;
 // -1 -> No se puede hablar con nadie.
 // 0 -> Se puede hablar con el doctor.
 // 1 -> Se puede hablar con Pablo.
-let talkTo4 = -1;
+let talkTo6 = -1;
 
 // Variable para verificar que ya habló con un personaje.
 // -1 -> No ha hablado con nadie.
 // 0 -> Ya habló con el doctor.
 // 1 -> Ya habló con pablo.
-let alreadyTalkTo4 = -1;
+let alreadyTalkTo6 = -1;
 
 // Función para ocultar las respuestas.
-function hideAnswers4() {
+function hideAnswers6() {
     answer1.classList.add("answer-hide");
     answer2.classList.add("answer-hide");
     answer3.classList.add("answer-hide");
@@ -211,109 +210,109 @@ function hideAnswers4() {
 }
 
 // Función para ocultar los diálogos.
-async function hideDialogs4() {
-    dialog42.classList.add("dialog-hide");
-    dialog42.classList.add("dialog-behind-curtain");
-    dialogs4 = -1;
-    hideAnswers4();
+async function hideDialogs6() {
+    dialog62.classList.add("dialog-hide");
+    dialog62.classList.add("dialog-behind-curtain");
+    dialogs6 = -1;
+    hideAnswers6();
 }
 
 // Para mostrar los diálogos (se empieza mostrando el primero).
-async function showDialogs4() {
+async function showDialogs6() {
     // Se resetean algunos atributos del contenedor de diálogos.
-    dialog42.style.top = "";
-    dialog42.style.left = "";
-    dialog42.style.transform = "";
+    dialog62.style.top = "";
+    dialog62.style.left = "";
+    dialog62.style.transform = "";
 
     // Se muestra el diálogo.
-    dialog42.classList.remove("dialog-hide");
-    dialog42.classList.remove("dialog-behind-curtain");
+    dialog62.classList.remove("dialog-hide");
+    dialog62.classList.remove("dialog-behind-curtain");
 
     // Se coloca el diálogo en cuestión.
-    dialogs4 = 0;
-    dialog42.innerHTML = allDialogs4[talkTo4][0];
+    dialogs6 = 0;
+    dialog62.innerHTML = allDialogs6[talkTo6][0];
 }
 
 // Función para mostrar los diálogos del doctor.
-async function showEngineerDialogs4() {
-    engineer42.style.left = "0.5rem";
-    engineer42.style.top = "0.75rem";
-    engineer42.classList.remove("engineer-hide");
-    engineer42.classList.remove("engineer-behind-curtain");
-    alreadyTalkTo4 = 0;
-    showDialogs4();
+async function showApoDialogs6() {
+    apo62.style.left = "2.5rem";
+    apo62.style.top = "2.75rem";
+    apo62.classList.remove("apo2-hide");
+    apo62.classList.remove("apo2-behind-curtain");
+    alreadyTalkTo6 = 0;
+    showDialogs6();
 }
 
 // Función para ocultar los diálogos del doctor.
-async function hideEngineerDialogs4() {
-    engineer42.classList.add("engineer-hide");
-    engineer42.classList.add("engineer-behind-curtain");
-    alreadyTalkTo4 = -1;
-    hideDialogs4();
+async function hideApoDialogs6() {
+    apo62.classList.add("apo2-hide");
+    apo62.classList.add("apo2-behind-curtain");
+    alreadyTalkTo6 = -1;
+    hideDialogs6();
 }
 
 // Función para mostrar los diálogos de pablo small.
-async function showPabloSmallDialogs4() {
-    pabloSmall42.style.left = "0.5rem";
-    pabloSmall42.style.top = "0.75rem";
-    pabloSmall42.classList.remove("pablo-small-hide");
-    pabloSmall42.classList.remove("pablo-small-behind-curtain");
-    alreadyTalkTo4 = 1;
-    showDialogs4();
+async function showPabloSmallDialogs6() {
+    pabloSmall62.style.left = "0.5rem";
+    pabloSmall62.style.top = "0.75rem";
+    pabloSmall62.classList.remove("pablo-small-hide");
+    pabloSmall62.classList.remove("pablo-small-behind-curtain");
+    alreadyTalkTo6 = 1;
+    showDialogs6();
 }
 
 // Función para ocultar los diálogos de pablo small.
-async function hidePabloSmallDialogs4() {
-    pabloSmall42.classList.add("pablo-small-hide");
-    pabloSmall42.classList.add("pablo-small-behind-curtain");
-    alreadyTalkTo4 = -1;
-    hideDialogs4();
+async function hidePabloSmallDialogs6() {
+    pabloSmall62.classList.add("pablo-small-hide");
+    pabloSmall62.classList.add("pablo-small-behind-curtain");
+    alreadyTalkTo6 = -1;
+    hideDialogs6();
 }
 
 // Función para mostrar en la parte superior de la pantalla los personajes y sus diálogos.
 // Esta función se activa al presionar la tecla E.
-async function toggleCharacterDialogs4() {
+async function toggleCharacterDialogs6() {
     // Se ocultan los diálogos del biólogo.
-    if (alreadyTalkTo4 == 0) { hideEngineerDialogs4(); return; }
+    if (alreadyTalkTo6 == 0) { hideApoDialogs6(); return; }
 
     // En caso de que presione E en la parte en la que ha querido pasar de nivel sin haber respondido a las preguntas del biólogo.
-    if (talkTo4 == 1 && allowPassLevel4 == 1) { allowPassLevel4 = -1; dialogs4 = -1; hidePabloSmallDialogs4(); return; }
+    if (talkTo6 == 1 && allowPassLevel6 == 1) { allowPassLevel6 = -1; dialogs6 = -1; hidePabloSmallDialogs6(); return; }
 
     // Se ocultan los diálogos de pablo pequeño.
-    if (alreadyTalkTo4 == 1) { hidePabloSmallDialogs4(); return; }
+    if (alreadyTalkTo6 == 1) { hidePabloSmallDialogs6(); return; }
 
     // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
     // Tener en cuenta que si ya ha logrado responder todas las preguntas de la profesorá,
     // no podrá volver a hablar con ella.
-    if (talkTo4 == 0 && allowQ4 != 2) { showEngineerDialogs4(); return; }
+    if (talkTo6 == 0 && allowQ6 != 2) { showApoDialogs6(); return; }
 
     // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
-    if (talkTo4 == 1 && allowQ4 != 3) { showPabloSmallDialogs4(); return; }
+    if (talkTo6 == 1 && allowQ6 != 3) { showPabloSmallDialogs6(); return; }
 };
 
-async function finishLevel4(goNextLevel) {
+async function finishLevel6(goNextLevel) {
     if (!goNextLevel) {
-        dialog42.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
-        hideAnswers4();
-        allowPassLevel4 = 1;
-        dialogs4 = 0;
+        dialog62.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
+        hideAnswers6();
+        allowPassLevel6 = 1;
+        dialogs6 = 0;
         return;
     }
 
-    if (allowQ4 != 2) {
-        dialog42.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
-        hideAnswers4();
-        allowPassLevel4 = 1;
-        dialogs4 = 0;
+    if (allowQ6 != 2) {
+        dialog62.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
+        hideAnswers6();
+        allowPassLevel6 = 1;
+        dialogs6 = 0;
         return;
     }
 
-    if (goNextLevel && allowQ4 == 2) {
-        // Se le pasa el control del movimiento al nivel 5.
-        mVC = 4;
+    if (goNextLevel && allowQ6 == 2) {
+        // Se le pasa el control del movimiento para finalizar.
+        mVC = 6;
 
-        // Se ocultan todos los recursos del nivel 4.
-        hideFourthLevel();
+        // Se ocultan todos los recursos del nivel 6.
+        hideSixthLevel();
 
         between.classList.remove('between-behind-curtain');
         between.classList.remove('between-hide');
@@ -322,27 +321,27 @@ async function finishLevel4(goNextLevel) {
         await sleep(1000);
         between.classList.add('between-behind-curtain');
 
-        // Se ejecuta el proceso para mostrar el nivel 5.
-        loadLevel5Variables();
+        // Se ejecuta el proceso para finalizar el juego y mostrar los créditos.
+        // showCredits();
     }
 }
 
-async function updateDialog4() {
+async function updateDialog6() {
     // Sí ya se admitió responder las preguntas, entonces
     // se debe esperar a que se respondan las preguntas.
-    if (allowQ4 == 0) return;
+    if (allowQ6 == 0) return;
 
     // Si se ha equivocado en la respuesta se ocultan los diálogos de la profesora y el personaje de la profesora.
-    if (allowQ4 == 1) { hideEngineerDialogs4(); allowQ4 = -1; return; }
-    if (allowQ4 == 2 && talkTo4 == 0) { hideEngineerDialogs4(); return; }
+    if (allowQ6 == 1) { hideApoDialogs6(); allowQ6 = -1; return; }
+    if (allowQ6 == 2 && talkTo6 == 0) { hideApoDialogs6(); return; }
 
     // Si ha intentado pasar de nivel sin haber respondido antes a las preguntas de la profesora
-    if (allowPassLevel4 == 1 && talkTo4 == 1) { hidePabloSmallDialogs4(); allowPassLevel4 = -1; return; }
+    if (allowPassLevel6 == 1 && talkTo6 == 1) { hidePabloSmallDialogs6(); allowPassLevel6 = -1; return; }
 
-    let theDialogs = allDialogs4[talkTo4];
-    dialog42.innerHTML = theDialogs[dialogs4];
-    if (dialogs4 != (theDialogs.length - 1)) { hideAnswers4(); return; }
-    else if (talkTo4 == 0) {
+    let theDialogs = allDialogs6[talkTo6];
+    dialog62.innerHTML = theDialogs[dialogs6];
+    if (dialogs6 != (theDialogs.length - 1)) { hideAnswers6(); return; }
+    else if (talkTo6 == 0) {
         // Se debe permitir al jugador si decide continuar con las preguntas de la profesora o no.
         // Se modifican los textos de las respuestas 1 y 2.
         answer1.innerHTML = "Sí.";
@@ -350,8 +349,8 @@ async function updateDialog4() {
         answer1.classList.remove("answer-hide");
         answer2.classList.remove("answer-hide");
 
-        answer1.onclick = () => showEngineerQuestions4(true);
-        answer2.onclick = () => showEngineerQuestions4(false);
+        answer1.onclick = () => showApoQuestions6(true);
+        answer2.onclick = () => showApoQuestions6(false);
 
         // Se ocultan las respuestas 3 y 4.
         answer3.classList.add("answer-hide");
@@ -371,8 +370,8 @@ async function updateDialog4() {
         answer1.classList.remove("answer-hide");
         answer2.classList.remove("answer-hide");
 
-        answer1.onclick = () => finishLevel4(true);
-        answer2.onclick = () => finishLevel4(false);
+        answer1.onclick = () => finishLevel6(true);
+        answer2.onclick = () => finishLevel6(false);
 
         // Se ocultan las respuestas 3 y 4.
         answer3.classList.add("answer-hide");
@@ -387,13 +386,13 @@ async function updateDialog4() {
     }
 }
 
-async function verifyAnswer4(theQuestion, theAnswer, theAnswerElement) {
+async function verifyAnswer6(theQuestion, theAnswer, theAnswerElement) {
     // Se toma la pregunta y se verifica que la respuesta correcta
     // de la pregunta, efectivamente corresponde con la respuesta otorgada.
     // En caso tal de que la respuesta otorgada no corresponda con la respuesta
     // correcta, se debe indicar al usuario que se ha equivocado y que debe revisar
     // el libro e intentar nuevamente
-    if (answersEngineer4[theQuestion]["c"] == theAnswer) {
+    if (answersApo6[theQuestion]["c"] == theAnswer) {
         // Se hace una animación indicando que la respuesta fue correcta
         theAnswerElement.classList.add("right-answer");
         await sleep(750);
@@ -401,34 +400,34 @@ async function verifyAnswer4(theQuestion, theAnswer, theAnswerElement) {
         await sleep(750);
 
         // Se muestra la siguiente pregunta.
-        questions4++;
+        questions6++;
 
         // Se valida que al intentar mostrar la siguiente pregunta sea la última pregunta.
         // Si ha sido la última pregunta, debe mostrar un mensaje exitoso y actualizar 
         // una variable para que ya pueda continuar hacia el siguiente nivel.
-        if (questions4 == questionsEngineer4.length) {
+        if (questions6 == questionsApo6.length) {
             // Se coloca el mensaje final indicando que ya puede pasar de nivel.
-            dialog42.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
+            dialog62.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
             // Se asigna el valor correspondiente a la variable.
-            allowQ4 = 2;
+            allowQ6 = 2;
             // Se ocultan las respuestas.
-            hideAnswers4();
+            hideAnswers6();
             return;
         }
 
-        dialog42.innerHTML = `<span>${questionsEngineer4[questions4]}</span>`;
+        dialog62.innerHTML = `<span>${questionsApo6[questions6]}</span>`;
 
         // Se actualizan las respuestas.
-        answer1.innerHTML = answersEngineer4[questions4]["r"][0];
-        answer2.innerHTML = answersEngineer4[questions4]["r"][1];
-        answer3.innerHTML = answersEngineer4[questions4]["r"][2];
-        answer4.innerHTML = answersEngineer4[questions4]["r"][3];
+        answer1.innerHTML = answersApo6[questions6]["r"][0];
+        answer2.innerHTML = answersApo6[questions6]["r"][1];
+        answer3.innerHTML = answersApo6[questions6]["r"][2];
+        answer4.innerHTML = answersApo6[questions6]["r"][3];
 
         // Se actualizan los eventos onclick de las respuestas.
-        answer1.onclick = () => verifyAnswer4(questions4, 0, answer1);
-        answer2.onclick = () => verifyAnswer4(questions4, 1, answer2);
-        answer3.onclick = () => verifyAnswer4(questions4, 2, answer3);
-        answer4.onclick = () => verifyAnswer4(questions4, 3, answer4);
+        answer1.onclick = () => verifyAnswer6(questions6, 0, answer1);
+        answer2.onclick = () => verifyAnswer6(questions6, 1, answer2);
+        answer3.onclick = () => verifyAnswer6(questions6, 2, answer3);
+        answer4.onclick = () => verifyAnswer6(questions6, 3, answer4);
 
         // Se ha equivocado en la respuesta.
     } else {
@@ -442,42 +441,42 @@ async function verifyAnswer4(theQuestion, theAnswer, theAnswerElement) {
         answer3.classList.add("answer-hide");
         answer4.classList.add("answer-hide");
 
-        dialog42.innerHTML = "Lo siento, creo que te has equivocado...";
+        dialog62.innerHTML = "Lo siento, creo que te has equivocado...";
 
-        allowQ4 = 1;
+        allowQ6 = 1;
     }
 }
 
-async function showEngineerQuestions4(showThem) {
+async function showApoQuestions6(showThem) {
     if (showThem) {
         // Se actualiza la variable.
-        questions4 = 0;
+        questions6 = 0;
 
         // Se debe ocultar el diálogo previo a las preguntas de si se está listo para contestar las preguntas.
-        allowQ4 = 0;
-        dialog42.innerHTML = `<span>${questionsEngineer4[0]}</span>`;
+        allowQ6 = 0;
+        dialog62.innerHTML = `<span>${questionsApo6[0]}</span>`;
 
         // Se debe mostrar la primera pregunta junto con sus respuestas
-        answer1.innerHTML = answersEngineer4[0]["r"][0];
-        answer2.innerHTML = answersEngineer4[0]["r"][1];
+        answer1.innerHTML = answersApo6[0]["r"][0];
+        answer2.innerHTML = answersApo6[0]["r"][1];
 
         // Se muestran las respuestas 3 y 4
         answer3.classList.remove("answer-hide");
         answer4.classList.remove("answer-hide");
-        answer3.innerHTML = answersEngineer4[0]["r"][2];
-        answer4.innerHTML = answersEngineer4[0]["r"][3];
+        answer3.innerHTML = answersApo6[0]["r"][2];
+        answer4.innerHTML = answersApo6[0]["r"][3];
 
         // Se asigna el método click para cada una de las variables
-        answer1.onclick = () => verifyAnswer4(0, 0, answer1);
-        answer2.onclick = () => verifyAnswer4(0, 1, answer2);
-        answer3.onclick = () => verifyAnswer4(0, 2, answer3);
-        answer4.onclick = () => verifyAnswer4(0, 3, answer4);
+        answer1.onclick = () => verifyAnswer6(0, 0, answer1);
+        answer2.onclick = () => verifyAnswer6(0, 1, answer2);
+        answer3.onclick = () => verifyAnswer6(0, 2, answer3);
+        answer4.onclick = () => verifyAnswer6(0, 3, answer4);
     } else {
 
     }
 }
 
-async function controlFuncs4(keyDown) {
+async function controlFuncs6(keyDown) {
     if (((keyDown != "w" && keyDown != "W") &&
         (keyDown != "a" && keyDown != "A") &&
         (keyDown != "s" && keyDown != "S") &&
@@ -489,62 +488,62 @@ async function controlFuncs4(keyDown) {
 
     if (keyDown == "w" || keyDown == "W" || keyDown == "ArrowUp") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) return;
-        keyToUpPressed4 = true;
-        if (keyToRightPressed4) movePlayerRight4();
-        else if (keyToLeftPressed4) movePlayerLeft4();
-        movePlayerUp4();
+        if (dialogs6 > -1) return;
+        keyToUpPressed6 = true;
+        if (keyToRightPressed6) movePlayerRight6();
+        else if (keyToLeftPressed6) movePlayerLeft6();
+        movePlayerUp6();
     }
 
     if (keyDown == "s" || keyDown == "S" || keyDown == "ArrowDown") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) return;
-        keyToDownPressed4 = true;
-        movePlayerDown4();
+        if (dialogs6 > -1) return;
+        keyToDownPressed6 = true;
+        movePlayerDown6();
     }
 
     if (keyDown == "a" || keyDown == "A" || keyDown == "ArrowLeft") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) {
-            if (dialogs4 > 0) dialogs4--;
-            updateDialog4();
+        if (dialogs6 > -1) {
+            if (dialogs6 > 0) dialogs6--;
+            updateDialog6();
             return;
         } else {
-            keyToLeftPressed4 = true;
-            if (keyToUpPressed4) movePlayerUp4();
-            movePlayerLeft4();
+            keyToLeftPressed6 = true;
+            if (keyToUpPressed6) movePlayerUp6();
+            movePlayerLeft6();
         }
     }
 
     if (keyDown == "d" || keyDown == "D" || keyDown == "ArrowRight") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) {
-            let lengthDialogs = allDialogs4[talkTo4].length;
-            if (dialogs4 < (lengthDialogs - 1)) dialogs4++;
-            updateDialog4();
+        if (dialogs6 > -1) {
+            let lengthDialogs = allDialogs6[talkTo6].length;
+            if (dialogs6 < (lengthDialogs - 1)) dialogs6++;
+            updateDialog6();
             return;
         } else {
-            keyToRightPressed4 = true;
-            if (keyToUpPressed4) movePlayerUp4();
-            movePlayerRight4();
+            keyToRightPressed6 = true;
+            if (keyToUpPressed6) movePlayerUp6();
+            movePlayerRight6();
         }
     }
 
-    if ((keyDown == "e" || keyDown == "E") && talkTo4 != -1) toggleCharacterDialogs4();
+    if ((keyDown == "e" || keyDown == "E") && talkTo6 != -1) toggleCharacterDialogs6();
 }
 
 // Función para controlar las teclas presionadas.
-function controlPressedKeys4(keyUp) {
-    if (keyUp == "w" || keyUp == "W" || keyUp == "ArrowUp") keyToUpPressed4 = false;
-    if (keyUp == "s" || keyUp == "S" || keyUp == "ArrowDown") keyToDownPressed4 = false;
-    if (keyUp == "a" || keyUp == "A" || keyUp == "ArrowLeft") keyToLeftPressed4 = false;
-    if (keyUp == "d" || keyUp == "D" || keyUp == "ArrowRight") keyToRightPressed4 = false;
+function controlPressedKeys6(keyUp) {
+    if (keyUp == "w" || keyUp == "W" || keyUp == "ArrowUp") keyToUpPressed6 = false;
+    if (keyUp == "s" || keyUp == "S" || keyUp == "ArrowDown") keyToDownPressed6 = false;
+    if (keyUp == "a" || keyUp == "A" || keyUp == "ArrowLeft") keyToLeftPressed6 = false;
+    if (keyUp == "d" || keyUp == "D" || keyUp == "ArrowRight") keyToRightPressed6 = false;
 }
 
 // Función para agregar los primeros objetos y cuestiones del primer nivel.
-async function addFourthLevel() {
+async function addSixthLevel() {
     // Se muestra el letrero que indica el primer nivel
-    showLevel.innerHTML = 'NIVEL 4';
+    showLevel.innerHTML = 'NIVEL 6';
     showLevel.classList.remove('show-level-behind-curtain');
     showLevel.classList.remove('show-level-hide');
 
@@ -563,20 +562,12 @@ async function addFourthLevel() {
     floor.classList.remove("floor-hide");
 
     // Se agrega el personaje de la profesora
-    engineer.classList.remove("engineer-behind-curtain");
-    engineer.classList.remove("engineer-hide");
+    apo.classList.remove("apo-behind-curtain");
+    apo.classList.remove("apo-hide");
 
     // Se ubica el ingeniero en la parte inferior del mapa
-    engineer.style.bottom = "3rem";
-    engineer.style.left = "100rem";
-
-    // Se agrega la construcción de la escuela
-    school.classList.remove('school-behind-curtain');
-    school.classList.remove('school-hide');
-
-    // Se ubica la profesora en la parte inferior del mapa
-    school.style.bottom = "3rem";
-    school.style.left = "120rem";
+    apo.style.bottom = "6rem";
+    apo.style.left = "100rem";
 
     // Se agrega a pablo pequeño al final del nivel
     pabloSmall.classList.remove("pablo-small-hide");
@@ -587,17 +578,17 @@ async function addFourthLevel() {
     pabloSmall.style.left = "240rem";
 
     // Se posicionan las alertas y se agregan los textos.
-    alertEngineer4.innerHTML = "Pulsa <b>E</b> para hablar con el ingeniero";
-    alertEngineer4.style.left = "95rem";
-    alertEngineer4.style.bottom = "16rem";
+    alertApo6.innerHTML = "Pulsa <b>E</b> para hablar con el Cubo APO";
+    alertApo6.style.left = "95rem";
+    alertApo6.style.bottom = "24rem";
 
-    alertPablo4.innerHTML = "Pulsa <b>E</b> para hablar con pablo";
-    alertPablo4.style.left = "235rem";
-    alertPablo4.style.bottom = "15rem";
+    alertPablo6.innerHTML = "Pulsa <b>E</b> para hablar con pablo";
+    alertPablo6.style.left = "235rem";
+    alertPablo6.style.bottom = "15rem";
 
     // Se agregan los diálogos al nivel
-    levels.appendChild(alertEngineer4);
-    levels.appendChild(alertPablo4);
+    levels.appendChild(alertApo6);
+    levels.appendChild(alertPablo6);
 
     // Se oculta el letrero después de haber mostrado todos los recursos del nivel.
     showLevel.classList.add('show-level-hide');
@@ -605,30 +596,26 @@ async function addFourthLevel() {
     showLevel.classList.add('show-level-behind-curtain');
 }
 
-async function hideFourthLevel() {
+async function hideSixthLevel() {
     // Se oculta el personaje principal
     character.classList.add("character-behind-curtain");
     character.classList.add("character-hide");
 
     // Se oculta el personaje del ingeniero
-    engineer.classList.add("engineer-behind-curtain");
-    engineer.classList.add("engineer-hide");
-
-    // Se oculta la construcción de la escuela
-    school.classList.add("school-behind-curtain");
-    school.classList.add("school-hide");
+    apo.classList.add("apo-behind-curtain");
+    apo.classList.add("apo-hide");
 
     // Se oculta al pablo pequeño de los diálogos
-    pabloSmall42.classList.add("pablo-small-hide");
-    pabloSmall42.classList.add("pablo-small-behind-curtain");
+    pabloSmall62.classList.add("pablo-small-hide");
+    pabloSmall62.classList.add("pablo-small-behind-curtain");
 
     // Se oculta al pablo que se encuentra en el nivel
     pabloSmall.classList.add("pablo-small-hide");
     pabloSmall.classList.add("pablo-small-behind-curtain");
 
     // Se ocultan los diálogos
-    dialog42.classList.add("dialog-hide");
-    dialog42.classList.add("dialog-behind-curtain");
+    dialog62.classList.add("dialog-hide");
+    dialog62.classList.add("dialog-behind-curtain");
 
     // Se ocultan las respuestas
     answer1.classList.add("answer-hide");
@@ -637,140 +624,136 @@ async function hideFourthLevel() {
     answer4.classList.add("answer-hide");
 
     // Se remueven los diálogos del nivel
-    levels.removeChild(alertEngineer4);
-    levels.removeChild(alertPablo4);
+    levels.removeChild(alertApo6);
+    levels.removeChild(alertPablo6);
 }
 
-let alreadyGoUp4 = false;
-async function movePlayerUp4() {
-    if (!alreadyGoUp4) {
+let alreadyGoUp6 = false;
+async function movePlayerUp6() {
+    if (!alreadyGoUp6) {
         character.style.bottom = "15rem";
-        alreadyGoUp4 = true;
+        alreadyGoUp6 = true;
         await sleep(500);
         character.style.bottom = "3rem";
         await sleep(500);
-        alreadyGoUp4 = false;
+        alreadyGoUp6 = false;
     }
-    if (keyToRightPressed4) movePlayerRight4();
+    if (keyToRightPressed6) movePlayerRight6();
     // Verificar diálogos.
-    verifyDialog4();
+    verifyDialog6();
 }
 
-async function movePlayerDown4() {
-    if (yPlayer4 > 3) yPlayer4 -= 2;
-    character.style.bottom = `${yPlayer4}rem`;
+async function movePlayerDown6() {
+    if (yPlayer6 > 3) yPlayer6 -= 2;
+    character.style.bottom = `${yPlayer6}rem`;
     await sleep(500);
     // Verificar diálogos.
-    verifyDialog4();
+    verifyDialog6();
 }
 
-async function movePlayerLeft4() {
-    if (xPlayer4 > 1) {
-        xPlayer4--;
-        character.style.left = `${xPlayer4}rem`;
+async function movePlayerLeft6() {
+    if (xPlayer6 > 1) {
+        xPlayer6--;
+        character.style.left = `${xPlayer6}rem`;
 
         // Verificar diálogos.
-        verifyDialog4();
-    } else if (xBackground4 >= 1) {
-        xBackground4 -= 0.005;
-        moveLeftBackground4();
+        verifyDialog6();
+    } else if (xBackground6 >= 1) {
+        xBackground6 -= 0.005;
+        moveLeftBackground6();
     }
 }
 
-async function movePlayerRight4() {
-    if (xPlayer4 < 74) {
-        xPlayer4++;
-        character.style.left = `${xPlayer4}rem`;
+async function movePlayerRight6() {
+    if (xPlayer6 < 74) {
+        xPlayer6++;
+        character.style.left = `${xPlayer6}rem`;
         // Verificar diálogos.
-        verifyDialog4();
+        verifyDialog6();
     }
-    else if (xBackground4 < 1.65) {
-        xBackground4 += 0.005;
-        moveRightBackground4();
+    else if (xBackground6 < 1.65) {
+        xBackground6 += 0.005;
+        moveRightBackground6();
     }
 }
 
 // Función para verificar si se puede mostrar el diálogo.
-function verifyDialog4() {
+function verifyDialog6() {
     // Se verifica para el ingeniero.
-    let distanceTeacher = engineerX4 - xPlayer4;
+    let distanceTeacher = apoX6 - xPlayer6;
 
     // Hay que tener en cuenta que si ya ha pasado el nivel, no se mostrará nuevamente el mensaje
     // para hablar con el ingeniero.
-    if (distanceTeacher > -16 && distanceTeacher < 13 && allowQ4 != 2) {
-        alertEngineer4.classList.remove("alert-action-hide");
-        alertEngineer4.classList.remove("alert-action-behind-curtain");
-        talkTo4 = 0;
+    if (distanceTeacher > -16 && distanceTeacher < 13 && allowQ6 != 2) {
+        alertApo6.classList.remove("alert-action-hide");
+        alertApo6.classList.remove("alert-action-behind-curtain");
+        talkTo6 = 0;
         return;
     } else {
-        alertEngineer4.classList.add("alert-action-hide");
-        alertEngineer4.classList.add("alert-action-behind-curtain");
-        talkTo4 = -1;
+        alertApo6.classList.add("alert-action-hide");
+        alertApo6.classList.add("alert-action-behind-curtain");
+        talkTo6 = -1;
     }
 
     // Se verifica para pablo pequeño.
-    let distancePablo = pabloSmallX4 - xPlayer4;
+    let distancePablo = pabloSmallX6 - xPlayer6;
     if (distancePablo > -16 && distancePablo < 13) {
-        alertPablo4.classList.remove("alert-action-hide");
-        alertPablo4.classList.remove("alert-action-behind-curtain");
-        talkTo4 = 1;
+        alertPablo6.classList.remove("alert-action-hide");
+        alertPablo6.classList.remove("alert-action-behind-curtain");
+        talkTo6 = 1;
         return;
     } else {
-        alertPablo4.classList.add("alert-action-hide");
-        alertPablo4.classList.add("alert-action-behind-curtain");
-        talkTo4 = -1;
+        alertPablo6.classList.add("alert-action-hide");
+        alertPablo6.classList.add("alert-action-behind-curtain");
+        talkTo6 = -1;
     }
 }
 
-function moveRightBackground4() {
-    engineerX4 -= xBackground4;
-    schoolX4 -= xBackground4;
-    pabloSmallX4 -= xBackground4;
-    alertEngineerX4 -= xBackground4;
-    alertPabloX4 -= xBackground4;
+function moveRightBackground6() {
+    apoX6 -= xBackground6;
+    pabloSmallX6 -= xBackground6;
+    alertApoX6 -= xBackground6;
+    alertPabloX6 -= xBackground6;
 
-    engineer.style.left = `${engineerX4}rem`;
-    school.style.left = `${schoolX4}rem`;
-    pabloSmall.style.left = `${pabloSmallX4}rem`;
-    alertEngineer4.style.left = `${alertEngineerX4}rem`;
-    alertPablo4.style.left = `${alertPabloX4}rem`;
+    apo.style.left = `${apoX6}rem`;
+    pabloSmall.style.left = `${pabloSmallX6}rem`;
+    alertApo6.style.left = `${alertApoX6}rem`;
+    alertPablo6.style.left = `${alertPabloX6}rem`;
 }
 
-function moveLeftBackground4() {
-    engineerX4 += xBackground4;
-    schoolX4 += xBackground4;
-    pabloSmallX4 += xBackground4;
-    alertEngineerX4 += xBackground4;
-    alertPabloX4 += xBackground4;
+function moveLeftBackground6() {
+    apoX6 += xBackground6;
+    pabloSmallX6 += xBackground6;
+    alertApoX6 += xBackground6;
+    alertPabloX6 += xBackground6;
 
-    engineer.style.left = `${engineerX4}rem`;
-    school.style.left = `${schoolX4}rem`;
-    pabloSmall.style.left = `${pabloSmallX4}rem`;
-    alertEngineer4.style.left = `${alertEngineerX4}rem`;
-    alertPablo4.style.left = `${alertPabloX4}rem`;
+    apo.style.left = `${apoX6}rem`;
+    pabloSmall.style.left = `${pabloSmallX6}rem`;
+    alertApo6.style.left = `${alertApoX6}rem`;
+    alertPablo6.style.left = `${alertPabloX6}rem`;
 }
 
 // Función para setiar por defecto los valores de las variables
 // y agregar las variables correspondientes al background o escena general.
-function loadLevel4Variables() {
-    xPlayer4 = 1;
-    yPlayer4 = 3;
-    keyToUpPressed4 = false;
-    keyToDownPressed4 = false;
-    keyToLeftPressed4 = false;
-    keyToRightPressed4 = false;
+function loadLevel6Variables() {
+    xPlayer6 = 1;
+    yPlayer6 = 3;
+    keyToUpPressed6 = false;
+    keyToDownPressed6 = false;
+    keyToLeftPressed6 = false;
+    keyToRightPressed6 = false;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
-    // Primero se ocultan los dialog42.
-    dialog42.classList.add("dialog-hide");
-    dialog42.classList.add("dialog-behind-curtain");
-    dialog42.classList.add("dialog-top");
+    // Primero se ocultan los dialog62.
+    dialog62.classList.add("dialog-hide");
+    dialog62.classList.add("dialog-behind-curtain");
+    dialog62.classList.add("dialog-top");
 
     // Después si se agregan personajes, objetos, escenarios, etc., al levels.
-    levels.appendChild(engineer42);
-    levels.appendChild(pabloSmall42);
-    levels.appendChild(dialog42);
+    levels.appendChild(apo62);
+    levels.appendChild(pabloSmall62);
+    levels.appendChild(dialog62);
 
-    // Se llama la función que genera el nivel 4.
-    addFourthLevel();
+    // Se llama la función que genera el nivel 6.
+    addSixthLevel();
 }

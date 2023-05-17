@@ -1,30 +1,30 @@
 // Coordenadas del jugador para el nivel 3
-let xPlayer4 = 1;
-let yPlayer4 = 3;
+let xPlayer5 = 1;
+let yPlayer5 = 3;
 
 // Coordenadas para mover el escenario
-let xBackground4 = 1;
+let xBackground5 = 1;
 
 // Teclas presionadas
-let keyToUpPressed4 = false;
-let keyToDownPressed4 = false;
-let keyToLeftPressed4 = false;
-let keyToRightPressed4 = false;
+let keyToUpPressed5 = false;
+let keyToDownPressed5 = false;
+let keyToLeftPressed5 = false;
+let keyToRightPressed5 = false;
 
 // Para mostrar al personaje en la parte superior de la pantalla y mostrar sus diálogos.
 // El primer 3 inidica que es del nivel 3.
 // El segundo 2 inidica que es una copia del personaje original.
-let engineer42 = engineer.cloneNode(true);
-let pabloSmall42 = pabloSmall.cloneNode(true);
+let biomedic52 = biomedic.cloneNode(true);
+let pabloSmall52 = pabloSmall.cloneNode(true);
 
 // Para mostrar los diálogos en la parte superior de la pantalla para cada personaje.
 // El 2 indica que es una copia del diálogo original.
-let dialog42 = dialog.cloneNode(true);
+let dialog52 = dialog.cloneNode(true);
 
 // Diálogos para cada personaje.
 // El 3 al final indica el nivel 3.
 // Diálogos del doctor.
-let dialogsEngineer4 = [
+let dialogsBiomedic5 = [
     "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
     "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
     "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
@@ -49,11 +49,11 @@ let dialogsEngineer4 = [
 ];
 
 // Variable similar a dialogs43 para ir mostrando las preguntas.
-let questions4 = -1;
+let questions5 = -1;
 
 // Preguntas que hará el doctor.
 // El 3 indica el nivel 3.
-let questionsEngineer4 = [
+let questionsBiomedic5 = [
     "1. ¿Qué es un objeto?",
     "2. ¿Cómo se puede categorizar un objeto?",
     "3. ¿Qué son los mensajes entre objetos?",
@@ -66,7 +66,7 @@ let questionsEngineer4 = [
 
 // Respuestas para el doctor.
 // El 3 indica el nivel 3.
-let answersEngineer4 = [
+let answersBiomedic5 = [
     // Respuestas de la pregunta 1.
     {
         r: [
@@ -145,16 +145,16 @@ let answersEngineer4 = [
 // 0 -> Se permite mostrar las preguntas
 // 1 -> Hubo un error en las respuestas
 // 2 -> Ha terminado de responder todo correctamente.
-let allowQ4 = -1;
+let allowQ5 = -1;
 
 // Variable que permite pasar o no de nivel.
 // -1 -> No se ha determinado.
 // 0 -> Cuando ha contestado correctamente las preguntas y ha dado click en Sí.
 // 1 -> Cuando no ha contestado correctamente las preguntas o ha dado click en No.
-let allowPassLevel4 = -1;
+let allowPassLevel5 = -1;
 
 // Diálogos de pablo.
-let dialogsPablo4 = [
+let dialogsPablo5 = [
     "¿Y qué tal? ¿Cómo ha ido todo?",
     "La profesora me comentó que has estado contestado adecuadamente...",
     "Es hora de seguir aprendiendo...",
@@ -162,31 +162,31 @@ let dialogsPablo4 = [
 ];
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
-let allDialogs4 = [
-    dialogsEngineer4,
-    dialogsPablo4
+let allDialogs5 = [
+    dialogsBiomedic5,
+    dialogsPablo5
 ];
 
 // El 3 al final indica el nivel 3.
 // Variable para mover los diálogos.
 // Si esta variable toma un valor mayor a -1, no se le debe permitir al jugador moverse,
 // sino mover los diálogos.
-let dialogs4 = -1;
+let dialogs5 = -1;
 
 // Para ir moviendo los objetos/personajes/construcciones del escenario.
 // El 3, indica el nivel 3.
-let engineerX4 = 100;
-let schoolX4 = 120;
-let pabloSmallX4 = 240;
+let biomedicX5 = 100;
+let schoolX5 = 120;
+let pabloSmallX5 = 240;
 
 // Alertas que indican con la proximidad del jugador que es posible hablar con los personajes.
 // El 3, indica el nivel 3.
-let alertEngineer4 = alertAction.cloneNode(true);
-let alertPablo4 = alertAction.cloneNode(true);
+let alertBiomedic5 = alertAction.cloneNode(true);
+let alertPablo5 = alertAction.cloneNode(true);
 
 // Coordenadas de las alertas (se deben mover con los personajes).
-let alertEngineerX4 = 95;
-let alertPabloX4 = 235;
+let alertBiomedicX5 = 95;
+let alertPabloX5 = 235;
 
 // Variable que controla el desplegar el diálogo de algún personaje.
 // Esta variable se actualiza cuando el jugador está cerca de algún personaje
@@ -194,16 +194,16 @@ let alertPabloX4 = 235;
 // -1 -> No se puede hablar con nadie.
 // 0 -> Se puede hablar con el doctor.
 // 1 -> Se puede hablar con Pablo.
-let talkTo4 = -1;
+let talkTo5 = -1;
 
 // Variable para verificar que ya habló con un personaje.
 // -1 -> No ha hablado con nadie.
 // 0 -> Ya habló con el doctor.
 // 1 -> Ya habló con pablo.
-let alreadyTalkTo4 = -1;
+let alreadyTalkTo5 = -1;
 
 // Función para ocultar las respuestas.
-function hideAnswers4() {
+function hideAnswers5() {
     answer1.classList.add("answer-hide");
     answer2.classList.add("answer-hide");
     answer3.classList.add("answer-hide");
@@ -211,109 +211,109 @@ function hideAnswers4() {
 }
 
 // Función para ocultar los diálogos.
-async function hideDialogs4() {
-    dialog42.classList.add("dialog-hide");
-    dialog42.classList.add("dialog-behind-curtain");
-    dialogs4 = -1;
-    hideAnswers4();
+async function hideDialogs5() {
+    dialog52.classList.add("dialog-hide");
+    dialog52.classList.add("dialog-behind-curtain");
+    dialogs5 = -1;
+    hideAnswers5();
 }
 
 // Para mostrar los diálogos (se empieza mostrando el primero).
-async function showDialogs4() {
+async function showDialogs5() {
     // Se resetean algunos atributos del contenedor de diálogos.
-    dialog42.style.top = "";
-    dialog42.style.left = "";
-    dialog42.style.transform = "";
+    dialog52.style.top = "";
+    dialog52.style.left = "";
+    dialog52.style.transform = "";
 
     // Se muestra el diálogo.
-    dialog42.classList.remove("dialog-hide");
-    dialog42.classList.remove("dialog-behind-curtain");
+    dialog52.classList.remove("dialog-hide");
+    dialog52.classList.remove("dialog-behind-curtain");
 
     // Se coloca el diálogo en cuestión.
-    dialogs4 = 0;
-    dialog42.innerHTML = allDialogs4[talkTo4][0];
+    dialogs5 = 0;
+    dialog52.innerHTML = allDialogs5[talkTo5][0];
 }
 
 // Función para mostrar los diálogos del doctor.
-async function showEngineerDialogs4() {
-    engineer42.style.left = "0.5rem";
-    engineer42.style.top = "0.75rem";
-    engineer42.classList.remove("engineer-hide");
-    engineer42.classList.remove("engineer-behind-curtain");
-    alreadyTalkTo4 = 0;
-    showDialogs4();
+async function showBiomedicDialogs5() {
+    biomedic52.style.left = "0.5rem";
+    biomedic52.style.top = "0.75rem";
+    biomedic52.classList.remove("biomedic-hide");
+    biomedic52.classList.remove("biomedic-behind-curtain");
+    alreadyTalkTo5 = 0;
+    showDialogs5();
 }
 
 // Función para ocultar los diálogos del doctor.
-async function hideEngineerDialogs4() {
-    engineer42.classList.add("engineer-hide");
-    engineer42.classList.add("engineer-behind-curtain");
-    alreadyTalkTo4 = -1;
-    hideDialogs4();
+async function hideBiomedicDialogs5() {
+    biomedic52.classList.add("biomedic-hide");
+    biomedic52.classList.add("biomedic-behind-curtain");
+    alreadyTalkTo5 = -1;
+    hideDialogs5();
 }
 
 // Función para mostrar los diálogos de pablo small.
-async function showPabloSmallDialogs4() {
-    pabloSmall42.style.left = "0.5rem";
-    pabloSmall42.style.top = "0.75rem";
-    pabloSmall42.classList.remove("pablo-small-hide");
-    pabloSmall42.classList.remove("pablo-small-behind-curtain");
-    alreadyTalkTo4 = 1;
-    showDialogs4();
+async function showPabloSmallDialogs5() {
+    pabloSmall52.style.left = "0.5rem";
+    pabloSmall52.style.top = "0.75rem";
+    pabloSmall52.classList.remove("pablo-small-hide");
+    pabloSmall52.classList.remove("pablo-small-behind-curtain");
+    alreadyTalkTo5 = 1;
+    showDialogs5();
 }
 
 // Función para ocultar los diálogos de pablo small.
-async function hidePabloSmallDialogs4() {
-    pabloSmall42.classList.add("pablo-small-hide");
-    pabloSmall42.classList.add("pablo-small-behind-curtain");
-    alreadyTalkTo4 = -1;
-    hideDialogs4();
+async function hidePabloSmallDialogs5() {
+    pabloSmall52.classList.add("pablo-small-hide");
+    pabloSmall52.classList.add("pablo-small-behind-curtain");
+    alreadyTalkTo5 = -1;
+    hideDialogs5();
 }
 
 // Función para mostrar en la parte superior de la pantalla los personajes y sus diálogos.
 // Esta función se activa al presionar la tecla E.
-async function toggleCharacterDialogs4() {
+async function toggleCharacterDialogs5() {
     // Se ocultan los diálogos del biólogo.
-    if (alreadyTalkTo4 == 0) { hideEngineerDialogs4(); return; }
+    if (alreadyTalkTo5 == 0) { hideBiomedicDialogs5(); return; }
 
     // En caso de que presione E en la parte en la que ha querido pasar de nivel sin haber respondido a las preguntas del biólogo.
-    if (talkTo4 == 1 && allowPassLevel4 == 1) { allowPassLevel4 = -1; dialogs4 = -1; hidePabloSmallDialogs4(); return; }
+    if (talkTo5 == 1 && allowPassLevel5 == 1) { allowPassLevel5 = -1; dialogs5 = -1; hidePabloSmallDialogs5(); return; }
 
     // Se ocultan los diálogos de pablo pequeño.
-    if (alreadyTalkTo4 == 1) { hidePabloSmallDialogs4(); return; }
+    if (alreadyTalkTo5 == 1) { hidePabloSmallDialogs5(); return; }
 
     // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
     // Tener en cuenta que si ya ha logrado responder todas las preguntas de la profesorá,
     // no podrá volver a hablar con ella.
-    if (talkTo4 == 0 && allowQ4 != 2) { showEngineerDialogs4(); return; }
+    if (talkTo5 == 0 && allowQ5 != 2) { showBiomedicDialogs5(); return; }
 
     // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
-    if (talkTo4 == 1 && allowQ4 != 3) { showPabloSmallDialogs4(); return; }
+    if (talkTo5 == 1 && allowQ5 != 3) { showPabloSmallDialogs5(); return; }
 };
 
-async function finishLevel4(goNextLevel) {
+async function finishLevel5(goNextLevel) {
     if (!goNextLevel) {
-        dialog42.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
-        hideAnswers4();
-        allowPassLevel4 = 1;
-        dialogs4 = 0;
+        dialog52.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
+        hideAnswers5();
+        allowPassLevel5 = 1;
+        dialogs5 = 0;
         return;
     }
 
-    if (allowQ4 != 2) {
-        dialog42.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
-        hideAnswers4();
-        allowPassLevel4 = 1;
-        dialogs4 = 0;
+    if (allowQ5 != 2) {
+        dialog52.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
+        hideAnswers5();
+        allowPassLevel5 = 1;
+        dialogs5 = 0;
         return;
     }
 
-    if (goNextLevel && allowQ4 == 2) {
-        // Se le pasa el control del movimiento al nivel 5.
-        mVC = 4;
+    if (goNextLevel && allowQ5 == 2) {
+        // Se le pasa el control del movimiento al nivel 6.
+        mVC = 5;
 
-        // Se ocultan todos los recursos del nivel 4.
-        hideFourthLevel();
+        // Se ocultan todos los recursos del nivel 5.
+        hideFifthLevel();
 
         between.classList.remove('between-behind-curtain');
         between.classList.remove('between-hide');
@@ -322,27 +322,27 @@ async function finishLevel4(goNextLevel) {
         await sleep(1000);
         between.classList.add('between-behind-curtain');
 
-        // Se ejecuta el proceso para mostrar el nivel 5.
-        loadLevel5Variables();
+        // Se ejecuta el proceso para mostrar el nivel 6.
+        addSixthLevel();
     }
 }
 
-async function updateDialog4() {
+async function updateDialog5() {
     // Sí ya se admitió responder las preguntas, entonces
     // se debe esperar a que se respondan las preguntas.
-    if (allowQ4 == 0) return;
+    if (allowQ5 == 0) return;
 
     // Si se ha equivocado en la respuesta se ocultan los diálogos de la profesora y el personaje de la profesora.
-    if (allowQ4 == 1) { hideEngineerDialogs4(); allowQ4 = -1; return; }
-    if (allowQ4 == 2 && talkTo4 == 0) { hideEngineerDialogs4(); return; }
+    if (allowQ5 == 1) { hideBiomedicDialogs5(); allowQ5 = -1; return; }
+    if (allowQ5 == 2 && talkTo5 == 0) { hideBiomedicDialogs5(); return; }
 
     // Si ha intentado pasar de nivel sin haber respondido antes a las preguntas de la profesora
-    if (allowPassLevel4 == 1 && talkTo4 == 1) { hidePabloSmallDialogs4(); allowPassLevel4 = -1; return; }
+    if (allowPassLevel5 == 1 && talkTo5 == 1) { hidePabloSmallDialogs5(); allowPassLevel5 = -1; return; }
 
-    let theDialogs = allDialogs4[talkTo4];
-    dialog42.innerHTML = theDialogs[dialogs4];
-    if (dialogs4 != (theDialogs.length - 1)) { hideAnswers4(); return; }
-    else if (talkTo4 == 0) {
+    let theDialogs = allDialogs5[talkTo5];
+    dialog52.innerHTML = theDialogs[dialogs5];
+    if (dialogs5 != (theDialogs.length - 1)) { hideAnswers5(); return; }
+    else if (talkTo5 == 0) {
         // Se debe permitir al jugador si decide continuar con las preguntas de la profesora o no.
         // Se modifican los textos de las respuestas 1 y 2.
         answer1.innerHTML = "Sí.";
@@ -350,8 +350,8 @@ async function updateDialog4() {
         answer1.classList.remove("answer-hide");
         answer2.classList.remove("answer-hide");
 
-        answer1.onclick = () => showEngineerQuestions4(true);
-        answer2.onclick = () => showEngineerQuestions4(false);
+        answer1.onclick = () => showBiomedicQuestions5(true);
+        answer2.onclick = () => showBiomedicQuestions5(false);
 
         // Se ocultan las respuestas 3 y 4.
         answer3.classList.add("answer-hide");
@@ -371,8 +371,8 @@ async function updateDialog4() {
         answer1.classList.remove("answer-hide");
         answer2.classList.remove("answer-hide");
 
-        answer1.onclick = () => finishLevel4(true);
-        answer2.onclick = () => finishLevel4(false);
+        answer1.onclick = () => finishLevel5(true);
+        answer2.onclick = () => finishLevel5(false);
 
         // Se ocultan las respuestas 3 y 4.
         answer3.classList.add("answer-hide");
@@ -387,13 +387,13 @@ async function updateDialog4() {
     }
 }
 
-async function verifyAnswer4(theQuestion, theAnswer, theAnswerElement) {
+async function verifyAnswer5(theQuestion, theAnswer, theAnswerElement) {
     // Se toma la pregunta y se verifica que la respuesta correcta
     // de la pregunta, efectivamente corresponde con la respuesta otorgada.
     // En caso tal de que la respuesta otorgada no corresponda con la respuesta
     // correcta, se debe indicar al usuario que se ha equivocado y que debe revisar
     // el libro e intentar nuevamente
-    if (answersEngineer4[theQuestion]["c"] == theAnswer) {
+    if (answersBiomedic5[theQuestion]["c"] == theAnswer) {
         // Se hace una animación indicando que la respuesta fue correcta
         theAnswerElement.classList.add("right-answer");
         await sleep(750);
@@ -401,34 +401,34 @@ async function verifyAnswer4(theQuestion, theAnswer, theAnswerElement) {
         await sleep(750);
 
         // Se muestra la siguiente pregunta.
-        questions4++;
+        questions5++;
 
         // Se valida que al intentar mostrar la siguiente pregunta sea la última pregunta.
         // Si ha sido la última pregunta, debe mostrar un mensaje exitoso y actualizar 
         // una variable para que ya pueda continuar hacia el siguiente nivel.
-        if (questions4 == questionsEngineer4.length) {
+        if (questions5 == questionsBiomedic5.length) {
             // Se coloca el mensaje final indicando que ya puede pasar de nivel.
-            dialog42.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
+            dialog52.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
             // Se asigna el valor correspondiente a la variable.
-            allowQ4 = 2;
+            allowQ5 = 2;
             // Se ocultan las respuestas.
-            hideAnswers4();
+            hideAnswers5();
             return;
         }
 
-        dialog42.innerHTML = `<span>${questionsEngineer4[questions4]}</span>`;
+        dialog52.innerHTML = `<span>${questionsBiomedic5[questions5]}</span>`;
 
         // Se actualizan las respuestas.
-        answer1.innerHTML = answersEngineer4[questions4]["r"][0];
-        answer2.innerHTML = answersEngineer4[questions4]["r"][1];
-        answer3.innerHTML = answersEngineer4[questions4]["r"][2];
-        answer4.innerHTML = answersEngineer4[questions4]["r"][3];
+        answer1.innerHTML = answersBiomedic5[questions5]["r"][0];
+        answer2.innerHTML = answersBiomedic5[questions5]["r"][1];
+        answer3.innerHTML = answersBiomedic5[questions5]["r"][2];
+        answer4.innerHTML = answersBiomedic5[questions5]["r"][3];
 
         // Se actualizan los eventos onclick de las respuestas.
-        answer1.onclick = () => verifyAnswer4(questions4, 0, answer1);
-        answer2.onclick = () => verifyAnswer4(questions4, 1, answer2);
-        answer3.onclick = () => verifyAnswer4(questions4, 2, answer3);
-        answer4.onclick = () => verifyAnswer4(questions4, 3, answer4);
+        answer1.onclick = () => verifyAnswer5(questions5, 0, answer1);
+        answer2.onclick = () => verifyAnswer5(questions5, 1, answer2);
+        answer3.onclick = () => verifyAnswer5(questions5, 2, answer3);
+        answer4.onclick = () => verifyAnswer5(questions5, 3, answer4);
 
         // Se ha equivocado en la respuesta.
     } else {
@@ -442,42 +442,42 @@ async function verifyAnswer4(theQuestion, theAnswer, theAnswerElement) {
         answer3.classList.add("answer-hide");
         answer4.classList.add("answer-hide");
 
-        dialog42.innerHTML = "Lo siento, creo que te has equivocado...";
+        dialog52.innerHTML = "Lo siento, creo que te has equivocado...";
 
-        allowQ4 = 1;
+        allowQ5 = 1;
     }
 }
 
-async function showEngineerQuestions4(showThem) {
+async function showBiomedicQuestions5(showThem) {
     if (showThem) {
         // Se actualiza la variable.
-        questions4 = 0;
+        questions5 = 0;
 
         // Se debe ocultar el diálogo previo a las preguntas de si se está listo para contestar las preguntas.
-        allowQ4 = 0;
-        dialog42.innerHTML = `<span>${questionsEngineer4[0]}</span>`;
+        allowQ5 = 0;
+        dialog52.innerHTML = `<span>${questionsBiomedic5[0]}</span>`;
 
         // Se debe mostrar la primera pregunta junto con sus respuestas
-        answer1.innerHTML = answersEngineer4[0]["r"][0];
-        answer2.innerHTML = answersEngineer4[0]["r"][1];
+        answer1.innerHTML = answersBiomedic5[0]["r"][0];
+        answer2.innerHTML = answersBiomedic5[0]["r"][1];
 
         // Se muestran las respuestas 3 y 4
         answer3.classList.remove("answer-hide");
         answer4.classList.remove("answer-hide");
-        answer3.innerHTML = answersEngineer4[0]["r"][2];
-        answer4.innerHTML = answersEngineer4[0]["r"][3];
+        answer3.innerHTML = answersBiomedic5[0]["r"][2];
+        answer4.innerHTML = answersBiomedic5[0]["r"][3];
 
         // Se asigna el método click para cada una de las variables
-        answer1.onclick = () => verifyAnswer4(0, 0, answer1);
-        answer2.onclick = () => verifyAnswer4(0, 1, answer2);
-        answer3.onclick = () => verifyAnswer4(0, 2, answer3);
-        answer4.onclick = () => verifyAnswer4(0, 3, answer4);
+        answer1.onclick = () => verifyAnswer5(0, 0, answer1);
+        answer2.onclick = () => verifyAnswer5(0, 1, answer2);
+        answer3.onclick = () => verifyAnswer5(0, 2, answer3);
+        answer4.onclick = () => verifyAnswer5(0, 3, answer4);
     } else {
 
     }
 }
 
-async function controlFuncs4(keyDown) {
+async function controlFuncs5(keyDown) {
     if (((keyDown != "w" && keyDown != "W") &&
         (keyDown != "a" && keyDown != "A") &&
         (keyDown != "s" && keyDown != "S") &&
@@ -489,62 +489,62 @@ async function controlFuncs4(keyDown) {
 
     if (keyDown == "w" || keyDown == "W" || keyDown == "ArrowUp") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) return;
-        keyToUpPressed4 = true;
-        if (keyToRightPressed4) movePlayerRight4();
-        else if (keyToLeftPressed4) movePlayerLeft4();
-        movePlayerUp4();
+        if (dialogs5 > -1) return;
+        keyToUpPressed5 = true;
+        if (keyToRightPressed5) movePlayerRight5();
+        else if (keyToLeftPressed5) movePlayerLeft5();
+        movePlayerUp5();
     }
 
     if (keyDown == "s" || keyDown == "S" || keyDown == "ArrowDown") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) return;
-        keyToDownPressed4 = true;
-        movePlayerDown4();
+        if (dialogs5 > -1) return;
+        keyToDownPressed5 = true;
+        movePlayerDown5();
     }
 
     if (keyDown == "a" || keyDown == "A" || keyDown == "ArrowLeft") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) {
-            if (dialogs4 > 0) dialogs4--;
-            updateDialog4();
+        if (dialogs5 > -1) {
+            if (dialogs5 > 0) dialogs5--;
+            updateDialog5();
             return;
         } else {
-            keyToLeftPressed4 = true;
-            if (keyToUpPressed4) movePlayerUp4();
-            movePlayerLeft4();
+            keyToLeftPressed5 = true;
+            if (keyToUpPressed5) movePlayerUp5();
+            movePlayerLeft5();
         }
     }
 
     if (keyDown == "d" || keyDown == "D" || keyDown == "ArrowRight") {
         // Se verifica si se ha activado un diálogo.
-        if (dialogs4 > -1) {
-            let lengthDialogs = allDialogs4[talkTo4].length;
-            if (dialogs4 < (lengthDialogs - 1)) dialogs4++;
-            updateDialog4();
+        if (dialogs5 > -1) {
+            let lengthDialogs = allDialogs5[talkTo5].length;
+            if (dialogs5 < (lengthDialogs - 1)) dialogs5++;
+            updateDialog5();
             return;
         } else {
-            keyToRightPressed4 = true;
-            if (keyToUpPressed4) movePlayerUp4();
-            movePlayerRight4();
+            keyToRightPressed5 = true;
+            if (keyToUpPressed5) movePlayerUp5();
+            movePlayerRight5();
         }
     }
 
-    if ((keyDown == "e" || keyDown == "E") && talkTo4 != -1) toggleCharacterDialogs4();
+    if ((keyDown == "e" || keyDown == "E") && talkTo5 != -1) toggleCharacterDialogs5();
 }
 
 // Función para controlar las teclas presionadas.
-function controlPressedKeys4(keyUp) {
-    if (keyUp == "w" || keyUp == "W" || keyUp == "ArrowUp") keyToUpPressed4 = false;
-    if (keyUp == "s" || keyUp == "S" || keyUp == "ArrowDown") keyToDownPressed4 = false;
-    if (keyUp == "a" || keyUp == "A" || keyUp == "ArrowLeft") keyToLeftPressed4 = false;
-    if (keyUp == "d" || keyUp == "D" || keyUp == "ArrowRight") keyToRightPressed4 = false;
+function controlPressedKeys5(keyUp) {
+    if (keyUp == "w" || keyUp == "W" || keyUp == "ArrowUp") keyToUpPressed5 = false;
+    if (keyUp == "s" || keyUp == "S" || keyUp == "ArrowDown") keyToDownPressed5 = false;
+    if (keyUp == "a" || keyUp == "A" || keyUp == "ArrowLeft") keyToLeftPressed5 = false;
+    if (keyUp == "d" || keyUp == "D" || keyUp == "ArrowRight") keyToRightPressed5 = false;
 }
 
 // Función para agregar los primeros objetos y cuestiones del primer nivel.
-async function addFourthLevel() {
+async function addFifthLevel() {
     // Se muestra el letrero que indica el primer nivel
-    showLevel.innerHTML = 'NIVEL 4';
+    showLevel.innerHTML = 'NIVEL 5';
     showLevel.classList.remove('show-level-behind-curtain');
     showLevel.classList.remove('show-level-hide');
 
@@ -563,12 +563,12 @@ async function addFourthLevel() {
     floor.classList.remove("floor-hide");
 
     // Se agrega el personaje de la profesora
-    engineer.classList.remove("engineer-behind-curtain");
-    engineer.classList.remove("engineer-hide");
+    biomedic.classList.remove("biomedic-behind-curtain");
+    biomedic.classList.remove("biomedic-hide");
 
     // Se ubica el ingeniero en la parte inferior del mapa
-    engineer.style.bottom = "3rem";
-    engineer.style.left = "100rem";
+    biomedic.style.bottom = "3rem";
+    biomedic.style.left = "100rem";
 
     // Se agrega la construcción de la escuela
     school.classList.remove('school-behind-curtain');
@@ -587,17 +587,17 @@ async function addFourthLevel() {
     pabloSmall.style.left = "240rem";
 
     // Se posicionan las alertas y se agregan los textos.
-    alertEngineer4.innerHTML = "Pulsa <b>E</b> para hablar con el ingeniero";
-    alertEngineer4.style.left = "95rem";
-    alertEngineer4.style.bottom = "16rem";
+    alertBiomedic5.innerHTML = "Pulsa <b>E</b> para hablar con el biomédico";
+    alertBiomedic5.style.left = "95rem";
+    alertBiomedic5.style.bottom = "16rem";
 
-    alertPablo4.innerHTML = "Pulsa <b>E</b> para hablar con pablo";
-    alertPablo4.style.left = "235rem";
-    alertPablo4.style.bottom = "15rem";
+    alertPablo5.innerHTML = "Pulsa <b>E</b> para hablar con pablo";
+    alertPablo5.style.left = "235rem";
+    alertPablo5.style.bottom = "15rem";
 
     // Se agregan los diálogos al nivel
-    levels.appendChild(alertEngineer4);
-    levels.appendChild(alertPablo4);
+    levels.appendChild(alertBiomedic5);
+    levels.appendChild(alertPablo5);
 
     // Se oculta el letrero después de haber mostrado todos los recursos del nivel.
     showLevel.classList.add('show-level-hide');
@@ -605,30 +605,30 @@ async function addFourthLevel() {
     showLevel.classList.add('show-level-behind-curtain');
 }
 
-async function hideFourthLevel() {
+async function hideFifthLevel() {
     // Se oculta el personaje principal
     character.classList.add("character-behind-curtain");
     character.classList.add("character-hide");
 
     // Se oculta el personaje del ingeniero
-    engineer.classList.add("engineer-behind-curtain");
-    engineer.classList.add("engineer-hide");
+    biomedic.classList.add("biomedic-behind-curtain");
+    biomedic.classList.add("biomedic-hide");
 
     // Se oculta la construcción de la escuela
     school.classList.add("school-behind-curtain");
     school.classList.add("school-hide");
 
     // Se oculta al pablo pequeño de los diálogos
-    pabloSmall42.classList.add("pablo-small-hide");
-    pabloSmall42.classList.add("pablo-small-behind-curtain");
+    pabloSmall52.classList.add("pablo-small-hide");
+    pabloSmall52.classList.add("pablo-small-behind-curtain");
 
     // Se oculta al pablo que se encuentra en el nivel
     pabloSmall.classList.add("pablo-small-hide");
     pabloSmall.classList.add("pablo-small-behind-curtain");
 
     // Se ocultan los diálogos
-    dialog42.classList.add("dialog-hide");
-    dialog42.classList.add("dialog-behind-curtain");
+    dialog52.classList.add("dialog-hide");
+    dialog52.classList.add("dialog-behind-curtain");
 
     // Se ocultan las respuestas
     answer1.classList.add("answer-hide");
@@ -637,140 +637,140 @@ async function hideFourthLevel() {
     answer4.classList.add("answer-hide");
 
     // Se remueven los diálogos del nivel
-    levels.removeChild(alertEngineer4);
-    levels.removeChild(alertPablo4);
+    levels.removeChild(alertBiomedic5);
+    levels.removeChild(alertPablo5);
 }
 
-let alreadyGoUp4 = false;
-async function movePlayerUp4() {
-    if (!alreadyGoUp4) {
+let alreadyGoUp5 = false;
+async function movePlayerUp5() {
+    if (!alreadyGoUp5) {
         character.style.bottom = "15rem";
-        alreadyGoUp4 = true;
+        alreadyGoUp5 = true;
         await sleep(500);
         character.style.bottom = "3rem";
         await sleep(500);
-        alreadyGoUp4 = false;
+        alreadyGoUp5 = false;
     }
-    if (keyToRightPressed4) movePlayerRight4();
+    if (keyToRightPressed5) movePlayerRight5();
     // Verificar diálogos.
-    verifyDialog4();
+    verifyDialog5();
 }
 
-async function movePlayerDown4() {
-    if (yPlayer4 > 3) yPlayer4 -= 2;
-    character.style.bottom = `${yPlayer4}rem`;
+async function movePlayerDown5() {
+    if (yPlayer5 > 3) yPlayer5 -= 2;
+    character.style.bottom = `${yPlayer5}rem`;
     await sleep(500);
     // Verificar diálogos.
-    verifyDialog4();
+    verifyDialog5();
 }
 
-async function movePlayerLeft4() {
-    if (xPlayer4 > 1) {
-        xPlayer4--;
-        character.style.left = `${xPlayer4}rem`;
+async function movePlayerLeft5() {
+    if (xPlayer5 > 1) {
+        xPlayer5--;
+        character.style.left = `${xPlayer5}rem`;
 
         // Verificar diálogos.
-        verifyDialog4();
-    } else if (xBackground4 >= 1) {
-        xBackground4 -= 0.005;
-        moveLeftBackground4();
+        verifyDialog5();
+    } else if (xBackground5 >= 1) {
+        xBackground5 -= 0.005;
+        moveLeftBackground5();
     }
 }
 
-async function movePlayerRight4() {
-    if (xPlayer4 < 74) {
-        xPlayer4++;
-        character.style.left = `${xPlayer4}rem`;
+async function movePlayerRight5() {
+    if (xPlayer5 < 74) {
+        xPlayer5++;
+        character.style.left = `${xPlayer5}rem`;
         // Verificar diálogos.
-        verifyDialog4();
+        verifyDialog5();
     }
-    else if (xBackground4 < 1.65) {
-        xBackground4 += 0.005;
-        moveRightBackground4();
+    else if (xBackground5 < 1.65) {
+        xBackground5 += 0.005;
+        moveRightBackground5();
     }
 }
 
 // Función para verificar si se puede mostrar el diálogo.
-function verifyDialog4() {
+function verifyDialog5() {
     // Se verifica para el ingeniero.
-    let distanceTeacher = engineerX4 - xPlayer4;
+    let distanceTeacher = biomedicX5 - xPlayer5;
 
     // Hay que tener en cuenta que si ya ha pasado el nivel, no se mostrará nuevamente el mensaje
     // para hablar con el ingeniero.
-    if (distanceTeacher > -16 && distanceTeacher < 13 && allowQ4 != 2) {
-        alertEngineer4.classList.remove("alert-action-hide");
-        alertEngineer4.classList.remove("alert-action-behind-curtain");
-        talkTo4 = 0;
+    if (distanceTeacher > -16 && distanceTeacher < 13 && allowQ5 != 2) {
+        alertBiomedic5.classList.remove("alert-action-hide");
+        alertBiomedic5.classList.remove("alert-action-behind-curtain");
+        talkTo5 = 0;
         return;
     } else {
-        alertEngineer4.classList.add("alert-action-hide");
-        alertEngineer4.classList.add("alert-action-behind-curtain");
-        talkTo4 = -1;
+        alertBiomedic5.classList.add("alert-action-hide");
+        alertBiomedic5.classList.add("alert-action-behind-curtain");
+        talkTo5 = -1;
     }
 
     // Se verifica para pablo pequeño.
-    let distancePablo = pabloSmallX4 - xPlayer4;
+    let distancePablo = pabloSmallX5 - xPlayer5;
     if (distancePablo > -16 && distancePablo < 13) {
-        alertPablo4.classList.remove("alert-action-hide");
-        alertPablo4.classList.remove("alert-action-behind-curtain");
-        talkTo4 = 1;
+        alertPablo5.classList.remove("alert-action-hide");
+        alertPablo5.classList.remove("alert-action-behind-curtain");
+        talkTo5 = 1;
         return;
     } else {
-        alertPablo4.classList.add("alert-action-hide");
-        alertPablo4.classList.add("alert-action-behind-curtain");
-        talkTo4 = -1;
+        alertPablo5.classList.add("alert-action-hide");
+        alertPablo5.classList.add("alert-action-behind-curtain");
+        talkTo5 = -1;
     }
 }
 
-function moveRightBackground4() {
-    engineerX4 -= xBackground4;
-    schoolX4 -= xBackground4;
-    pabloSmallX4 -= xBackground4;
-    alertEngineerX4 -= xBackground4;
-    alertPabloX4 -= xBackground4;
+function moveRightBackground5() {
+    biomedicX5 -= xBackground5;
+    schoolX5 -= xBackground5;
+    pabloSmallX5 -= xBackground5;
+    alertBiomedicX5 -= xBackground5;
+    alertPabloX5 -= xBackground5;
 
-    engineer.style.left = `${engineerX4}rem`;
-    school.style.left = `${schoolX4}rem`;
-    pabloSmall.style.left = `${pabloSmallX4}rem`;
-    alertEngineer4.style.left = `${alertEngineerX4}rem`;
-    alertPablo4.style.left = `${alertPabloX4}rem`;
+    biomedic.style.left = `${biomedicX5}rem`;
+    school.style.left = `${schoolX5}rem`;
+    pabloSmall.style.left = `${pabloSmallX5}rem`;
+    alertBiomedic5.style.left = `${alertBiomedicX5}rem`;
+    alertPablo5.style.left = `${alertPabloX5}rem`;
 }
 
-function moveLeftBackground4() {
-    engineerX4 += xBackground4;
-    schoolX4 += xBackground4;
-    pabloSmallX4 += xBackground4;
-    alertEngineerX4 += xBackground4;
-    alertPabloX4 += xBackground4;
+function moveLeftBackground5() {
+    biomedicX5 += xBackground5;
+    schoolX5 += xBackground5;
+    pabloSmallX5 += xBackground5;
+    alertBiomedicX5 += xBackground5;
+    alertPabloX5 += xBackground5;
 
-    engineer.style.left = `${engineerX4}rem`;
-    school.style.left = `${schoolX4}rem`;
-    pabloSmall.style.left = `${pabloSmallX4}rem`;
-    alertEngineer4.style.left = `${alertEngineerX4}rem`;
-    alertPablo4.style.left = `${alertPabloX4}rem`;
+    biomedic.style.left = `${biomedicX5}rem`;
+    school.style.left = `${schoolX5}rem`;
+    pabloSmall.style.left = `${pabloSmallX5}rem`;
+    alertBiomedic5.style.left = `${alertBiomedicX5}rem`;
+    alertPablo5.style.left = `${alertPabloX5}rem`;
 }
 
 // Función para setiar por defecto los valores de las variables
 // y agregar las variables correspondientes al background o escena general.
-function loadLevel4Variables() {
-    xPlayer4 = 1;
-    yPlayer4 = 3;
-    keyToUpPressed4 = false;
-    keyToDownPressed4 = false;
-    keyToLeftPressed4 = false;
-    keyToRightPressed4 = false;
+function loadLevel5Variables() {
+    xPlayer5 = 1;
+    yPlayer5 = 3;
+    keyToUpPressed5 = false;
+    keyToDownPressed5 = false;
+    keyToLeftPressed5 = false;
+    keyToRightPressed5 = false;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
-    // Primero se ocultan los dialog42.
-    dialog42.classList.add("dialog-hide");
-    dialog42.classList.add("dialog-behind-curtain");
-    dialog42.classList.add("dialog-top");
+    // Primero se ocultan los dialog52.
+    dialog52.classList.add("dialog-hide");
+    dialog52.classList.add("dialog-behind-curtain");
+    dialog52.classList.add("dialog-top");
 
     // Después si se agregan personajes, objetos, escenarios, etc., al levels.
-    levels.appendChild(engineer42);
-    levels.appendChild(pabloSmall42);
-    levels.appendChild(dialog42);
+    levels.appendChild(biomedic52);
+    levels.appendChild(pabloSmall52);
+    levels.appendChild(dialog52);
 
     // Se llama la función que genera el nivel 4.
-    addFourthLevel();
+    addFifthLevel();
 }

@@ -87,6 +87,18 @@ let doctor = document.getElementById("doctor");
 // Contenedor del hospital
 let hospital = document.getElementById("hospital");
 
+// Contenedor del ingeniero
+let engineer = document.getElementById("engineer");
+
+// Contenedor del biomedico
+let biomedic = document.getElementById("biomedic");
+
+// Cotenedor de apo
+let apo = document.getElementById("apo");
+
+// Cotenedor de apo2
+let apo2 = document.getElementById("apo2");
+
 // Alerta para indicarle al jugador qué hacer
 let alertAction = document.getElementById("alert-action");
 

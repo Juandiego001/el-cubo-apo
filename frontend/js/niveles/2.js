@@ -187,7 +187,7 @@ let alertBiologist2 = alertAction.cloneNode(true);
 let alertPablo2 = alertAction.cloneNode(true);
 
 // Coordenadas de las alertas (se deben mover con los personajes).
-let alertbiologistX2 = 95;
+let alertBiologistX2 = 95;
 let alertPabloX2 = 235;
 
 // Variable que controla el desplegar el diálogo de algún personaje.
@@ -287,7 +287,7 @@ async function toggleCharacterDialogs2() {
     // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
     // Tener en cuenta que si ya ha logrado responder todas las preguntas de la profesorá,
     // no podrá volver a hablar con ella.
-    if (talkTo2 == 0 && allowQ2 != 2) { showBiologistDialogs2(); return; }
+    if (talkTo2 == 0 && allowQ2 != 2) { console.log("LLEGA AQUI"); showBiologistDialogs2(); return; }
 
     // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
     if (talkTo2 == 1 && allowQ2 != 3) { showPabloSmallDialogs2(); return; }
@@ -325,7 +325,7 @@ async function finishLevel2(goNextLevel) {
         between.classList.add('between-behind-curtain');
 
         // Se ejecuta el proceso para mostrar el nivel 3.
-        addThirdLevel();
+        loadLevel3Variables();
     }
 }
 
@@ -629,24 +629,24 @@ async function hideSecondLevel() {
     character.classList.add("character-hide");
 
     // Se oculta el personaje de la profesora
-    teacher.classList.add("teacher-behind-curtain");
-    teacher.classList.add("teacher-hide");
+    biologist.classList.add("biologist-behind-curtain");
+    biologist.classList.add("biologist-hide");
 
     // Se oculta la construcción de la escuela
     school.classList.add("school-behind-curtain");
     school.classList.add("school-hide");
 
     // Se oculta al pablo pequeño de los diálogos
-    pabloSmall21.classList.add("pablo-small-hide");
-    pabloSmall21.classList.add("pablo-small-behind-curtain");
+    pabloSmall22.classList.add("pablo-small-hide");
+    pabloSmall22.classList.add("pablo-small-behind-curtain");
 
     // Se oculta al pablo que se encuentra en el nivel
     pabloSmall.classList.add("pablo-small-hide");
     pabloSmall.classList.add("pablo-small-behind-curtain");
 
     // Se ocultan los diálogos
-    dialog21.classList.add("dialog-hide");
-    dialog21.classList.add("dialog-behind-curtain");
+    dialog22.classList.add("dialog-hide");
+    dialog22.classList.add("dialog-behind-curtain");
 
     // Se ocultan las respuestas
     answer1.classList.add("answer-hide");
@@ -655,8 +655,8 @@ async function hideSecondLevel() {
     answer4.classList.add("answer-hide");
 
     // Se remueven los diálogos del nivel
-    levels.removeChild(alertTeacher1);
-    levels.removeChild(alertPablo1);
+    levels.removeChild(alertBiologist2);
+    levels.removeChild(alertPablo2);
 }
 
 let alreadyGoUp2 = false;
@@ -746,7 +746,7 @@ function moveRightBackground2() {
     smallTreeX2 -= xBackground2;
     midTreeX2 -= xBackground2;
     pabloSmallX2 -= xBackground2;
-    alertbiologistX2 -= xBackground2;
+    alertBiologistX2 -= xBackground2;
     alertPabloX2 -= xBackground2;
 
     biologist.style.left = `${biologistX2}rem`;
@@ -754,7 +754,7 @@ function moveRightBackground2() {
     smallTree.style.left = `${smallTreeX2}rem`;
     midTree.style.left = `${midTreeX2}rem`;
     pabloSmall.style.left = `${pabloSmallX2}rem`;
-    alertBiologist2.style.left = `${alertbiologistX2}rem`;
+    alertBiologist2.style.left = `${alertBiologistX2}rem`;
     alertPablo2.style.left = `${alertPabloX2}rem`;
 }
 
@@ -764,7 +764,7 @@ function moveLeftBackground2() {
     smallTreeX2 += xBackground2;
     midTreeX2 += xBackground2;
     pabloSmallX2 += xBackground2;
-    alertbiologistX2 += xBackground2;
+    alertBiologistX2 += xBackground2;
     alertPabloX2 += xBackground2;
 
     biologist.style.left = `${biologistX2}rem`;
@@ -772,7 +772,7 @@ function moveLeftBackground2() {
     smallTree.style.left = `${smallTreeX2}rem`;
     midTree.style.left = `${midTreeX2}rem`;
     pabloSmall.style.left = `${pabloSmallX2}rem`;
-    alertBiologist2.style.left = `${alertbiologistX2}rem`;
+    alertBiologist2.style.left = `${alertBiologistX2}rem`;
     alertPablo2.style.left = `${alertPabloX2}rem`;
 }
 
