@@ -1,0 +1,184 @@
+/* Para el doctor */
+.doctor {
+    position: absolute;
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .8);
+    z-index: 4;
+    border-radius: 1rem;
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.doctor .hat {
+    position: absolute;
+    background-color: gray;
+    width: 100%;
+    height: 2rem;
+    top: -5%;
+}
+
+.doctor .eyes {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.doctor .eye {
+    background-color: #212529;
+    width: 0.5rem;
+    height: 1rem;
+    margin-top: 0.5rem;
+}
+
+.doctor .t-shirt {
+    position: absolute;
+    width: 100%;
+    height: 40%;
+    bottom: 0;
+    border-top: 0.15rem solid gray;
+}
+
+.doctor .t-shirt .button-1 {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: gray;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 20%;
+}
+
+.doctor .t-shirt .button-2 {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: gray;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 40%;
+}
+
+.doctor .t-shirt .button-3 {
+    position: absolute;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: gray;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 60%;
+}
+
+.doctor-hide {
+    opacity: 0;
+}
+
+.doctor-behind-curtain {
+    z-index: -1;
+}
+
+/* Para el hospital */
+/* Contenedor de escuela */
+.hospital {
+    width: 40rem;
+    height: 20rem;
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hospital .building1 {
+    width: 30%;
+    height: 70%;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.hospital .building1 .window {
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(33, 37, 41, .5);
+    margin: auto;
+}
+
+.hospital .building0 {
+    width: 40%;
+    height: 100%;
+    z-index: 4;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.hospital .building0 .door {
+    height: 6rem;
+    width: 4rem;
+    box-shadow: 0 0 1rem rgba(33, 37, 41, .5);
+}
+
+.hospital .building2 {
+    width: 30%;
+    height: 70%;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
+    display: grid;
+    grid-template-rows: 50% 50%;
+}
+
+.hospital .building2 .window {
+    width: 3rem;
+    height: 3rem;
+    box-shadow: 0 0.75rem 1.5rem rgba(33, 37, 41, .5);
+    margin: auto;
+}
+
+.hospital .hospital-cross {
+    position: absolute;
+    z-index: 5;
+    width: 5rem;
+    height: 5rem;
+    transform: translate(-50%, -50%);
+    top: 20%;
+    left: 50%;
+    text-align: center;
+}
+
+.hospital-cross .cross-1 {
+    position: absolute;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 0 1rem rgba(33, 37, 41, .5);
+    width: 1rem;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hospital-cross .cross-2 {
+    position: absolute;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 0 1rem rgba(33, 37, 41, .5);
+    width: 100%;
+    height: 1rem;
+    top: 40%;
+    transform: translateY(-50%);
+}
+
+.hospital-hide {
+    opacity: 0;
+}
+
+.hospital-behind-curtain {
+    z-index: -1;
+}   

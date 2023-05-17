@@ -2,4 +2,5 @@
 // Son todas aquellas funciones que pueden detectar el teclado dependiendo de lo que indique el mvC.
 let arrayMVC = [
     [controlFuncs1, controlPressedKeys],
-    [controlFuncs2, controlPressedKeys2]];
+    [controlFuncs2, controlPressedKeys2],
+    [controlFuncs3, controlPressedKeys3]];

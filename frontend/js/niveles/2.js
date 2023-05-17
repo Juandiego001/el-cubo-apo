@@ -1,4 +1,4 @@
-// Coordenadas del jugador para el nivel 1
+// Coordenadas del jugador para el nivel 2
 let xPlayer2 = 1;
 let yPlayer2 = 3;
 
@@ -22,9 +22,9 @@ let pabloSmall22 = pabloSmall.cloneNode(true);
 let dialog22 = dialog.cloneNode(true);
 
 // Diálogos para cada personaje.
-// El 1 al final indica el nivel 1.
-// Diálogos de la profesora.
-let dialogsTeacher2 = [
+// El 2 al final indica el nivel 2.
+// Diálogos del biólogo.
+let dialogsBiologist2 = [
     "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
     "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
     "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
@@ -51,9 +51,9 @@ let dialogsTeacher2 = [
 // Variable similar a dialogs21 para ir mostrando las preguntas.
 let questions2 = -1;
 
-// Preguntas que hará la profesora.
-// El 1 indica el nivel 1.
-let questionsTeacher2 = [
+// Preguntas que hará el biólogo.
+// El 2 indica el nivel 2.
+let questionsBiologist2 = [
     "1. ¿Qué es un objeto?",
     "2. ¿Cómo se puede categorizar un objeto?",
     "3. ¿Qué son los mensajes entre objetos?",
@@ -64,9 +64,9 @@ let questionsTeacher2 = [
 ];
 
 
-// Respuestas para la profesora.
-// El 1 indica el nivel 1.
-let answersTeacher2 = [
+// Respuestas para el biólogo.
+// El 2 indica el nivel 2.
+let answersBiologist2 = [
     // Respuestas de la pregunta 1.
     {
         r: [
@@ -139,13 +139,13 @@ let answersTeacher2 = [
     }
 ];
 
-// Variable para permitir mostrar las preguntas de la profesora
-// TQ: Teacher Questions.
+// Variable para permitir mostrar las preguntas del biólogo
+// Q: Questions.
 // -1 -> No se permite mostrar las preguntas
 // 0 -> Se permite mostrar las preguntas
 // 1 -> Hubo un error en las respuestas
 // 2 -> Ha terminado de responder todo correctamente.
-let allowTQ2 = -1;
+let allowQ2 = -1;
 
 // Variable que permite pasar o no de nivel.
 // -1 -> No se ha determinado.
@@ -163,7 +163,7 @@ let dialogsPablo2 = [
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
 let allDialogs2 = [
-    dialogsTeacher2,
+    dialogsBiologist2,
     dialogsPablo2
 ];
 
@@ -237,19 +237,19 @@ async function showDialogs2() {
 }
 
 // Función para mostrar los diálogos de la profesora.
-async function showTeacherDialogs2() {
+async function showBiologistDialogs2() {
     biologist22.style.left = "0.5rem";
     biologist22.style.top = "0.75rem";
-    biologist22.classList.remove("teacher-hide");
-    biologist22.classList.remove("teacher-behind-curtain");
+    biologist22.classList.remove("biologist-hide");
+    biologist22.classList.remove("biologist-behind-curtain");
     alreadyTalkTo2 = 0;
     showDialogs2();
 }
 
 // Función para ocultar los diálogos de la profesora.
-async function hideTeacherDialogs2() {
-    biologist22.classList.add("teacher-hide");
-    biologist22.classList.add("teacher-behind-curtain");
+async function hideBiologistDialogs2() {
+    biologist22.classList.add("biologist-hide");
+    biologist22.classList.add("biologist-behind-curtain");
     alreadyTalkTo2 = -1;
     hideDialogs2();
 }
@@ -275,10 +275,10 @@ async function hidePabloSmallDialogs2() {
 // Función para mostrar en la parte superior de la pantalla los personajes y sus diálogos.
 // Esta función se activa al presionar la tecla E.
 async function toggleCharacterDialogs2() {
-    // Se ocultan los diálogos de la profesora.
-    if (alreadyTalkTo2 == 0) { hideTeacherDialogs2(); return; }
+    // Se ocultan los diálogos del biólogo.
+    if (alreadyTalkTo2 == 0) { hideBiologistDialogs2(); return; }
 
-    // En caso de que presione E en la parte en la que ha querido pasar de nivel sin haber respondido a las preguntas de la profesora.
+    // En caso de que presione E en la parte en la que ha querido pasar de nivel sin haber respondido a las preguntas del biólogo.
     if (talkTo2 == 1 && allowPassLevel2 == 1) { allowPassLevel2 = -1; dialogs2 = -1; hidePabloSmallDialogs2(); return; }
 
     // Se ocultan los diálogos de pablo pequeño.
@@ -287,13 +287,13 @@ async function toggleCharacterDialogs2() {
     // Se coloca a la profesora en la parte superior del mapa para presentar los diálogos.
     // Tener en cuenta que si ya ha logrado responder todas las preguntas de la profesorá,
     // no podrá volver a hablar con ella.
-    if (talkTo2 == 0 && allowTQ2 != 2) { showTeacherDialogs2(); return; }
+    if (talkTo2 == 0 && allowQ2 != 2) { showBiologistDialogs2(); return; }
 
     // Se coloca a pablo pequeño en la parte superior del mapa para presentar los diálogos.
-    if (talkTo2 == 1 && allowTQ2 != 3) { showPabloSmallDialogs2(); return; }
+    if (talkTo2 == 1 && allowQ2 != 3) { showPabloSmallDialogs2(); return; }
 };
 
-function finishLevel2(goNextLevel) {
+async function finishLevel2(goNextLevel) {
     if (!goNextLevel) {
         dialog22.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
         hideAnswers2();
@@ -302,7 +302,7 @@ function finishLevel2(goNextLevel) {
         return;
     }
 
-    if (allowTQ2 != 2) {
+    if (allowQ2 != 2) {
         dialog22.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
         hideAnswers2();
         allowPassLevel2 = 1;
@@ -310,17 +310,33 @@ function finishLevel2(goNextLevel) {
         return;
     }
 
-    if (goNextLevel && allowTQ2 == 2) alert("Está intentando ir al siguiente nivel");
+    if (goNextLevel && allowQ2 == 2) {
+        // Se le pasa el control del movimiento al nivel 3.
+        mVC = 2;
+
+        // Se ocultan todos los recursos del nivel 2.
+        hideSecondLevel();
+
+        between.classList.remove('between-behind-curtain');
+        between.classList.remove('between-hide');
+        await sleep(5000);
+        between.classList.add('between-hide');
+        await sleep(1000);
+        between.classList.add('between-behind-curtain');
+
+        // Se ejecuta el proceso para mostrar el nivel 3.
+        addThirdLevel();
+    }
 }
 
 async function updateDialog2() {
     // Sí ya se admitió responder las preguntas, entonces
     // se debe esperar a que se respondan las preguntas.
-    if (allowTQ2 == 0) return;
+    if (allowQ2 == 0) return;
 
     // Si se ha equivocado en la respuesta se ocultan los diálogos de la profesora y el personaje de la profesora.
-    if (allowTQ2 == 1) { hideTeacherDialogs2(); allowTQ2 = -1; return; }
-    if (allowTQ2 == 2 && talkTo2 == 0) { hideTeacherDialogs2(); return; }
+    if (allowQ2 == 1) { hideBiologistDialogs2(); allowQ2 = -1; return; }
+    if (allowQ2 == 2 && talkTo2 == 0) { hideBiologistDialogs2(); return; }
 
     // Si ha intentado pasar de nivel sin haber respondido antes a las preguntas de la profesora
     if (allowPassLevel2 == 1 && talkTo2 == 1) { hidePabloSmallDialogs2(); allowPassLevel2 = -1; return; }
@@ -379,7 +395,7 @@ async function verifyAnswer2(theQuestion, theAnswer, theAnswerElement) {
     // En caso tal de que la respuesta otorgada no corresponda con la respuesta
     // correcta, se debe indicar al usuario que se ha equivocado y que debe revisar
     // el libro e intentar nuevamente
-    if (answersTeacher2[theQuestion]["c"] == theAnswer) {
+    if (answersBiologist2[theQuestion]["c"] == theAnswer) {
         // Se hace una animación indicando que la respuesta fue correcta
         theAnswerElement.classList.add("right-answer");
         await sleep(750);
@@ -392,23 +408,23 @@ async function verifyAnswer2(theQuestion, theAnswer, theAnswerElement) {
         // Se valida que al intentar mostrar la siguiente pregunta sea la última pregunta.
         // Si ha sido la última pregunta, debe mostrar un mensaje exitoso y actualizar 
         // una variable para que ya pueda continuar hacia el siguiente nivel.
-        if (questions2 == questionsTeacher2.length) {
+        if (questions2 == questionsBiologist2.length) {
             // Se coloca el mensaje final indicando que ya puede pasar de nivel.
             dialog22.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
             // Se asigna el valor correspondiente a la variable.
-            allowTQ2 = 2;
+            allowQ2 = 2;
             // Se ocultan las respuestas.
             hideAnswers2();
             return;
         }
 
-        dialog22.innerHTML = `<span>${questionsTeacher2[questions2]}</span>`;
+        dialog22.innerHTML = `<span>${questionsBiologist2[questions2]}</span>`;
 
         // Se actualizan las respuestas.
-        answer1.innerHTML = answersTeacher2[questions2]["r"][0];
-        answer2.innerHTML = answersTeacher2[questions2]["r"][1];
-        answer3.innerHTML = answersTeacher2[questions2]["r"][2];
-        answer4.innerHTML = answersTeacher2[questions2]["r"][3];
+        answer1.innerHTML = answersBiologist2[questions2]["r"][0];
+        answer2.innerHTML = answersBiologist2[questions2]["r"][1];
+        answer3.innerHTML = answersBiologist2[questions2]["r"][2];
+        answer4.innerHTML = answersBiologist2[questions2]["r"][3];
 
         // Se actualizan los eventos onclick de las respuestas.
         answer1.onclick = () => verifyAnswer2(questions2, 0, answer1);
@@ -430,7 +446,7 @@ async function verifyAnswer2(theQuestion, theAnswer, theAnswerElement) {
 
         dialog22.innerHTML = "Lo siento, creo que te has equivocado...";
 
-        allowTQ2 = 1;
+        allowQ2 = 1;
     }
 }
 
@@ -440,18 +456,18 @@ async function showTeacherQuestions2(showThem) {
         questions2 = 0;
 
         // Se debe ocultar el diálogo previo a las preguntas de si se está listo para contestar las preguntas.
-        allowTQ2 = 0;
-        dialog22.innerHTML = `<span>${questionsTeacher2[0]}</span>`;
+        allowQ2 = 0;
+        dialog22.innerHTML = `<span>${questionsBiologist2[0]}</span>`;
 
         // Se debe mostrar la primera pregunta junto con sus respuestas
-        answer1.innerHTML = answersTeacher2[0]["r"][0];
-        answer2.innerHTML = answersTeacher2[0]["r"][1];
+        answer1.innerHTML = answersBiologist2[0]["r"][0];
+        answer2.innerHTML = answersBiologist2[0]["r"][1];
 
         // Se muestran las respuestas 3 y 4
         answer3.classList.remove("answer-hide");
         answer4.classList.remove("answer-hide");
-        answer3.innerHTML = answersTeacher2[0]["r"][2];
-        answer4.innerHTML = answersTeacher2[0]["r"][3];
+        answer3.innerHTML = answersBiologist2[0]["r"][2];
+        answer4.innerHTML = answersBiologist2[0]["r"][3];
 
         // Se asigna el método click para cada una de las variables
         answer1.onclick = () => verifyAnswer2(0, 0, answer1);
@@ -607,6 +623,42 @@ async function addSecondLevel() {
     showLevel.classList.add('show-level-behind-curtain');
 }
 
+async function hideSecondLevel() {
+    // Se oculta el personaje principal
+    character.classList.add("character-behind-curtain");
+    character.classList.add("character-hide");
+
+    // Se oculta el personaje de la profesora
+    teacher.classList.add("teacher-behind-curtain");
+    teacher.classList.add("teacher-hide");
+
+    // Se oculta la construcción de la escuela
+    school.classList.add("school-behind-curtain");
+    school.classList.add("school-hide");
+
+    // Se oculta al pablo pequeño de los diálogos
+    pabloSmall21.classList.add("pablo-small-hide");
+    pabloSmall21.classList.add("pablo-small-behind-curtain");
+
+    // Se oculta al pablo que se encuentra en el nivel
+    pabloSmall.classList.add("pablo-small-hide");
+    pabloSmall.classList.add("pablo-small-behind-curtain");
+
+    // Se ocultan los diálogos
+    dialog21.classList.add("dialog-hide");
+    dialog21.classList.add("dialog-behind-curtain");
+
+    // Se ocultan las respuestas
+    answer1.classList.add("answer-hide");
+    answer2.classList.add("answer-hide");
+    answer3.classList.add("answer-hide");
+    answer4.classList.add("answer-hide");
+
+    // Se remueven los diálogos del nivel
+    levels.removeChild(alertTeacher1);
+    levels.removeChild(alertPablo1);
+}
+
 let alreadyGoUp2 = false;
 async function movePlayerUp2() {
     if (!alreadyGoUp2) {
@@ -625,7 +677,6 @@ async function movePlayerUp2() {
 async function movePlayerDown2() {
     if (yPlayer2 > 3) yPlayer2 -= 2;
     character.style.bottom = `${yPlayer2}rem`;
-    alreadyGoDown = true;
     await sleep(500);
     // Verificar diálogos.
     verifyDialog2();
@@ -664,7 +715,7 @@ function verifyDialog2() {
 
     // Hay que tener en cuenta que si ya ha pasado el nivel, no se mostrará nuevamente el mensaje
     // para hablar con la profesora.
-    if (distanceTeacher > -16 && distanceTeacher < 13 && allowTQ2 != 2) {
+    if (distanceTeacher > -16 && distanceTeacher < 13 && allowQ2 != 2) {
         alertBiologist2.classList.remove("alert-action-hide");
         alertBiologist2.classList.remove("alert-action-behind-curtain");
         talkTo2 = 0;
@@ -742,9 +793,10 @@ function loadLevel2Variables() {
     dialog22.classList.add("dialog-top");
 
     // Después si se agregan personajes, objetos, escenarios, etc., al levels.
-    levels.appendChild(biologist222);
+    levels.appendChild(biologist22);
     levels.appendChild(pabloSmall22);
     levels.appendChild(dialog22);
-}
 
-// loadLevel2Variables();
+    // Se llama la función que genera el nivel 2.
+    addSecondLevel();
+}

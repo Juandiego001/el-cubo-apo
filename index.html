@@ -24,6 +24,10 @@
      -->
     <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/1.css">
     <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/2.css">
+    <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/3.css">
+    <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/4.css">
+    <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/5.css">
+    <link id="level-style" rel="stylesheet" href="./frontend/styles/niveles/6.css">
 
     <title>EL CUBO APO</title>
 </head>
@@ -41,7 +45,7 @@
         Contenedor inicial que presentará las opciones
         para iniciar sesión o registrarse.
     -->
-    <div id="signUpIn-container" class="signUpIn-container signUpIn-container-hide">
+    <div id="signUpIn-container" class="signUpIn-container signUpIn-container-hide signUpIn-container-behind-curtain">
         <form>
             <div>
                 <h2>EL CUBO APO</h2>
@@ -102,8 +106,8 @@
         Contenedor para mostrar
         las opciones del juego
      -->
-    <div id="game-options-container" class="game-options-container-hide 
-            game-options-container-behind-curtain 
+    <div id="game-options-container" class="
+            
             game-options-container">
         <h2 class="game-options-container-h2">
             EL CUBO APO
@@ -232,7 +236,7 @@
     <!-- 
         Contenedor para hacer una pausa en el juego y salir al menú principal
     -->
-    <div id="game-stop" class="game-stop game-stop-hide">
+    <div id="game-stop" class="game-stop game-stop-hide game-stop-behind-curtain">
         <button onclick="hideStopMenu()">Volver al juego</button>
         <button>Libro</button>
         <button>Configuración</button>
@@ -243,19 +247,19 @@
     <!-- 
         Contenedor general que contendrá todo el juego o cada nivel que se vaya jugando.
     -->
-    <div id="levels" class="levels">
+    <div id="levels" class="levels levels-hide levels-behind-curtain">
         <!-- 
             Contenedor de diálogos para ir mostrando cada diálogo.
             dialog-hide dialog-behind-curtain
         -->
-        <div id="dialog" class="dialog">
+        <div id="dialog" class="dialog dialog-hide dialog-behind-curtain">
         </div>
 
         <!--
             Contenedor del personaje guía (Pablo).
             pablo-hide pablo-behind-curtain
         -->
-        <div id="pablo" class="pablo">
+        <div id="pablo" class="pablo pablo-hide pablo-behind-curtain">
             <div class="hat"></div>
             <div class="eyes">
                 <div class="eye"></div>
@@ -367,6 +371,48 @@
             <div class="branch"></div>
         </div>
 
+        <!-- Doctor -->
+        <div id="doctor" class="doctor doctor-hide doctor-behind-curtain">
+            <div class="hat">
+                <div class="church"></div>
+            </div>
+
+            <div class="eyes">
+                <div class="eye"></div>
+                <div class="eye"></div>
+            </div>
+
+            <div class="t-shirt">
+                <div class="button-1"></div>
+                <div class="button-2"></div>
+                <div class="button-3"></div>
+            </div>
+        </div>
+
+        <!--
+            Hospital
+        -->
+        <div id="hospital" class="hospital hospital-hide hospital-behind-curtain">
+            <div class="building1">
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+
+            <div class="building0">
+                <div class="door"></div>
+            </div>
+
+            <div class="building2">
+                <div class="window"></div>
+                <div class="window"></div>
+            </div>
+
+            <div class="hospital-cross">
+                <div class="cross-1"></div>
+                <div class="cross-2"></div>
+            </div>
+        </div>
+
         <!--
             Alerta para informarle al jugador que debe presionar E para hablar con un personaje
             o hacer alguna acción.
@@ -396,6 +442,8 @@
     <script src="frontend/js/global.variables.js"></script>
     <!-- Javascript de la cinemática intro. -->
     <script src="frontend/js/cinematicas/intro.js"></script>
+    <!-- Javascript del nivel 3. -->
+    <script src="frontend/js/niveles/3.js"></script>
     <!-- Javascript del nivel 2. -->
     <script src="frontend/js/niveles/2.js"></script>
     <!-- Javascript del nivel 1. -->

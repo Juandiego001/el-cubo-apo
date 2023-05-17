@@ -200,7 +200,7 @@ async function goSignUp() {
 async function goLevel(theLevel) {
     // Se oculta el menú de historia
     gameHistory.classList.add(`game-levels-hide`);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    await sleep(1000);
     gameHistory.classList.add(`game-levels-behind-curtain`);
 
     // Se muestra el canvas del juego
@@ -209,8 +209,12 @@ async function goLevel(theLevel) {
 
     mVC = Number(theLevel) - 1;
     
-    // Se carga el nivel 1.
     if (mVC == 0) loadLevel1Variables();
+    if (mVC == 1) loadLevel2Variables();
+    if (mVC == 2) loadLevel3Variables();
+    // if (mVC == 3) loadLevel4Variables();
+    // if (mVC == 4) loadLevel5Variables();
+    // if (mVC == 5) loadLevel6Variables();
 }
 
 // Registro de teclas

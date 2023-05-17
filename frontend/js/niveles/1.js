@@ -327,6 +327,9 @@ async function finishLevel1(goNextLevel) {
     }
 
     if (goNextLevel && allowTQ == 2) {
+        // Se le pasa el control del movimiento al nivel 2.
+        mVC = 1;
+
         // Se ocultan todos los recursos del nivel 1.
         hideFirstLevel();
 
@@ -336,9 +339,6 @@ async function finishLevel1(goNextLevel) {
         between.classList.add('between-hide');
         await sleep(1000);
         between.classList.add('between-behind-curtain');
-
-        // Se le pasa el control del movimiento al nivel 2.
-        mVC = 1;
 
         // Se ejecuta el proceso para mostrar el nivel 2.
         addSecondLevel();
@@ -694,7 +694,6 @@ async function movePlayerUp() {
 async function movePlayerDown() {
     if (yPlayer1 > 3) yPlayer1 -= 2;
     character.style.bottom = `${yPlayer1}rem`;
-    alreadyGoDown = true;
     await sleep(500);
     // Verificar diálogos.
     verifyDialog();
@@ -827,19 +826,5 @@ function loadLevel1Variables() {
     levels.appendChild(pabloSmall21);
     levels.appendChild(dialog21);
 
-    // Se agregan las respuestas de sí/no para el teacher.
-    // Se coloca un id para identificarlas y establecer los textos correspondientes.
-    // answer11.id = "answer11";
-    // answer21.id = "answer21";
-    // answer31.id = "answer31";
-    // answer41.id = "answer41";
-
-    // answers1.appendChild(answer11);
-    // answers1.appendChild(answer21);
-    // answers1.appendChild(answer31);
-    // answers1.appendChild(answer41);
-
     loadIntro();
 }
-
-loadLevel1Variables();

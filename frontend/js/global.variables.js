@@ -63,6 +63,9 @@ let floor = document.getElementById("floor");
 // Contenedor general para mostrar cada uno de los niveles de historia.
 let levels = document.getElementById("levels");
 
+// Contenedor de personaje secundario
+let teacher = document.getElementById("teacher");
+
 // Contenedor de escuela
 let school = document.getElementById("school");
 
@@ -78,8 +81,11 @@ let midTree = document.getElementById("mid-tree");
 // Contenedor de árbol pequeño
 let smallTree = document.getElementById("small-tree");
 
-// Contenedor de personaje secundario
-let teacher = document.getElementById("teacher");
+// Contenedor de doctor
+let doctor = document.getElementById("doctor");
+
+// Contenedor del hospital
+let hospital = document.getElementById("hospital");
 
 // Alerta para indicarle al jugador qué hacer
 let alertAction = document.getElementById("alert-action");
@@ -103,7 +109,7 @@ let answer4 = document.getElementById("answer4");
 // mVC = 4: Se pasa el control de movimiento al nivel 5.
 // mVC = 5: Se pasa el control de movimiento al nivel 6.
 
-let mVC = 0;
+let mVC = -1;
 
 // Contenedor para las animaciones entre niveles
 let between = document.getElementById("between");

@@ -41,6 +41,13 @@ async function prevDialog() {
 
 // Para cargar todos los elementos iniciales de la cinemática inicial
 async function loadIntro() { 
+    // Se muestran los diálogos
     let theDialog = introDialogs[dIntro];
     dialog.innerHTML = `<span>${theDialog}</span>`;
+    dialog.classList.remove('dialog-behind-curtain');
+    dialog.classList.remove('dialog-hide');
+
+    // Se muestra el personaje grande de pablo.
+    pablo.classList.remove('pablo-behind-curtain');
+    pablo.classList.remove('pablo-hide');
 }
