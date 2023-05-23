@@ -4,7 +4,6 @@ module.exports = (app, connection) => {
         // Método GET para iniciar sesión.
         .get((req, res) => {
             try {
-                console.log({"req.query": req.query});
                 let { email, password } = req.query;
                 connection.query("SELECT * FROM USUARIO WHERE correo = ? AND contrasena = ?", [
                     email,
@@ -89,15 +88,13 @@ module.exports = (app, connection) => {
                         return;
                     }
 
-                    console.log({results});
                     res.json({
                         "code": 200,
-                        "message": "Test works!",
+                        "message": "User created successfuly.",
                         "data": true
                     })
                 })
             } catch (e) {
-                console.log({"postUsersError": e});
                 res.json({
                     "code": 500,
                     "message": "Ocurrió un error en el servidor al intentar crear el usuario.",
@@ -105,4 +102,49 @@ module.exports = (app, connection) => {
                 })
             }
         })
+
+    .put((req, res) => {
+        try {
+            let { originalEmail, newEmail, newPassword } = req.body;
+    
+            console.log({originalEmail});
+            console.log({newEmail});
+            console.log({newPassword});
+    
+            if (!originalEmail) {
+                res.json({
+                    "code": 301,
+                    "message": "El correo original es un campo obligatorio.",
+                    "data": false
+                })
+                return;
+            }
+    
+            connection.query('UPDATE USUARIO SET correo = ?, contrasena = ? WHERE correo = ?', 
+                [newEmail, newPassword, originalEmail], (err, results, fields) => {
+                    if (err) {
+                        console.log({"putConnectionErr": err});
+                        res.json({
+                            "code": 500,
+                            "message": "Ocurrió un error al intentar realizar la actualización en la base de datos.",
+                            "data": false
+                        })
+                        return;   
+                    }
+    
+                res.json({
+                    "code": 200,
+                    "message": "User updated successfuly.",
+                    "data": true
+                })
+            })
+        } catch (e) {
+            console.log("putError: " + e);
+            res.json({
+                "code": 500,
+                "message": "There was an error while trying to update the user.",
+                "data": false
+            })
+        }
+    })
 }

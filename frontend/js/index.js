@@ -96,6 +96,10 @@ async function logIn(event) {
     let theCode = response["code"];
 
     if (theCode == 200) {
+        // Se guardan los valores en los inputs de actualización
+        inputEmail1.value = theEmail;
+        inputPassword1.value = thePassword;
+
         // Se procede a mostrar el panel del videojuego.
         signUpInContainer.classList.add("signUpIn-container-hide");
         await new Promise((resolve, reject) => setTimeout(resolve, 1000));
@@ -111,6 +115,10 @@ async function logIn(event) {
 }
 
 async function logOut() {
+    // Se ocultan los valores en los campos para iniciar sesión.
+    inputEmail.value = "";
+    inputPassword.value = "";
+
     gameOptionsContainer.classList.add("game-options-container-hide");
 
     // Se espera a que se oculte el contenedor y luego se ubica detrás del telón.
@@ -122,6 +130,7 @@ async function logOut() {
     // Se muestra el contenedor general que almacena el formulario de inicio.
     signUpInContainer.classList.remove("signUpIn-container-behind-curtain");
     signUpInContainer.classList.remove("signUpIn-container-hide");
+
 }
 
 async function showOption(index) {
@@ -152,14 +161,97 @@ async function goBackMenu(index) {
     gameOptionsContainer.classList.remove("game-options-container-hide");
 }
 
+async function hideAllGame() {    
+    for (let i = 0; i < allChildNodes.length; i++) {
+        let child = allChildNodes[i];
+        child.classList.add(`${child.id}-hide`);
+        child.classList.add(`${child.id}-behind-curtain`);
+    }
+
+    // Para el nivel 1
+    teacher21.classList.add('teacher-hide');
+    teacher21.classList.add('teacher-behind-curtain');
+    pabloSmall21.classList.add('pablo-small-hide');
+    pabloSmall21.classList.add('pablo-small-behind-curtain');
+    dialog21.classList.add('dialog-hide');
+    dialog21.classList.add('dialog-behind-curtain');
+    alertTeacher1.classList.add('alert-action-hide');
+    alertTeacher1.classList.add('alert-action-behind-curtain');
+    alertPablo1.classList.add('alert-action-hide');
+    alertPablo1.classList.add('alert-action-behind-curtain');
+
+    // Para el nivel 2
+    biologist22.classList.add('biologist-hide');
+    biologist22.classList.add('biologist-behind-curtain');
+    pabloSmall22.classList.add('pablo-small-hide');
+    pabloSmall22.classList.add('pablo-small-behind-curtain');
+    dialog22.classList.add('dialog-hide');
+    dialog22.classList.add('dialog-behind-curtain');
+    alertBiologist2.classList.add('alert-action-hide');
+    alertBiologist2.classList.add('alert-action-behind-curtain');
+    alertPablo2.classList.add('alert-action-hide');
+    alertPablo2.classList.add('alert-action-behind-curtain');
+
+    // Para el nivel 3
+    doctor32.classList.add('doctor-hide');
+    doctor32.classList.add('doctor-behind-curtain');
+    pabloSmall32.classList.add('pablo-small-hide');
+    pabloSmall32.classList.add('pablo-small-behind-curtain');
+    dialog32.classList.add('dialog-hide');
+    dialog32.classList.add('dialog-behind-curtain');
+    alertDoctor3.classList.add('alert-action-hide');
+    alertDoctor3.classList.add('alert-action-behind-curtain');
+    alertPablo3.classList.add('alert-action-hide');
+    alertPablo3.classList.add('alert-action-behind-curtain');
+
+    // Para el nivel 4
+    engineer42.classList.add('engineer-hide');
+    engineer42.classList.add('engineer-behind-curtain');
+    pabloSmall42.classList.add('pablo-small-hide');
+    pabloSmall42.classList.add('pablo-small-behind-curtain');
+    dialog42.classList.add('dialog-hide');
+    dialog42.classList.add('dialog-behind-curtain');
+    alertEngineer4.classList.add('alert-action-hide');
+    alertEngineer4.classList.add('alert-action-behind-curtain');
+    alertPablo4.classList.add('alert-action-hide');
+    alertPablo4.classList.add('alert-action-behind-curtain');
+
+    // Para el nivel 5
+    biomedic52.classList.add('biomedic-hide');
+    biomedic52.classList.add('biomedic-behind-curtain');
+    pabloSmall52.classList.add('pablo-small-hide');
+    pabloSmall52.classList.add('pablo-small-behind-curtain');
+    dialog52.classList.add('dialog-hide');
+    dialog52.classList.add('dialog-behind-curtain');
+    alertBiomedic5.classList.add('alert-action-hide');
+    alertBiomedic5.classList.add('alert-action-behind-curtain');
+    alertPablo5.classList.add('alert-action-hide');
+    alertPablo5.classList.add('alert-action-behind-curtain');
+
+    // Para el nivel 6
+    apo62.classList.add('apo2-hide');
+    apo62.classList.add('apo2-behind-curtain');
+    pabloSmall62.classList.add('pablo-small-hide');
+    pabloSmall62.classList.add('pablo-small-behind-curtain');
+    dialog62.classList.add('dialog-hide');
+    dialog62.classList.add('dialog-behind-curtain');
+    alertApo6.classList.add('alert-action-hide');
+    alertApo6.classList.add('alert-action-behind-curtain');
+    alertPablo6.classList.add('alert-action-hide');
+    alertPablo6.classList.add('alert-action-behind-curtain');
+
+}
+
 // Función para volver al menú principal desde la historia
 async function goBackMenuFromHistory() {
+    // Se oculta todo lo del juego.
+    hideAllGame();
+
     // Se oculta el contenedor de pausa
     gameStop.classList.add("game-stop-hide");
 
     // Se oculta el canvas del juego
     levels.classList.add(`levels-hide`);
-    await new Promise(resolve => setTimeout(resolve, 1000));
     levels.classList.add(`levels-behind-curtain`);
 
     // Se establece que el jugador ha dejado de jugar algún nivel
@@ -199,9 +291,9 @@ async function goSignUp() {
 // Dirigirse a algún nivel.
 async function goLevel(theLevel) {
     // Se oculta el menú de historia
-    gameHistory.classList.add(`game-levels-hide`);
+    gameHistory.classList.add(`game-history-hide`);
     await sleep(1000);
-    gameHistory.classList.add(`game-levels-behind-curtain`);
+    gameHistory.classList.add(`game-history-behind-curtain`);
 
     // Se muestra el canvas del juego
     levels.classList.remove(`levels-behind-curtain`);
@@ -253,4 +345,56 @@ async function sleep(miliseconds) {
     return new Promise((resolve, reject) => {
         setTimeout(() => resolve(), miliseconds);
     });
+}
+
+async function updateData() {
+    let originalEmail = inputEmail.value;
+    let newEmail = inputEmail1.value;
+    let newPassword = inputPassword1.value;
+
+    if (!(originalEmail && newEmail && newPassword)) {
+        alert("Error. No deben existir campos vacíos al actualizar la información.");
+        return;
+    }
+
+    let jsonBody = {
+        originalEmail,
+        newEmail,
+        newPassword
+    };
+
+    let responseJson = await fetch("http://localhost:3000/users", {
+        method: "PUT",
+        headers: {
+            "Allow-Access-Origin": "*",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(jsonBody)
+    });
+
+    responseJson = await responseJson.json();
+    console.log({responseJson});
+
+    if (responseJson["code"] == 200) {
+        alert("¡Los datos han sido actualizados correctamente!");
+
+        // Se actualizan los campos
+        inputEmail.value = newEmail;
+        inputEmail1.value = newEmail;
+        inputPassword.value = newPassword;
+        inputPassword1.value = newPassword;
+    } else {
+        alert("Ocurrió un error al intentar actualizar los datos. Por favor, verifique e intente nuevamente.")
+    }
+}
+
+async function showBook() {
+    book.classList.remove('book-behind-curtain');
+    book.classList.remove('book-hide');
+}
+
+async function hideBook() {
+    book.classList.add('book-hide');
+    await sleep(1000);
+    book.classList.add('book-behind-curtain');
 }

@@ -5,6 +5,10 @@
 let inputEmail = document.getElementById("email");
 let inputPassword = document.getElementById("password");
 
+// Inputs para actualizar la información
+let inputEmail1 = document.getElementById("aEmail");
+let inputPassword1 = document.getElementById("aPassword");
+
 // Contenedor general que almacena el formulario inicial.
 let signUpInContainer = document.getElementById("signUpIn-container");
 
@@ -27,9 +31,6 @@ let gameOptionsContainer = document.getElementById("game-options-container");
 // Contenedor de los módulos de historia.
 let gameHistory = document.getElementById("game-history");
 
-// Contenedor para la opción de multijugador.
-let gameMultiplayer = document.getElementById("game-multiplayer");
-
 // Contenedor de instrucciones.
 let gameInstructions = document.getElementById("game-instructions");
 
@@ -43,7 +44,7 @@ let gameConfig = document.getElementById("game-config");
 let gameStop = document.getElementById("game-stop");
 
 // Variable que contendrá todas las opciones.
-let optionsGame = [gameHistory, gameMultiplayer, gameInstructions, gameDocumentation, gameConfig];
+let optionsGame = [gameHistory, gameInstructions, gameDocumentation, gameConfig];
 
 // Contenedor de diálogos.
 let dialog = document.getElementById("dialog");
@@ -125,7 +126,17 @@ let mVC = -1;
 
 // Contenedor para las animaciones entre niveles
 let between = document.getElementById("between");
-
 // Contenedor para mostrar el nivel al que se accede
 let showLevel = document.getElementById("show-level");
+
+// Contenedor de créditos
+let credits = document.getElementById('credits');
+    
+// Contenedor del libro
+let book = document.getElementById('book');
+
+// Todos los elementos hijo que se encuentran en el html
+let allChildNodes = [dialog, pablo, pabloSmall, character, floor, levels, teacher, 
+    school, biologist, bigTree, midTree, smallTree, doctor, hospital, engineer, biomedic,
+    apo, apo2, alertAction, answers, credits, book];
 

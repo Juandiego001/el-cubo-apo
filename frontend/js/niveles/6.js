@@ -25,27 +25,9 @@ let dialog62 = dialog.cloneNode(true);
 // El 3 al final indica el nivel 3.
 // Diálogos del doctor.
 let dialogsApo6 = [
-    "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
-    "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
-    "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
-    "<span>Verás, cada vida de nuestro universo tiene un código...</span>",
-    "<span>En el universo 7 (el humanoide), se le llama <b>ADN...</b></span>",
-    "<span>Nosotros lo llamamos <b>código fuente...</b></span>",
-    "<span>Así, cada ser vivo que te rodea tiene un código fuente diferente...</span>",
-    "<span>Ahora bien, este código se forma apartir de una estructura llamada <b>Paradigma de Programación Orientada a Objetos...</b></span>",
-    "<span>Que para efectos más concretos, se ha decidido abreviar como <b>POO...</b></span>",
-    "<span>Nuestros científicos, han logrado identificar <b>6 estructuras</b> aún más pequeñas que componen la <b>POO...</b></span>",
-    "<span>Estas son: <b>clases, atributos, métodos, herencia, polimorfismo y sobrecarga...</b></span>",
-    "<span>Se dice que pueden haber más, pero no sabremos cuando podremos averiguarlo...</span>",
-    "<span>Como sabrás, desde que nuestra piedra angular <b>(El cubo APO)</b> fue robada...</span>",
-    "<span>Hemos tenido mucho caos en este pueblo...</span>",
-    "<span>Tanto así que se me ha encargado revisar nuevamente todas las investigaciones...</span>",
-    "<span>Es un trabajo extenuante pero poco a poco he avanzado...</span>",
-    "<span>Ahora me encuentro revisando la investigación de las Clases en la POO...</span>",
-    "<span>Tengo un documento que describía su funcionamiento y Pablo me comentó...</span>",
-    "<span>Que tú podrías confirmarme algunas con el libro que él te había proporcionado...</span>",
-    "<span>Entonces quisiera saber si podrías ayudarme...</span>",
-    "<span>¿Estás listo para responder algunas preguntas de Clases en la POO?</span>"
+    "<span>*Te quedas boquiabierto por ver por primera vez una figura de 3 dimensiones*</span>",
+    "<span>*El cubo nota tu presencia y percibe una sensación de nobleza*</span>",
+    "<span>*Empieza a girar y preguntarte si deseas empezar las preguntas (al parecer tendrá piedad de ti)*</span>"
 ];
 
 // Variable similar a dialogs43 para ir mostrando las preguntas.
@@ -55,12 +37,17 @@ let questions6 = -1;
 // El 3 indica el nivel 3.
 let questionsApo6 = [
     "1. ¿Qué es un objeto?",
-    "2. ¿Cómo se puede categorizar un objeto?",
-    "3. ¿Qué son los mensajes entre objetos?",
-    "4. ¿Qué son las clases?",
-    "5. Un Ferrari es un objeto de la clase...",
-    "6. Un Jet es un objeto de la clase...",
-    "7. Elefantes y delfines hacen parte respectivamente de las clases..."
+    "2. ¿Cuál de las siguientes afirmaciones es verdadera acerca de los atributos de una clase?",
+    "3. ¿Qué es la subclase en herencias?",
+    "4. ¿Qué es un evento en POO?",
+    "5. ¿Qué es la sobrecarga de un método?",
+    "6. ¿Qué son las clases?",
+    "7. ¿Cuáles son los atributos de un paciente con taquicardia?",
+    "8. ¿De qué tipo de células heredan los globulos rojos?",
+    "9. ¿Cuáles son los métodos del hipotálamo?",
+    "10. De los siguientes métodos, ¿cuáles se podrían considerar como sobrecarga?",
+    "11. El corazón y los pulmones son objetos de la clase...",
+    "12. ¿Cuáles son los métodos del corazón humano?"
 ];
 
 
@@ -80,62 +67,112 @@ let answersApo6 = [
     // Respuestas de la pregunta 2.
     {
         r: [
-            "Simples y complejos.",
-            "Reales o imaginarios.",
-            "Nignua de las anteriores.",
-            "Todas las anteriores."
+            "Los atributos son funciones que pertenecen a una clase.",
+            "Los atributos definen el comportamiento de una clase.",
+            "Los atributos son variables que almacenan datos relacionados con una clase.",
+            "Los atributos son utilizados para realizar operaciones en una clase."
         ],
-        c: 3
+        c: 2
     },
     // Respuestas de la pregunta 3.
     {
         r: [
-            "Son representaciones de cosas.",
-            "Son comunicaciones e interacciones entre objetos.",
-            "Son acciones que puede ejecutar un objeto.",
-            "Son características de un objeto."
+            "Ninguna de las anteriores.",
+            "Es la clase padre de la que se puede heredar.",
+            "Es la clase hija que hereda de una clase padre.",
+            "Ambas son correctas."
         ],
-        c: 1
+        c: 2
     },
     // Respuestas de la pregunta 4.
     {
         r: [
-            "Son representaciones de un tipo particular de objeto.",
+            "Ambas son correctas.",
+            "Son sucesos que utiliza un objeto para iniciar un método de otro objeto.",
+            "Son acciones que puede realizar un objeto.",
+            "Ninguna de las anteriores."
+        ],
+        c: 1
+    },
+    // Respuestas de la pregunta 5.
+    {
+        r: [
+            "Cuando el método de una clase hija tiene el mismo nombre que el método de una clase padre.",
+            "Ninguna de las anteriores.",
+            "Cuando un método tiene el mismo nombre pero sus entradas generan diferentes salidas.",
+            "Ambas son correctas."
+        ],
+        c: 2
+    },
+    // Respuestas de la pregunta 6.
+    {
+        r: [
+            "Son representaciones de un tipo particular de objeto. ",
             "Son acciones que pueden retornan o no un valor como resultado.",
             "Todas las anteriores.",
             "Son las características de un objeto."
         ],
         c: 0
     },
-    // Respuestas de la pregunta 5.
-    {
-        r: [
-            "De coches.",
-            "De aviones.",
-            "De animales.",
-            "De plantas."
-        ],
-        c: 0
-    },
-    // Respuestas de la pregunta 6.
-    {
-        r: [
-            "De coches.",
-            "De animales.",
-            "De aviones.",
-            "De plantas."
-        ],
-        c: 2
-    },
     // Respuestas de la pregunta 7.
     {
         r: [
-            "Marsupiales y mamíferos.",
-            "Acuáticos y terrestres.",
-            "Ambos son mamíferos.",
-            "Carnívoros y Omnívoros."
+            "Ritmo cardiaco desacelerado.",
+            "Ritmo cardiaco acelerado.",
+            "Ritmo cardiaco normal.",
+            "Ninguna de las anteriores."
+        ],
+        c: 1
+    },
+    // Respuestas de la pregunta 8.
+    {
+        r: [
+            "Células epiteliales.",
+            "Células de la sangre.",
+            "Leucocitos.",
+            "Células nerviosas."
+        ],
+        c: 1
+    },
+    // Respuestas de la pregunta 9.
+    {
+        r: [
+            "Segregación de insulina y glucagón.",
+            "Sístole y Diástole.",
+            "Segregación de gondatropinas.",
+            "Digestión mecánica y digestión química."
         ],
         c: 2
+    },
+    // Respuestas de la pregunta 10.
+    {
+        r: [
+            "Ninguna de las anteriores.",
+            "El método de las funciones orgánicas, ya que cada órgano tiene una función pero cada uno realiza diferentes procesos.",
+            "El método del intercambio gaseoso en los alveólos.",
+            "El método de mover las articulaciones ya que dependiendo de la artículación se envían diferentes señales."
+        ],
+        c: 3
+    },
+    // Respuestas de la pregunta 11.
+    {
+        r: [
+            "Células.",
+            "Órganos.",
+            "Sistemas.",
+            "Tejidos."
+        ],
+        c: 1
+    },
+    // Respuestas de la pregunta 12.
+    {
+        r: [
+            "Segregación de insulina y glucagón.",
+            "Digestión mecánica y digestión química.",
+            "Segregación de gondatropinas.",
+            "Sístole y Diástole."
+        ],
+        c: 3
     }
 ];
 
@@ -155,10 +192,9 @@ let allowPassLevel6 = -1;
 
 // Diálogos de pablo.
 let dialogsPablo6 = [
-    "¿Y qué tal? ¿Cómo ha ido todo?",
-    "La profesora me comentó que has estado contestado adecuadamente...",
-    "Es hora de seguir aprendiendo...",
-    "¿Estás listo para el siguiente nivel?"
+    "¿¡Cómo estás!?",
+    "¿¡Lo has conseguido?!",
+    "¿¡Podemos ir a contar nuestra victora a nuestros hermanos cúbicos y esperar a que todo florezca!?"
 ];
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
@@ -248,6 +284,7 @@ async function hideApoDialogs6() {
     apo62.classList.add("apo2-hide");
     apo62.classList.add("apo2-behind-curtain");
     alreadyTalkTo6 = -1;
+    allowQ6 = allowQ6 != 2 ? -1 : 2;
     hideDialogs6();
 }
 
@@ -290,9 +327,27 @@ async function toggleCharacterDialogs6() {
     if (talkTo6 == 1 && allowQ6 != 3) { showPabloSmallDialogs6(); return; }
 };
 
+async function showCredits() {
+    credits.classList.remove('credits-behind-curtain');
+    credits.classList.remove('credits-hide');
+    await sleep(20000);
+    credits.classList.add('credits-behind-curtain');
+    credits.classList.add('credits-hide');
+
+    // Se oculta el contenedor de levels
+    levels.classList.add('levels-hide');
+    await sleep(1000)
+    levels.classList.add('levels-behind-curtain');
+
+    // Se muestra el contenedor de las opciones generales
+    gameOptionsContainer.classList.remove('game-options-container-behind-curtain');
+    await sleep(1000);
+    gameOptionsContainer.classList.remove('game-options-container-hide');
+}
+
 async function finishLevel6(goNextLevel) {
     if (!goNextLevel) {
-        dialog62.innerHTML = "¡Ven a verme cuando desees pasar de nivel!";
+        dialog62.innerHTML = "¡Ven a verme cuando hayas derrotado al Cubo APO!";
         hideAnswers6();
         allowPassLevel6 = 1;
         dialogs6 = 0;
@@ -300,7 +355,7 @@ async function finishLevel6(goNextLevel) {
     }
 
     if (allowQ6 != 2) {
-        dialog62.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
+        dialog62.innerHTML = "Pero si ya lo venciste... ¿Por qué no hemos vuelto a la normalidad?";
         hideAnswers6();
         allowPassLevel6 = 1;
         dialogs6 = 0;
@@ -322,7 +377,7 @@ async function finishLevel6(goNextLevel) {
         between.classList.add('between-behind-curtain');
 
         // Se ejecuta el proceso para finalizar el juego y mostrar los créditos.
-        // showCredits();
+        showCredits();
     }
 }
 
@@ -407,7 +462,7 @@ async function verifyAnswer6(theQuestion, theAnswer, theAnswerElement) {
         // una variable para que ya pueda continuar hacia el siguiente nivel.
         if (questions6 == questionsApo6.length) {
             // Se coloca el mensaje final indicando que ya puede pasar de nivel.
-            dialog62.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
+            dialog62.innerHTML = `<span>Me has demostrado tu confianza en la POO. Eres de una valentía admirable. ¡Este universo volverá a las tres dimensiones!</span>`;
             // Se asigna el valor correspondiente a la variable.
             allowQ6 = 2;
             // Se ocultan las respuestas.
@@ -742,6 +797,20 @@ function loadLevel6Variables() {
     keyToDownPressed6 = false;
     keyToLeftPressed6 = false;
     keyToRightPressed6 = false;
+
+    xPlayer6 = 1;
+    yPlayer6 = 3;
+    xBackground6 = 1;
+    questions6 = -1;
+    allowQ6 = -1;
+    allowPassLevel6 = -1;
+    dialogs6 = -1;
+    apoX6 = 100;
+    pabloSmallX6 = 240;
+    alertApoX6 = 95;
+    alertPabloX6 = 235;
+    talkTo6 = -1;
+    alreadyTalkTo6 = -1;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
     // Primero se ocultan los dialog62.

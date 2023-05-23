@@ -25,27 +25,24 @@ let dialog32 = dialog.cloneNode(true);
 // El 3 al final indica el nivel 3.
 // Diálogos del doctor.
 let dialogsDoctor3 = [
-    "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
-    "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
-    "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
-    "<span>Verás, cada vida de nuestro universo tiene un código...</span>",
-    "<span>En el universo 7 (el humanoide), se le llama <b>ADN...</b></span>",
-    "<span>Nosotros lo llamamos <b>código fuente...</b></span>",
-    "<span>Así, cada ser vivo que te rodea tiene un código fuente diferente...</span>",
-    "<span>Ahora bien, este código se forma apartir de una estructura llamada <b>Paradigma de Programación Orientada a Objetos...</b></span>",
-    "<span>Que para efectos más concretos, se ha decidido abreviar como <b>POO...</b></span>",
-    "<span>Nuestros científicos, han logrado identificar <b>6 estructuras</b> aún más pequeñas que componen la <b>POO...</b></span>",
-    "<span>Estas son: <b>clases, atributos, métodos, herencia, polimorfismo y sobrecarga...</b></span>",
-    "<span>Se dice que pueden haber más, pero no sabremos cuando podremos averiguarlo...</span>",
-    "<span>Como sabrás, desde que nuestra piedra angular <b>(El cubo APO)</b> fue robada...</span>",
-    "<span>Hemos tenido mucho caos en este pueblo...</span>",
-    "<span>Tanto así que se me ha encargado revisar nuevamente todas las investigaciones...</span>",
-    "<span>Es un trabajo extenuante pero poco a poco he avanzado...</span>",
+    "<span><i>Salut joven alma.</i></span>",
+    "<span>Se dice entre los miembros del pueblo que has estado superando adecuadamente las pruebas.</span>",
+    "<span>Espero sigas con esa racha porque las preguntas que te haré a continuación son bastante difíciles.</span>",
+    "<span>Me presento, <b>soy el doctor.</b> Antiguo solucionador de los malestares de los integrantes del pueblo.</span>",
+    "<span>Cuando teníamos las tres dimensiones, ¡No te imaginas la de enfermedades y problemas que teníamos!</span>",
+    "<span>Sin embargo, así mismo, eramos felices, porque la vida tenía un ciclo y eso lo comprendiamos muy bien.</span>",
+    "<span>Ahora, todo nuestro mundo es gris.</span>",
+    "<span>Por el mismo tema de las dimensiones, no podemos tener más colores como los solíamos tener.</span>",
+    "<span>Todo está en blanco y negro...</span>",
+    "<span>Pero bueno, para eso te estamos entrenando.</span>",
+    "<span>Para que logres la victoria contra el Cubo APO y no seas desintegrado en el acto.</span>",
+    "<span>¿Qué? ¿No lo sabías?</span>",
+    "<span>¡Pues claro!</span>",
+    "<span>Si no logras vencerlo, el Cubo APO reduce significativamente tus lados hasta volverte un vértice. Como si de un agujero negro se tratase.</span>",
+    "<span>Pero bueno, no te preocupes. Todo irá bien ... espero.</span>",
+    "<span>Para esta ocasión, te entrenaré sobre el concepto de herencia. Un concepto que a simple vista puede ser poco importante, pero cuando se le da un uso adecuado es capaz de crear vida de maneras rápidas y sencillas.</span>",
     "<span>Ahora me encuentro revisando la investigación de las Clases en la POO...</span>",
-    "<span>Tengo un documento que describía su funcionamiento y Pablo me comentó...</span>",
-    "<span>Que tú podrías confirmarme algunas con el libro que él te había proporcionado...</span>",
-    "<span>Entonces quisiera saber si podrías ayudarme...</span>",
-    "<span>¿Estás listo para responder algunas preguntas de Clases en la POO?</span>"
+    "<span>Pablo me informó que ya debías de estar preparado. Así qué, ¿estás listo para responder preguntas de herencia?</span>"
 ];
 
 // Variable similar a dialogs33 para ir mostrando las preguntas.
@@ -57,10 +54,10 @@ let questionsDoctor3 = [
     "1. ¿Qué es la herencia?",
     "2. ¿Cuáles son los tipos de herencia?",
     "3. ¿Qué es la subclase en herencias?",
-    "4. ¿Cuál podría ser la relación de herencias entre Avión-Jet?",
-    "5. Un Ferrari es un objeto de la clase...",
-    "6. Un Jet es un objeto de la clase...",
-    "7. Elefantes y delfines hacen parte respectivamente de las clases..."
+    "4. ¿Qué es la superclase en herencias?",
+    "5. ¿De qué tipo de células heredan las neuronas y las células gliales?",
+    "6. ¿De qué tipo de células heredan los globulos blancos?",
+    "7. ¿De qué tipo de células heredan los globulos rojos?"
 ];
 
 
@@ -80,10 +77,10 @@ let answersDoctor3 = [
     // Respuestas de la pregunta 2.
     {
         r: [
-            "Todas las anteriores.",
+            "Ambas son correctas.",
             "Superclase.",
             "Subclase.",
-            "Reutilización."
+            "Ninguna de las anteriores."
         ],
         c: 0
     },
@@ -92,50 +89,50 @@ let answersDoctor3 = [
         r: [
             "Ninguna de las anteriores.",
             "Es la clase padre de la que se puede heredar.",
-            "Es la clase que hereda de una clase padre.",
-            "Todas las anteriores."
+            "Es la clase hija que hereda de una clase padre.",
+            "Ambas son correctas."
         ],
         c: 2
     },
     // Respuestas de la pregunta 4.
     {
         r: [
-            "Avión es la subclase.",
-            "Avión es la superclase.",
-            "Jet es la subclase.",
-            "Jet es la superclase."
+            "Ninguna de las anteriores.",
+            "Es la clase padre de la que se puede heredar.",
+            "Es la clase que hereda de una clase padre.",
+            "Ambas son correctas."
         ],
-        c: 0
+        c: 1
     },
     // Respuestas de la pregunta 5.
     {
         r: [
-            "De coches.",
-            "De aviones.",
-            "De animales.",
-            "De plantas."
+            "Células epiteliales.",
+            "Células de la sangre.",
+            "Leucocitos.",
+            "Células nerviosas."
         ],
-        c: 0
+        c: 3
     },
     // Respuestas de la pregunta 6.
     {
         r: [
-            "De coches.",
-            "De animales.",
-            "De aviones.",
-            "De plantas."
+            "Células epiteliales.",
+            "Células de la sangre.",
+            "Leucocitos.",
+            "Células nerviosas."
         ],
         c: 2
     },
     // Respuestas de la pregunta 7.
     {
         r: [
-            "Marsupiales y mamíferos.",
-            "Acuáticos y terrestres.",
-            "Ambos son mamíferos.",
-            "Carnívoros y Omnívoros."
+            "Células epiteliales.",
+            "Células de la sangre.",
+            "Leucocitos.",
+            "Células nerviosas."
         ],
-        c: 2
+        c: 1
     }
 ];
 
@@ -155,10 +152,12 @@ let allowPassLevel3 = -1;
 
 // Diálogos de pablo.
 let dialogsPablo3 = [
-    "¿Y qué tal? ¿Cómo ha ido todo?",
-    "La profesora me comentó que has estado contestado adecuadamente...",
-    "Es hora de seguir aprendiendo...",
-    "¿Estás listo para el siguiente nivel?"
+    "¡Amigo mio!",
+    "¿Qué tal todo?",
+    "Veo que estás avanzado a pasos agigantados.",
+    "Te diría que descansemos un poco, pero la verdad no sé cuánto más podrá soportar mi cordura.",
+    "¡No perdamos más tiempo y sigamos, estamos cerca de finalizar tu entrenamiento!",
+    "¿Preparado para seguir?"
 ];
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
@@ -249,6 +248,7 @@ async function hideDoctorDialogs3() {
     doctor32.classList.add("doctor-hide");
     doctor32.classList.add("doctor-behind-curtain");
     alreadytalkTo3 = -1;
+    allowQ3 = allowQ3 != 2 ? -1 : 2;
     hideDialogs3();
 }
 
@@ -301,7 +301,7 @@ async function finishLevel3(goNextLevel) {
     }
 
     if (allowQ3 != 2) {
-        dialog32.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
+        dialog32.innerHTML = "Lo siento. Primero debes responder a las preguntas del doctor.";
         hideAnswers3();
         allowPassLevel3 = 1;
         dialogs3 = 0;
@@ -759,6 +759,21 @@ function loadLevel3Variables() {
     keyToDownPressed3 = false;
     keyToLeftPressed3 = false;
     keyToRightPressed3 = false;
+
+    xPlayer3 = 1;
+    yPlayer3 = 3;
+    xBackground3 = 1;
+    questions3 = -1;
+    allowQ3 = -1;
+    allowPassLevel3 = -1;
+    dialogs3 = -1;
+    doctorX3 = 100;
+    hospitalX3 = 120;
+    pabloSmallX3 = 240;
+    alertdoctorX3 = 95;
+    alertPabloX3 = 235;
+    talkTo3 = -1;
+    alreadytalkTo3 = -1;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
     // Primero se ocultan los dialog32.

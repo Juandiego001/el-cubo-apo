@@ -531,11 +531,8 @@ button {
     z-index: -1;
 }
 
-.game-instructions div {
-    display: flex;
-}
-
 .game-instructions div:nth-child(1) {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -590,6 +587,10 @@ button {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.game-instructions p {
+    text-align: justify;
+}
+
 /* Estilos para el contendor de documentación del juego */
 .game-documentation {
     position: absolute;
@@ -602,6 +603,9 @@ button {
     border-radius: 0.375rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
     transition: opacity .75s linear;
+    max-height: calc(90vh - 5rem);
+    max-width: calc(90% - 3.375rem);
+    overflow-y: scroll;
 }
 
 .game-documentation-hide {
@@ -612,11 +616,8 @@ button {
     z-index: -1;
 }
 
-.game-documentation div {
+.game-documentation > :first-child {
     display: flex;
-}
-
-.game-documentation div:nth-child(1) {
     justify-content: space-between;
     align-items: center;
 }
@@ -693,11 +694,8 @@ button {
     z-index: -1;
 }
 
-.game-config div {
-    display: flex;
-}
-
 .game-config div:nth-child(1) {
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -752,6 +750,21 @@ button {
     transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
+.game-config form label {
+    margin-bottom: .5rem;
+    display: block;
+}
+
+.game-config p {
+    display: block;
+    text-align: center;
+    font-family: 'system-ui';
+}
+
+.game-config p:hover {
+    cursor: pointer;
+}
+
 /* Contenedor en donde se jugarán los niveles */
 .levels {
     height: 100%;
@@ -782,7 +795,7 @@ button {
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    z-index: 99 !important;
+    z-index: 6 !important;
     margin: 0;
     background-color: var(--fondo-blanco);
     padding: 3rem 5rem;
@@ -1318,7 +1331,7 @@ button {
     background-color: var(--fondo-blanco);
     padding: 1rem 3rem;
     box-shadow: 0 1rem 3rem rgba(33, 37, 41, .5);
-    z-index: 4;
+    z-index: 5;
     transition: background-color 0.75s ease;
 }
 
@@ -1390,5 +1403,83 @@ button {
 }
 
 .show-level-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor de los créditos */
+.credits {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 4;
+    margin: 0;
+    padding: 3rem;
+    transition: opacity .75s linear;
+    width: 30%;   
+    border-radius: 0.375rem;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.credits h2 {
+    font-family: 'Libre-Bodoni';
+    text-align: center;
+    padding: 0 3rem;
+}
+
+.credits p {
+    text-align: justify;
+    font-family: 'system-ui';
+}
+
+.credits-hide {
+    opacity: 0;
+}
+
+.credits-behind-curtain {
+    z-index: -1;
+}
+
+/* Contenedor del libro */
+.book {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    z-index: 7;
+    margin: 0;
+    padding: 3rem;
+    transition: opacity .75s linear;
+    max-height: 80vh;
+    max-width: 80%;
+    overflow-y: scroll;
+    border-radius: 0.375rem;
+    background-color: var(--fondo-blanco);
+    box-shadow: 0 1rem 3rem rgba(33, 37, 41, .175);
+}
+
+.book > :first-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.book > :first-child p:hover {
+    cursor: pointer;
+}
+
+.book p {
+    text-align: justify;
+}
+
+.book-hide {
+    opacity: 0;
+}
+
+.book-behind-curtain {
     z-index: -1;
 }

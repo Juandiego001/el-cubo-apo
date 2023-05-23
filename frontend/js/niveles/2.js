@@ -25,27 +25,19 @@ let dialog22 = dialog.cloneNode(true);
 // El 2 al final indica el nivel 2.
 // Diálogos del biólogo.
 let dialogsBiologist2 = [
-    "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
-    "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
-    "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
-    "<span>Verás, cada vida de nuestro universo tiene un código...</span>",
-    "<span>En el universo 7 (el humanoide), se le llama <b>ADN...</b></span>",
-    "<span>Nosotros lo llamamos <b>código fuente...</b></span>",
-    "<span>Así, cada ser vivo que te rodea tiene un código fuente diferente...</span>",
-    "<span>Ahora bien, este código se forma apartir de una estructura llamada <b>Paradigma de Programación Orientada a Objetos...</b></span>",
-    "<span>Que para efectos más concretos, se ha decidido abreviar como <b>POO...</b></span>",
-    "<span>Nuestros científicos, han logrado identificar <b>6 estructuras</b> aún más pequeñas que componen la <b>POO...</b></span>",
-    "<span>Estas son: <b>clases, atributos, métodos, herencia, polimorfismo y sobrecarga...</b></span>",
-    "<span>Se dice que pueden haber más, pero no sabremos cuando podremos averiguarlo...</span>",
-    "<span>Como sabrás, desde que nuestra piedra angular <b>(El cubo APO)</b> fue robada...</span>",
-    "<span>Hemos tenido mucho caos en este pueblo...</span>",
-    "<span>Tanto así que se me ha encargado revisar nuevamente todas las investigaciones...</span>",
-    "<span>Es un trabajo extenuante pero poco a poco he avanzado...</span>",
-    "<span>Ahora me encuentro revisando la investigación de las Clases en la POO...</span>",
-    "<span>Tengo un documento que describía su funcionamiento y Pablo me comentó...</span>",
-    "<span>Que tú podrías confirmarme algunas con el libro que él te había proporcionado...</span>",
-    "<span>Entonces quisiera saber si podrías ayudarme...</span>",
-    "<span>¿Estás listo para responder algunas preguntas de Clases en la POO?</span>"
+    "<span>¿Qué tal joven aventurero?</span>",
+    "<span>Soy el biólogo, encargado de vigilar la vida de los cúbicos y sus alrededores.</span>",
+    "<span>Veo que ya has logrado pasar a través de la misión de la Profesora.</span>",
+    "<span>Es una lástima que haya perdido el conocimiento... Yo le susurré las respuestas que debía esperar de ti. Era de los seres más sabios de este pueblo...</span>",
+    "<span>Pero desde que el Cubo APO se perdió, todo ha estado de cabeza...</span>",
+    "<span>En fin, historias que ya has de conocer.</span>",
+    "<span>Sin embargo, yo no he perdido por completo la cordura...</span>",
+    "<span>En mi caso he hablado con Pablo y te pondré a prueba con los conocimientos de las características de la vida.</span>",
+    "<span>Estas características las hemos llamado en la POO como atributos...</span>",
+    "<span>Los atributos son sencillamente las características de los objetos.</span>",
+    "<span>Por ejemplo, dentro de mis atributos tengo un sombrero como puedes ver...</span>",
+    "<span>Aunque con los libros que se te han otorgado, deberías ser capaz de resolver preguntas mucho más a fondo.</span>",
+    "<span>¿Estás dispuesto a contestar algunas preguntas de atributos?</span>"
 ];
 
 // Variable similar a dialogs21 para ir mostrando las preguntas.
@@ -56,11 +48,11 @@ let questions2 = -1;
 let questionsBiologist2 = [
     "1. ¿Cuál de las siguientes afirmaciones es verdadera acerca de los atributos de una clase?",
     "2. ¿Qué es un atributo?",
-    "3. ¿Qué es un objeto?",
+    "3. ¿Cómo se categoriza la visibilidad de los atributos?",
     "4. ¿Cuáles son los tipos de atributos en POO?",
-    "5. ¿Qué atributos puede tener un elefante?",
-    "6. ¿Qué son las clases?",
-    "7. ¿Qué atributos puede tener una casa?"
+    "5. ¿Cuáles son los atributos de la sangre?",
+    "6. ¿Cuáles son los atributos de un paciente con taquicardia?",
+    "7. ¿Cuáles son los atributos de un paciente con bradicardia?"
 ];
 
 
@@ -90,52 +82,52 @@ let answersBiologist2 = [
     // Respuestas de la pregunta 3.
     {
         r: [
-            "Definen estados o cualidades.",
-            "Son las característiaca de un algo.",
-            "Son aquellos encargados de representar cosas.",
+            "De instancia, clase o constantes.",
+            "Públicos, protegidos, privados o de paquete.",
+            "Ambas respuestas son correctas.",
             "Ninguna de las anteriores."
         ],
-        c: 2
+        c: 1
     },
     // Respuestas de la pregunta 4.
     {
         r: [
-            "Públicos.",
-            "Privados.",
-            "Protegidos.",
-            "Todas las anteriores."
+            "De instancia, clase o constantes.",
+            "Públicos, protegidos, privados o de paquete.",
+            "Ambas respuestas son correctas.",
+            "Ninguna de las anteriores."
         ],
-        c: 3
+        c: 0
     },
     // Respuestas de la pregunta 5.
     {
         r: [
-            "Motor y puertas.",
-            "Puertas y ventanas.",
-            "Trompa y orejas.",
-            "Alas y pico."
+            "Líquido de color rojo en vertebrados.",
+            "Líquido de color amarillo que transporta agua y desechos.",
+            "Líquido de color verde en invertebrados.",
+            "Todas las anteriores."
         ],
-        c: 2
+        c: 0
     },
     // Respuestas de la pregunta 6.
     {
         r: [
-            "Son representaciones de un tipo particular de objeto.",
-            "Son acciones que pueden retornan o no un valor como resultado.",
-            "Todas las anteriores.",
-            "Son las características de un objeto."
+            "Ritmo cardiaco desacelerado.",
+            "Ritmo cardiaco acelerado.",
+            "Ritmo cardiaco normal.",
+            "Ninguna de las anteriores."
         ],
-        c: 0
+        c: 1
     },
     // Respuestas de la pregunta 7.
     {
         r: [
-            "Motor y puertas.",
-            "Puertas y ventanas.",
-            "Trompa y orejas.",
-            "Alas y pico."
+            "Ritmo cardiaco desacelerado.",
+            "Ritmo cardiaco acelerado.",
+            "Ritmo cardiaco normal.",
+            "Ninguna de las anteriores."
         ],
-        c: 1
+        c: 0
     }
 ];
 
@@ -155,10 +147,13 @@ let allowPassLevel2 = -1;
 
 // Diálogos de pablo.
 let dialogsPablo2 = [
-    "¿Y qué tal? ¿Cómo ha ido todo?",
-    "La profesora me comentó que has estado contestado adecuadamente...",
-    "Es hora de seguir aprendiendo...",
-    "¿Estás listo para el siguiente nivel?"
+    "¿Qué tal ha ido? ¿Lograste resolver las preguntas del biólogo?",
+    "Quiero decirte que percibo que cada vez más el cubo se está acercando a nosotros...",
+    "Eres como la pieza faltante del rompecabezas...",
+    "Sin embargo, necesitamos que aprendas los conceptos de nuestra raza para poder enfrentarte al Cubo APO...",
+    "Se dice que te realizará una serie de preguntas y que si las logras contestar correctamente...",
+    "Volverá todo a la normalidad...",
+    "Así que, ¿Qué esperas? ¿Listo para seguir?"
 ];
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
@@ -251,6 +246,7 @@ async function hideBiologistDialogs2() {
     biologist22.classList.add("biologist-hide");
     biologist22.classList.add("biologist-behind-curtain");
     alreadyTalkTo2 = -1;
+    allowQ2 = allowQ2 != 2 ? -1 : 2;
     hideDialogs2();
 }
 
@@ -303,7 +299,7 @@ async function finishLevel2(goNextLevel) {
     }
 
     if (allowQ2 != 2) {
-        dialog22.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
+        dialog22.innerHTML = "Lo siento. Primero debes responder a las preguntas del biólogo.";
         hideAnswers2();
         allowPassLevel2 = 1;
         dialogs2 = 0;
@@ -785,6 +781,23 @@ function loadLevel2Variables() {
     keyToDownPressed2 = false;
     keyToLeftPressed2 = false;
     keyToRightPressed2 = false;
+
+    xPlayer2 = 1;
+    yPlayer2 = 3;
+    xBackground2 = 1;
+    questions2 = -1;
+    allowQ2 = -1;
+    allowPassLevel2 = -1;
+    dialogs2 = -1;
+    biologistX2 = 100;
+    bigTreeX2 = 120;
+    smallTreeX2 = 130;
+    midTreeX2 = 135;
+    pabloSmallX2 = 240;
+    alertBiologistX2 = 95;
+    alertPabloX2 = 235;
+    talkTo2 = -1;
+    alreadyTalkTo2 = -1;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
     // Primero se ocultan los dialog22.

@@ -45,7 +45,7 @@
         Contenedor inicial que presentará las opciones
         para iniciar sesión o registrarse.
     -->
-    <div id="signUpIn-container" class="signUpIn-container signUpIn-container-hide signUpIn-container-behind-curtain">
+    <div id="signUpIn-container" class="signUpIn-container">
         <form>
             <div>
                 <h2>EL CUBO APO</h2>
@@ -106,16 +106,18 @@
         Contenedor para mostrar
         las opciones del juego
      -->
-    <div id="game-options-container" class="game-options-container">
+    <div id="game-options-container" class="
+    game-options-container-hide
+    game-options-container-behind-curtain
+    game-options-container">
         <h2 class="game-options-container-h2">
             EL CUBO APO
         </h2>
 
         <button class="game-options-container-button" onclick="showOption(0)">Historia</button>
-        <button class="game-options-container-button" onclick="showOption(1)">Multijugador</button>
-        <button class="game-options-container-button" onclick="showOption(2)">Instrucciones</button>
-        <button class="game-options-container-button" onclick="showOption(3)">Documentación</button>
-        <button class="game-options-container-button" onclick="showOption(4)">Configuración</button>
+        <button class="game-options-container-button" onclick="showOption(1)">Instrucciones</button>
+        <button class="game-options-container-button" onclick="showOption(2)">Documentación</button>
+        <button class="game-options-container-button" onclick="showOption(3)">Configuración</button>
         <button class="game-options-container-button" onclick="logOut()">Salir</button>
     </div>
 
@@ -163,23 +165,6 @@
         </div>
     </div>
 
-    <!-- 
-        Contenedor para la opción de multijugador.
-    -->
-    <div id="game-multiplayer" class="game-multiplayer
-    game-multiplayer-hide
-    game-multiplayer-behind-curtain">
-        <div>
-            <h2>
-                Multijugador
-            </h2>
-
-            <h6 onclick="goBackMenu(1)">
-                Regresar
-            </h6>
-        </div>
-    </div>
-
     <!--
         Contenedor para las instrucciones del juego.
     -->
@@ -191,9 +176,31 @@
                 Instrucciones
             </h2>
 
-            <h6 onclick="goBackMenu(2)">
+            <h6 onclick="goBackMenu(1)">
                 Regresar
             </h6>
+        </div>
+        <div>
+            <p>
+                Para moverte puedes utilizar tanto las teclas <b>W-A-S-D</b> 
+                como las flechas.
+            </p>
+            <p>
+                Para interactuar con los personajes y objetos puedes utilizar la tecla <b>E.</b>
+            </p>
+            <p>
+                Se te presentarán una serie de preguntas relacionadas con el paradigma de programación
+                orientada a objetos. A su vez, estas preguntas se enmarcarán en un contexto de aplicación
+                de conceptos muy generales de la ingeniería biomédica.
+            </p>
+            <p>
+                Para responder a cada una de las preguntas que te hagan los personajes basta con
+                hacer <b>clic</b> en la que consideres como respuesta.
+            </p>
+            <p>
+                Cuando respondas todas las preguntas adecuadamente se desbloqueará el siguiente nivel.
+                Para pasar al siguiente nivel, el personaje de Pablo te esperará en lo último del nivel.
+            </p>
         </div>
     </div>
 
@@ -208,9 +215,136 @@
                 Documentación
             </h2>
 
-            <h6 onclick="goBackMenu(3)">
+            <h6 onclick="goBackMenu(2)">
                 Regresar
             </h6>
+        </div>
+
+        <!-- Documentación de los temas -->
+        <div>
+            <!-- Documentación de clases -->
+            <div>
+                <h4>Clases</h4>
+                <p>
+                    Dentro de algunos conceptos fundamentales del paradigma de programación orientado a objetos
+                    encontramos las <b>clases.</b> Estas se pueden definir como la plantilla para la creación de un objeto.
+                    Es la que establece la materia prima o las todas características necesarias que se deben reunir
+                    para conformar un objeto en específico.</br></br>
+
+                    Estas constan de una serie de métodos que resumen las características del objeto. Así, se pueden
+                    tener clases de diferentes cosas. Por ejemplo, si hablásemos de una <i>clase de carro</i>
+                    diríamos que es la plantilla para formar cualquier carro. Ya dentro de esta clase tendríamos
+                    características como las puertas, las ventanas, las ruedas, etc.</br></br>
+
+                    Es decir que las clases dan lugar a los objetos los cuales son: aquellos encargados de representar cosas.
+                    De esta manera podemos tener objetos reales, imaginarios, simples o complejos que pueden o no,
+                    comunicarse entre sí.</br></br>
+
+                    Por ejemplo, los "objetos" tales como corazón, pulmones, estómago, hígado, pancreas, etc., corresponden
+                    a la clase de <b>órganos</b> del ser humano. En este mismo sentido, en el mundo pluricelular podemos
+                    encontrar células procariotas y celulas eucariotas las cuales son objetos de la clase <b>células</b> 
+                    y a su vez estas pueden ser categorizadas en las clases de <i>células con nucleo definido</i>
+                    y <i>no definido respectivamente.</i>
+                </p>
+            </div>
+
+            <!-- Documentación de atributos -->
+            <div>
+                <h4>Atributos</h4>
+                <p>
+                    Los atributos son quizás una idea más sencilla de comprender. Estos básicamente son las
+                    <b>características que comprende una clase.</b> Ahora bien, en términos del paradigma de programación
+                    orientada a objetos, los atributos pueden tener diferentes tipos de visibilidad tales como:
+                    público, privado, protegido o de paquete. Estos atributos básicamente se utilizan
+                    al momento de modificar los objetos y es algo así como la accesibilidad que tienen
+                    entre los objetos para modificar sus características. También, se pueden categorizar los atributos
+                    de acuerdo a cómo se crean los objetos (aunque esto ya es algo más programático). Así, los tipos
+                    de atributos pueden ser: <i>de instancia, de clases o constantes.</i></br></br>
+                                    
+                    De esta manera cada objeto tiene sus características. Por ejemplo, la sangre cuenta 
+                    con sus propias características o atributos: es líquida, roja, bombeada por el corazón, para vertebrados, etc. La orina por su parte: es líquida, amarilla, contiene agua y desechos, etc. Así mismo,
+                    un paciente con problemas del corazón puede tener diferentes atributos. Por ejemplo,
+                    si es un paciente con una aceleración anormal del corazón se dice que tiene taquicardia,
+                    mientras que un paciente con una desaceleración anormal del corazón se dice bradicardia.</br></br>
+                                    
+                    De esta manera dos objetos pueden tener los mismos atributos con valores o asignaciones diferentes.
+                </p>
+            </div>
+
+            <!-- Documentación de herencia -->
+            <div>
+                <h4>Herencia</h4>
+                <p>
+                    La herencia es otro de los conceptos fundamentales del paradigma de programación orientada a objetos.
+                    Es básicamente, <b>la capacidad que tiene una clase padre (o superclase) de transferir información a una clase hija (o subclase).</b> Así, en la herencia se hace uso del concepto de <i>Reutilización,</i>
+                    que se presenta cuando se desea construir una nueva plantilla o clase a partir de una clase base. Es
+                    algo así como heredar características y hacer algunos cambios adicionales a esas características.</br></br>
+
+                    Por ejemplo, cuando hablamos de células podemos contemplar una clase general llamada <b>Célula.</b>
+                    Con ella, las clases <i>células nerviosas</i> (neuronas y células gliales), leucocitos 
+                    (glóbulos blancos) y las células de la sangre (glóbulos rojos), heredan sus características
+                    y modifican/adicionan/eliminan algunos atributos.
+                </p>
+            </div>
+
+            <!-- Documentación de métodos -->
+            <div>
+                <h4>Métodos</h4>
+                <p>
+                    Los métodos son básicamente los <b>procesos o acciones que puede ejecutar un objeto.</b> Al igual que los atributos, se suelen clasificar en su visibilidad (públicos, privados o protegidos). Sin embargo, a grandes rasgos los más importantes son los públicos. Por otra parte está el concepto de eventos, que
+                    es algo más externo al objeto en sí. Es básicamente cuando el objeto responde a un acción externa que
+                    lo obliga a ejecutar una acción o llamar al método de otro objeto.</br></br>
+
+                    <i>De esta forma los eventos responden a acciones del contexto, ambiente, usuario, etc., mientras que los métodos de un objeto son debidamente llamados.</i></br></br>
+
+                    Por otra parte, el cuerpo humano tiene dentro de sí diferentes órganos que ejecutan múltiples métodos. Por ejemplo, el corazón tiene como métodos los procesos de sístole y diástole; el pancreas tiene como métodos la segregación de insulina y glucagón; el sistema digestivo tiene como métodos la digestión química y física; y el hipotálamo tiene como métodos la segregación de hormonas gonadotropinas.
+                </p>
+            </div>
+
+            <!-- Documentación de Polimorfismo y Sobrecarga -->
+            <div>
+                <h4>Polimorfismo y sobrecarga</h4>
+                <p>
+                    El polimorfismo y la sobrecarga son conceptos más técnicos que tienen quizás una mayor relevancia al momento de elaborar tareas programáticas. Sin embargo, es un concepto que podemos evidenciar de igual manera en el día a día.</br></br>
+
+                    La <b>sobrecarga</b> es básicamente el conjunto de métodos con el mismo nombre que reciben diferentes entradas. Recibe este nombre porque se <i>sobrecarga</i> el nombre del método y lo que varía es la recepción de diferentes entradas para elaborar diferentes procesos.</br></br>
+                                    
+                    Por otro lado, el polimorfismo se relaciona con el concepto de herencia. Y es que el polimorfismo <i>hace referencia a la situación de tener un método en una clase hija que tiene el mismo nombre que su clase padre.</i> ¿Recuerdas cuando se mencionó que la clase hija hereda todas las características de la clase padre? Pues dentro de esas características se encuentran los métodos. Sin embargo, la clase hija puede decidir cómo parametrizar los procesos que le plazca. Por ejemplo, los coches todos cuentan con las mismas características (heredan de la clase padre atributos como motores, ventanas, sistemas de transmisión, etc.), pero cada uno modifica sus métodos a su manera (mayor o menor velocidad, sistemas inalámbricos, etc.).</br></br>
+                                    
+                    Así, diferentes objetos pueden presentar sobrecarga o polimorfismo. Por ejemplo, los sentidos pueden recibirse de diferentes formas (diferentes entradas) lo cual vendría siendo un proceso de sobrecarga. De otra manera ocurre con las células. Dependiendo del tipo de células se puede heredar de diferente manera el proceso de captación de energía (aunque en general todas las células captan energía para sobrevivir).
+                </p>
+            </div>
+
+            <!-- Documentación de referencias -->
+            <div>
+                <h4>Referencias</h4>
+                <ul>
+                    <li><a href="https://ifgeekthen.nttdata.com/es/herencia-en-programacion-orientada-objetos">https://ifgeekthen.nttdata.com/es/herencia-en-programacion-orientada-objetos</a></li>
+                    <li><a href="https://www.significados.com/celula-eucariota">https://www.significados.com/celula-eucariota</a></li>
+                    <li><a href="https://www.healthdirect.gov.au/bradycardia#:~:text=Resources%20and%20support-,What%20is%20bradycardia%3F,normal%20when%20you're%20sleeping">https://www.healthdirect.gov.au/bradycardia#:~:text=Resources%20and%20support-,What%20is%20bradycardia%3F,normal%20when%20you're%20sleeping</a></li>
+                    <li><a href="https://medlineplus.gov/spanish/blood.html">https://medlineplus.gov/spanish/blood.html</a></li>
+                    <li><a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/orina">https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/orina</a></li>
+                    <li><a href="https://es.khanacademy.org/science/biology/principles-of-physiology/body-structure-and-homeostasis/a/tissues-organs-organ-systems#:~:text=Las%20c%C3%A9lulas%20constituyen%20tejidos%2C%20los,digestivo%20cooperan%20para%20procesar%20alimentos">https://es.khanacademy.org/science/biology/principles-of-physiology/body-structure-and-homeostasis/a/tissues-organs-organ-systems#:~:text=Las%20c%C3%A9lulas%20constituyen%20tejidos%2C%20los,digestivo%20cooperan%20para%20procesar%20alimentos</a></li>
+                    <li><a href="https://www.genome.gov/es/genetics-glossary/Celula#:~:text=Todas%20las%20c%C3%A9lulas%20se%20pueden,mientras%20que%20las%20procariotas%20no">https://www.genome.gov/es/genetics-glossary/Celula#:~:text=Todas%20las%20c%C3%A9lulas%20se%20pueden,mientras%20que%20las%20procariotas%20no</a></li>
+                    <li><a href="http://ocw.upm.es/pluginfile.php/1042/mod_label/intro/12-tiposdeatributos.pdf">http://ocw.upm.es/pluginfile.php/1042/mod_label/intro/12-tiposdeatributos.pdf</a></li>
+                    <li><a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/neurona">https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/neurona</a></li>
+                    <li><a href="https://es.khanacademy.org/science/biology/human-biology/neuron-nervous-system/a/overview-of-neuron-structure-and-function">https://es.khanacademy.org/science/biology/human-biology/neuron-nervous-system/a/overview-of-neuron-structure-and-function</a></li>
+                    <li><a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/celula-nerviosa">https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/celula-nerviosa</a></li>
+                    <li><a href="https://rochepacientes.es/esclerosis-multiple/sistema-nervioso.html#:~:text=Est%C3%A1%20formado%20principalmente%20por%20dos,neuronas%20y%20las%20c%C3%A9lulas%20gliales">https://rochepacientes.es/esclerosis-multiple/sistema-nervioso.html#:~:text=Est%C3%A1%20formado%20principalmente%20por%20dos,neuronas%20y%20las%20c%C3%A9lulas%20gliales</a></li>
+                    <li><a href="https://www.cigna.com/es-us/knowledge-center/hw/glbulo-blanco-tv7034">https://www.cigna.com/es-us/knowledge-center/hw/glbulo-blanco-tv7034</a></li>
+                    <li><a href="https://www.ejemplos.co/20-ejemplos-de-celulas-humanas-y-sus-funciones">https://www.ejemplos.co/20-ejemplos-de-celulas-humanas-y-sus-funciones</a></li>
+                    <li><a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/eritrocito">https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/eritrocito</a></li>
+                    <li><a href="https://www.digitallearning.es/intro-programacion-js/objetos-propiedades-metodos.html">https://www.digitallearning.es/intro-programacion-js/objetos-propiedades-metodos.html</a></li>
+                    <li><a href="https://www.fdi.ucm.es/profesor/jpavon/poo/1.1.objetos%20y%20clases.pdf">https://www.fdi.ucm.es/profesor/jpavon/poo/1.1.objetos%20y%20clases.pdf</a></li>
+                    <li><a href="http://www.upv.es/amiga/43.htm">http://www.upv.es/amiga/43.htm</a></li>
+                    <li><a href="https://www.cvosoft.com/glosario-sap/abap-poo/abap-programacion-orientada-a-objetos-eventos-2297.html">https://www.cvosoft.com/glosario-sap/abap-poo/abap-programacion-orientada-a-objetos-eventos-2297.html</a></li>
+                    <li><a href="https://www.diferenciador.com/sistole-y-diastole">https://www.diferenciador.com/sistole-y-diastole</a></li>
+                    <li><a href="https://web.archive.org/web/20111022010625/http://bvs.sld.cu/revistas/ems/vol18_3_04/ems05304.htm">https://web.archive.org/web/20111022010625/http://bvs.sld.cu/revistas/ems/vol18_3_04/ems05304.htm</a></li>
+                    <li><a href="http://www3.uji.es/~belfern/Docencia/Presentaciones/ProgramacionAvanzada/Tema1/conceptosPolimorfismoSobrecarga.html#9">http://www3.uji.es/~belfern/Docencia/Presentaciones/ProgramacionAvanzada/Tema1/conceptosPolimorfismoSobrecarga.html#9</a></li>
+                    <li><a href="https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/sentidos">https://www.cancer.gov/espanol/publicaciones/diccionarios/diccionario-cancer/def/sentidos</a></li>
+                    <li><a href="https://aprendiendoarduino.wordpress.com/2017/07/08/clases-y-objetos/#:~:text=La%20programaci%C3%B3n%20orientada%20a%20objetos,objeto%20ofrece%20una%20funcionalidad%20especial">https://aprendiendoarduino.wordpress.com/2017/07/08/clases-y-objetos/#:~:text=La%20programaci%C3%B3n%20orientada%20a%20objetos,objeto%20ofrece%20una%20funcionalidad%20especial</a></li>
+                </ul>
+            </div>
         </div>
     </div>
 
@@ -225,10 +359,20 @@
                 Configuración
             </h2>
 
-            <h6 onclick="goBackMenu(4)">
+            <h6 onclick="goBackMenu(3)">
                 Regresar
             </h6>
         </div>
+
+        <!-- Para actualizar correo y contraseña -->
+        <form>
+            <label for="aEmail">Actualiza tu correo</label>
+            <input id="aEmail" name="aEmail" type="email" placeholder="Ingresa tu correo" /><br />
+            <label for="aPassowrd">Actualiza tu contraseña</label>
+            <input id="aPassword" name="aPassword" type="password" placeholder="Ingresa tu contraseña" />
+        </form>
+
+        <p onclick="updateData()">Actualizar</p>
     </div>
 
     <!-- 
@@ -236,9 +380,8 @@
     -->
     <div id="game-stop" class="game-stop game-stop-hide game-stop-behind-curtain">
         <button onclick="hideStopMenu()">Volver al juego</button>
-        <button>Libro</button>
-        <button>Configuración</button>
-        <button onclick="goBackMenuFromHistory(5)">Salir al menú principal</button>
+        <button onclick="showBook()">Libro</button>
+        <button onclick="goBackMenuFromHistory()">Salir al menú principal</button>
     </div>
 
 
@@ -489,6 +632,114 @@
 
     <!-- Contenedor para mostrar el nivel al que se accede -->
     <div id="show-level" class="show-level show-level-hide show-level-behind-curtain"></div>
+
+    <!-- Contenedor para mostrar los créditos -->
+    <div id="credits" class="credits credits-hide credits-behind-curtain">
+        <div>
+            <h2>Créditos</h2>
+            <p>
+                Este juego ha sido desarrollado por el estudiante Juan Diego Cobo Cabal
+                para el proyecto del curso Proyecto Informático I de la 
+                profesora Sandra Guarañita.<br/><br/>
+    
+                La idea general es lograr enseñar los conceptos fundamentales del paradigma
+                de programación orientado a objetos enmarcado en el contexto de los ingenieros
+                biomédicos de la Universidad Autonoma de Occidente.<br/><br/>
+
+                <i>Muchas gracias por jugarlo.</i>
+            </p>
+
+        </div>
+    </div>
+
+    <!-- Contenedor del libro -->
+    <div id="book" class="book book-hide book-behind-curtain">
+        <div>
+            <h2>Libro</h2>
+            <p onclick="hideBook()">Regresar</p>
+        </div>
+
+        <!-- Capítulo de clases -->
+        <div>
+            <h4>Capítulo de clases</h4>
+
+            <p>
+                El paradigma de programación orientada a objetos es un paradigma que sirve para el funcionamiento de los cúbicos. Básicamente, en este se plantea que existen objetos encargados de representar cosas que pueden ser reales, imaginarios, simples y complejos.<br/><br/>
+
+                Los objetos se comunican entre sí a través de mensajes. Es así como cada objeto emite un mensaje y los receptores se encargan de procesar dicho mensaje.<br/><br/>
+
+                Sin embargo, como tal, los objetos no podrían existir sin las clases, las cuales son una plantilla en la que se establecen todos los atributos de un objeto.
+            </p>
+            <ul>
+                <li>Los cangrejos, abejas, elefantes y demás son objetos de la clase animal.</li>
+                <li>Las celulas procariotas y eucariotas son objetos de la clase célula (las primeras con núcleo y las segundas sin núcleo).</li>
+                <li>El corazón, pulmones, hígado y riñón son objetos de la clase órganos.</li>
+            </ul>
+        </div>
+
+        <!-- Capítulo de atributos -->
+        <div>
+            <h4>Capítulo de atributos</h4>
+
+            <p>
+                Los atributos son las características de los objetos. Pueden dividirse de acuerdo a su visibilidad (públicos, privados o protegidos) o de acuerdo al tipo (de instancia, de clase o constante).
+            </p>
+
+            <ul>
+                <li>Los atributos de la sangre son: líquida, rojiza, para vertebrados.</li>
+                <li>Los atributos de un paciente con taquicardia son principalmente la aceleración del corazón.</li>
+                <li>Los atributos de un paciente con bradicardia son principalmente la desaceleración del corazón.</li>
+            </ul>
+        </div>
+
+        <!-- Capítulo de herencia -->
+        <div>
+            <h4>Capítulo de herencia</h4>
+
+            <p>
+                La herencia es básicamente cuando se tiene una clase padre que puede heredar a una clase hija. Esta acción de "heredar" quiere decir que una plantilla base sirve a otra plantilla para crear clases con características similares pero que cuentan con ciertas diferencias. Es algo así como un conjunto de conjuntos.
+            </p>
+
+            <ul>
+                <li>Las neuronas y las células gliales heredan de la clase de células nerviosas.</li>
+                <li>Los glóbulos rojos heredan de la clase de células sanguíneas.</li>
+                <li>Los globulos blancos heredan de la clase de leucocitos.</li>
+            </ul>
+        </div>
+
+        <!-- Capítulo de métodos -->
+        <div>
+            <h4>Capítulo de métodos</h4>
+
+            <p>
+                Los métodos son básicamente las acciones que puede hacer un objeto. También se denominan funciones que puede realizar un objeto o, de otra manera, procesos que, en algunas ocasiones, reciben entradas y, en algunas ocasiones, retornan salidas.
+            </p>
+
+            <ul>
+                <li>El corazón tiene como métodos el sístole y la diástole.</li>
+                <li>La digestión mecánica y digestión química hacen parte del objeto del sistema digestivo.</li>
+                <li>El hipotalamo tiene como métodos la segregación de las hormonas gonadotropinas.</li>
+                <li>El páncreas tiene como métodos la segregación de insulina y glucagón.</li>
+            </ul>
+        </div>
+
+        <!-- Capítulo de polimorfismo y sobrecarga -->
+        <div>
+            <h4>Capítulo de polimorfismo y sobrecarga</h4>
+
+            <p>
+                El polimorfismo y la sobrecarga son conceptos algo avanzados. La sobrecarga por su parte se refiere a la sobreescritura de métodos con el mismo nombre que reciben diferentes entradas. Mientras que el polimorfismo tiene relación con la herencia.<br/><br/>
+
+                El polimorfismo indica que una clase hija hereda características de una clase padre pero modifica los métodos de esa clase padre.
+            </p>
+
+            <ul>
+                <li>Los sentidos se pueden considerar como un conjunto de métodos por sobrecarga donde la idea es que se recibe un sentido pero dependiendo de este se efectúa un proceso cerebral diferente.</li>
+                <li>La transformación de energía de las células procariotas y eucariotas puede variar por lo que a pesar de que hereden de la clase célula, cada una le asigna un proceso diferente.</li>
+                <li>El movimiento de las artículaciones es un proceso por sobrecarga ya que a pesar de que la idea general es moverse, dependiendo de la entrada o señal cerebral que sea enviada, se efectuará un proceso distinto.</li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Variables globales para utilizar en el resto de aplicación. -->
     <script src="frontend/js/global.variables.js"></script>

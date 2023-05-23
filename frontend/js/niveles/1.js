@@ -76,9 +76,9 @@ let questionsTeacher1 = [
     "2. ¿Cómo se puede categorizar un objeto?",
     "3. ¿Qué son los mensajes entre objetos?",
     "4. ¿Qué son las clases?",
-    "5. Un Ferrari es un objeto de la clase...",
-    "6. Un Jet es un objeto de la clase...",
-    "7. Elefantes y delfines hacen parte respectivamente de las clases..."
+    "5. El corazón y los pulmones son objetos de la clase...",
+    "6. Las células con núcleo definido son células de la clase...",
+    "7. Las células con núcleo no definido son células de la clase..."
 ];
 
 
@@ -89,7 +89,7 @@ let answersTeacher1 = [
     {
         r: [
             "Definen estados o cualidades.",
-            "Son las característiaca de un algo.",
+            "Son las características de un algo.",
             "Son aquellos encargados de representar cosas.",
             "Ninguna de las anteriores."
         ],
@@ -100,7 +100,7 @@ let answersTeacher1 = [
         r: [
             "Simples y complejos.",
             "Reales o imaginarios.",
-            "Nignua de las anteriores.",
+            "Ninguna de las anteriores.",
             "Todas las anteriores."
         ],
         c: 3
@@ -128,32 +128,32 @@ let answersTeacher1 = [
     // Respuestas de la pregunta 5.
     {
         r: [
-            "De coches.",
-            "De aviones.",
-            "De animales.",
-            "De plantas."
+            "Células.",
+            "Órganos.",
+            "Sistemas.",
+            "Tejidos."
         ],
-        c: 0
+        c: 1
     },
     // Respuestas de la pregunta 6.
     {
         r: [
-            "De coches.",
-            "De animales.",
-            "De aviones.",
-            "De plantas."
+            "Célula procariota.",
+            "Célula eucariota.",
+            "Ambas respuestas son correctas.",
+            "Ninguna de las anteriores."
         ],
-        c: 2
+        c: 1
     },
     // Respuestas de la pregunta 7.
     {
         r: [
-            "Marsupiales y mamíferos.",
-            "Acuáticos y terrestres.",
-            "Ambos son mamíferos.",
-            "Carnívoros y Omnívoros."
+            "Célula procariota.",
+            "Célula eucariota.",
+            "Ambas respuestas son correctas.",
+            "Ninguna de las anteriores."
         ],
-        c: 2
+        c: 0
     }
 ];
 
@@ -267,6 +267,7 @@ async function hideTeacherDialogs1() {
     teacher21.classList.add("teacher-hide");
     teacher21.classList.add("teacher-behind-curtain");
     alreadyTalkTo = -1;
+    allowTQ = allowTQ != 2 ? -1 : 2;
     hideDialogs1();
 }
 
@@ -807,13 +808,26 @@ async function fadeInOut() {
 // y agregar las variables correspondientes al background o escena general.
 function loadLevel1Variables() {
     mVC1 = 0;
-    xPlayer1 = 1;
-    yPlayer1 = 3;
     keyToUpPressed = false;
     keyToDownPressed = false;
     keyToLeftPressed = false;
     keyToRightPressed = false;
     dIntro = 0;
+
+    xPlayer1 = 1;
+    yPlayer1 = 3;
+    xBackground = 1;
+    questions1 = -1;
+    allowTQ = -1;
+    allowPassLevel = -1;
+    dialogs1 = -1;
+    teacherX1 = 100;
+    schoolX1 = 120;
+    pabloSmallX1 = 240;
+    alertTeacherX1 = 95;
+    alertPabloX1 = 235;
+    talkTo = -1;
+    alreadyTalkTo = -1;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
     // Primero se ocultan los dialog21.

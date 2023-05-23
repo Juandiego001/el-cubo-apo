@@ -1,4 +1,4 @@
-#dialog {
+.dialog {
     background-color: var(--fondo-blanco);
     font-family: 'system-ui';
     border-radius: 1rem;

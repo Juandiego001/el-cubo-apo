@@ -25,27 +25,27 @@ let dialog52 = dialog.cloneNode(true);
 // El 3 al final indica el nivel 3.
 // Diálogos del doctor.
 let dialogsBiomedic5 = [
-    "<span>¡Hola! Tú debes ser el nuevo. Pablo me comentó de ti...</span>",
-    "<span>Te doy una vez más la bienvenida al pueblo cúbico...</span>",
-    "<span>Yo soy <b>la profesora</b> del pueblo y me han encargado comentarte un poco más acerca de tu razón aquí...</span>",
-    "<span>Verás, cada vida de nuestro universo tiene un código...</span>",
-    "<span>En el universo 7 (el humanoide), se le llama <b>ADN...</b></span>",
-    "<span>Nosotros lo llamamos <b>código fuente...</b></span>",
-    "<span>Así, cada ser vivo que te rodea tiene un código fuente diferente...</span>",
-    "<span>Ahora bien, este código se forma apartir de una estructura llamada <b>Paradigma de Programación Orientada a Objetos...</b></span>",
-    "<span>Que para efectos más concretos, se ha decidido abreviar como <b>POO...</b></span>",
-    "<span>Nuestros científicos, han logrado identificar <b>6 estructuras</b> aún más pequeñas que componen la <b>POO...</b></span>",
-    "<span>Estas son: <b>clases, atributos, métodos, herencia, polimorfismo y sobrecarga...</b></span>",
-    "<span>Se dice que pueden haber más, pero no sabremos cuando podremos averiguarlo...</span>",
-    "<span>Como sabrás, desde que nuestra piedra angular <b>(El cubo APO)</b> fue robada...</span>",
-    "<span>Hemos tenido mucho caos en este pueblo...</span>",
-    "<span>Tanto así que se me ha encargado revisar nuevamente todas las investigaciones...</span>",
-    "<span>Es un trabajo extenuante pero poco a poco he avanzado...</span>",
-    "<span>Ahora me encuentro revisando la investigación de las Clases en la POO...</span>",
-    "<span>Tengo un documento que describía su funcionamiento y Pablo me comentó...</span>",
-    "<span>Que tú podrías confirmarme algunas con el libro que él te había proporcionado...</span>",
-    "<span>Entonces quisiera saber si podrías ayudarme...</span>",
-    "<span>¿Estás listo para responder algunas preguntas de Clases en la POO?</span>"
+    "<span>¡Ahh! ¡Que susto!</span>",
+    "<span>Por un momento pensé que eras el Cubo APO...</span>",
+    "<span>Ya estaba pensando en todos los buenos momentos que pasaron en mi corta vida...</span>",
+    "<span>¿Cómo estás?</span>",
+    "<span>Tú debes de ser la promesa que nos salvará...</span>",
+    "<span>Quiero decirte que creo que eres muy valiente, ya que vas a enfrentarte a algo de lo que no sabes si regresarás o simplemente te hará desaparecer...</span>",
+    "<span>Yo no podría hacer lo que tú porque soy un alma vieja como dicen...</span>",
+    "<span>No tengo las agallas ni los conocimientos...</span>",
+    "<span>Solo recuerdo algunos conceptos y experimentos que hacíamos con la POO...</span>",
+    "<span>En cambio tú, con esta última lección quedarás fino.</span>",
+    "<span>Conmigo aprenderás los conceptos de Polimorfismo y Sobrecarga.</span>",
+    "<span>Si comprendiste bien los métodos...</span>",
+    "<span>Estos conceptos no deben ser mucho problema...</span>",
+    "<span>Lo que tienes que tener en cuenta es que la sobrecarga...</span>",
+    "<span>Es cuando se habla de métodos con el mismo nombre que reciben diferentes entradas.</span>",
+    "<span>Mientras que polimorfismo se relaciona con la herencia...</span>",
+    "<span>Donde la clase hija tiene un método igual que el método padre, solo que...</span>",
+    "<span>La clase hija lo adopta a sus características.</span>",
+    "<span>Pero con el libro puedes profundizar mucho más...</span>",
+    "<span>No te fíes completamente de lo que te estoy diciendo...</span>",
+    "<span>¿Entonces qué? ¿Estás listo para algunas preguntas de polimorfismo y sobrecarga?</span>"
 ];
 
 // Variable similar a dialogs43 para ir mostrando las preguntas.
@@ -54,13 +54,13 @@ let questions5 = -1;
 // Preguntas que hará el doctor.
 // El 3 indica el nivel 3.
 let questionsBiomedic5 = [
-    "1. ¿Qué es un objeto?",
-    "2. ¿Cómo se puede categorizar un objeto?",
-    "3. ¿Qué son los mensajes entre objetos?",
-    "4. ¿Qué son las clases?",
-    "5. Un Ferrari es un objeto de la clase...",
-    "6. Un Jet es un objeto de la clase...",
-    "7. Elefantes y delfines hacen parte respectivamente de las clases..."
+    "1. ¿Qué es la sobrecarga de un método?",
+    "2. ¿Qué es el polimorfismo de un método?",
+    "3. ¿Qué diferencia entonces la sobrecarga del polimorfismo?",
+    "4. De los siguientes métodos, ¿cuáles se podrían considerar como sobrecarga?",
+    "5. De los siguientes métodos, ¿cuáles se podrían considerar como polimorfismo?",
+    "6. De los siguientes métodos, ¿cuáles se podrían considerar como un método normal?",
+    "7. De los siguientes métodos, ¿cuáles se podrían considerar como sobrecarga?"
 ];
 
 
@@ -70,72 +70,72 @@ let answersBiomedic5 = [
     // Respuestas de la pregunta 1.
     {
         r: [
-            "Definen estados o cualidades.",
-            "Son las característiaca de un algo.",
-            "Son aquellos encargados de representar cosas.",
-            "Ninguna de las anteriores."
+            "Cuando el método de una clase hija tiene el mismo nombre que el método de una clase padre.",
+            "Ninguna de las anteriores.",
+            "Cuando un método tiene el mismo nombre pero sus entradas generan diferentes salidas.",
+            "Ambas son correctas."
         ],
         c: 2
     },
     // Respuestas de la pregunta 2.
     {
         r: [
-            "Simples y complejos.",
-            "Reales o imaginarios.",
-            "Nignua de las anteriores.",
-            "Todas las anteriores."
+            "Cuando el método de una clase hija tiene el mismo nombre que el método de una clase padre.",
+            "Ninguna de las anteriores.",
+            "Cuando un método tiene el mismo nombre pero sus entradas generan diferentes salidas.",
+            "Ambas son correctas."
         ],
-        c: 3
+        c: 0
     },
     // Respuestas de la pregunta 3.
     {
         r: [
-            "Son representaciones de cosas.",
-            "Son comunicaciones e interacciones entre objetos.",
-            "Son acciones que puede ejecutar un objeto.",
-            "Son características de un objeto."
+            "La herencia y la abstracción.",
+            "La herencia y las entradas enviadas respectivamente.",
+            "Las entradas enviadas y la herencia respectivamente.",
+            "No tienen diferencias."
         ],
-        c: 1
+        c: 2
     },
     // Respuestas de la pregunta 4.
     {
         r: [
-            "Son representaciones de un tipo particular de objeto.",
-            "Son acciones que pueden retornan o no un valor como resultado.",
-            "Todas las anteriores.",
-            "Son las características de un objeto."
+            "El método de recepción de sentidos, ya que las entradas pueden ser distintas (visión, audición, olfato, gusto y tacto) y generar diferentes salidas.",
+            "El método de transformación de energía de las células eucariotas y procariotas ya que ambas ajustan a sus necesidades el método heredado de la clase célula en general.",
+            "El método de convertir los alimentos mediante la digestión mecánica.",
+            "Ninguna de las anteriores."
         ],
         c: 0
     },
     // Respuestas de la pregunta 5.
     {
         r: [
-            "De coches.",
-            "De aviones.",
-            "De animales.",
-            "De plantas."
+            "El método de recepción de sentidos, ya que las entradas pueden ser distintas (visión, audición, olfato, gusto y tacto) y generar diferentes salidas.",
+            "El método de transformación de energía de las células eucariotas y procariotas ya que ambas ajustan a sus necesidades el método heredado de la clase célula en general.",
+            "El método de convertir los alimentos mediante la digestión mecánica.",
+            "Ninguna de las anteriores."
         ],
-        c: 0
+        c: 1
     },
     // Respuestas de la pregunta 6.
     {
         r: [
-            "De coches.",
-            "De animales.",
-            "De aviones.",
-            "De plantas."
+            "El método de recepción de sentidos, ya que las entradas pueden ser distintas (visión, audición, olfato, gusto y tacto) y generar diferentes salidas.",
+            "El método de transformación de energía de las células eucariotas y procariotas ya que ambas ajustan a sus necesidades el método heredado de la clase célula en general.",
+            "El método de convertir los alimentos mediante la digestión mecánica.",
+            "Ninguna de las anteriores."
         ],
         c: 2
     },
     // Respuestas de la pregunta 7.
     {
         r: [
-            "Marsupiales y mamíferos.",
-            "Acuáticos y terrestres.",
-            "Ambos son mamíferos.",
-            "Carnívoros y Omnívoros."
+            "Ninguna de las anteriores.",
+            "El método de las funciones orgánicas, ya que cada órgano tiene una función pero cada uno realiza diferentes procesos.",
+            "El método del intercambio gaseoso en los alveólos.",
+            "El método de mover las articulaciones ya que dependiendo de la artículación se envían diferentes señales."
         ],
-        c: 2
+        c: 3
     }
 ];
 
@@ -155,10 +155,15 @@ let allowPassLevel5 = -1;
 
 // Diálogos de pablo.
 let dialogsPablo5 = [
-    "¿Y qué tal? ¿Cómo ha ido todo?",
-    "La profesora me comentó que has estado contestado adecuadamente...",
-    "Es hora de seguir aprendiendo...",
-    "¿Estás listo para el siguiente nivel?"
+    "Bien amigo mio.",
+    "Estás preparado para enfrentarte al Cubo APO.",
+    "De acuerdo con lo que le entendí al biomédico...",
+    "Los piramidales lo observaron a unos kilómetros no muy lejos de aquí...",
+    "Al parecer ellos también tenían a alguien...",
+    "Que sencillamente no soportó la presión de las preguntas y lo reducieron a un vértice...",
+    "A partir de aquí estarás solo, yo te rodearé...",
+    "Si encuentras al Cubo y superas la prueba, me encontrarás seguro...",
+    "¡Suerte amigo mio y que la fuerza de los cuatro lados te acompañe!"
 ];
 
 // Arreglo que contiene todos los diálogos de ambos personajes.
@@ -249,6 +254,7 @@ async function hideBiomedicDialogs5() {
     biomedic52.classList.add("biomedic-hide");
     biomedic52.classList.add("biomedic-behind-curtain");
     alreadyTalkTo5 = -1;
+    allowQ5 = allowQ5 != 2 ? -1 : 2;
     hideDialogs5();
 }
 
@@ -301,7 +307,7 @@ async function finishLevel5(goNextLevel) {
     }
 
     if (allowQ5 != 2) {
-        dialog52.innerHTML = "Lo siento. Primero debes responder a las preguntas de la profesora.";
+        dialog52.innerHTML = "Lo siento. Primero debes responder a las preguntas del biomédico.";
         hideAnswers5();
         allowPassLevel5 = 1;
         dialogs5 = 0;
@@ -323,7 +329,7 @@ async function finishLevel5(goNextLevel) {
         between.classList.add('between-behind-curtain');
 
         // Se ejecuta el proceso para mostrar el nivel 6.
-        addSixthLevel();
+        loadLevel6Variables();
     }
 }
 
@@ -408,7 +414,7 @@ async function verifyAnswer5(theQuestion, theAnswer, theAnswerElement) {
         // una variable para que ya pueda continuar hacia el siguiente nivel.
         if (questions5 == questionsBiomedic5.length) {
             // Se coloca el mensaje final indicando que ya puede pasar de nivel.
-            dialog52.innerHTML = `<span>Creo que así está perfecto. Pablo te estará esperando para mostrarte a los demás del pueblo. ¡Adiós y gracias!</span>`;
+            dialog52.innerHTML = `<span>Creo que así está perfecto. Suerte en tu aventura final compatriota, todos estamos contigo.</span>`;
             // Se asigna el valor correspondiente a la variable.
             allowQ5 = 2;
             // Se ocultan las respuestas.
@@ -759,6 +765,21 @@ function loadLevel5Variables() {
     keyToDownPressed5 = false;
     keyToLeftPressed5 = false;
     keyToRightPressed5 = false;
+
+    xPlayer5 = 1;
+    yPlayer5 = 3;
+    xBackground5 = 1;
+    questions5 = -1;
+    allowQ5 = -1;
+    allowPassLevel5 = -1;
+    dialogs5 = -1;
+    biomedicX5 = 100;
+    schoolX5 = 120;
+    pabloSmallX5 = 240;
+    alertBiomedicX5 = 95;
+    alertPabloX5 = 235;
+    talkTo5 = -1;
+    alreadyTalkTo5 = -1;
 
     // Se agregan personajes, objetos, escenarios, etc., al levels.
     // Primero se ocultan los dialog52.
