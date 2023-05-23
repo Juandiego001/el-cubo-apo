@@ -43,7 +43,7 @@ async function signUp(event) {
         "password": thePassword
     };
 
-    let responseJson = await fetch("http://localhost:3000/users", {
+    let responseJson = await fetch("https://el-cubo-apo-service.onrender.com/users", {
         method: "POST",
         headers: {
             "Allow-Access-Origin": "*",
@@ -84,7 +84,7 @@ async function logIn(event) {
         return;
     }
 
-    let responseJson = await fetch(`http://localhost:3000/users?email=${theEmail}&password=${thePassword}`, {
+    let responseJson = await fetch(`https://el-cubo-apo-service.onrender.com/users?email=${theEmail}&password=${thePassword}`, {
         method: "GET",
         headers: {
             "Allow-Access-Control": "*",
@@ -363,7 +363,7 @@ async function updateData() {
         newPassword
     };
 
-    let responseJson = await fetch("http://localhost:3000/users", {
+    let responseJson = await fetch("https://el-cubo-apo-service.onrender.com/users", {
         method: "PUT",
         headers: {
             "Allow-Access-Origin": "*",
